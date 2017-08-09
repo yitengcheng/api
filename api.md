@@ -13,7 +13,7 @@
 ##### 11. [获取中国区划地址(getRegionAddress)](#11-获取中国区划地址)
 ##### 12. [获取发货点地址(getStartPointAddress)](#12-获取发货点地址)
 ## 货单api
-##### 13. [预下单(prePlaceOrder)](#13-预下单)
+##### 13. [预下单(placePreOrder)](#13-预下单)
 ##### 14. [下初始单(placeOriginOrder)](#14-下初始单)
 ##### 15. [下中转单(placeTransferOrder)](#15-下中转单)
 ##### 16. [获取发货单列表(getSendOrderList)](#16-获取发货单列表)
@@ -318,8 +318,8 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 ## 货单api
 
 ---
-### 13. [预下单](#13-预下单preplaceorder)
-- `prePlaceOrder`
+### 13. [预下单](#13-预下单placepreorder)
+- `placePreOrder`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |

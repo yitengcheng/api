@@ -372,6 +372,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 ### 16. [获取发货单列表](#16-获取发货单列表getsendorderlist)
 - `getSendOrderList`
 - 请求方式：`POST`
+
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
@@ -410,6 +411,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 ### 17. [获取收货单列表](#17-获取收货单列表getreceiveorderlist)
 - `getReceiveOrderList`
 - 请求方式：`POST`
+
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
@@ -465,6 +467,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 ### 19. [修改预下单货单](#19-修改预下单货单modifypreorder)
 - `modifyPreOrder`
 - 请求方式：`POST`
+
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
@@ -493,6 +496,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 ### 20. [删除预下单货单](#20-删除预下单货单removepreorder)
 - `removePreOrder`
 - 请求方式：`POST`
+
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |

@@ -374,7 +374,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| type | String | 类型 |
+| type | String | 类型 (preorder,waitpay,onway,complete)|
 | pageNo | Number | 页码 |
 | pageSize | Number | 每一页大小 |
 
@@ -412,7 +412,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| type | String | 类型 |
+| type | String | 类型(all,onway,complete) |
 | pageNo | Number | 页码 |
 | pageSize | Number | 每一页大小 |
 
@@ -461,16 +461,47 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | newPassword | String | 新密码 |
 
 ---
-### 19. [修改货单](#19-修改货单modifyorder)
-- `modifyOrder`
+### 19. [修改预下单货单](#19-修改货单modifyorder)
+- `modifyPreOrder`
 - 请求方式：`POST`
-
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| oldPassword | String | 旧密码 |
-| newPassword | String | 新密码 |
+| orderId | ID | 订单号 |
+| receiverPhone | String | 收货人电话 |
+| receiverName | String | 收货人姓名 |
+| startPoint | String | 始发地 |
+| endPoint | String | 货到地 |
+| totalNumbers | Number | 货物数量 |
+| weight | Number | 重量 |
+| size | Number | 方量 |
+| isSendToDoor | Bool | 是否送货上门 |
+| proxyCharge | Bool | 代收货款金额 |
+| insuanceMount | Number | 保险费 |
+| isReachPay | Bool | 是否到付 |
+| totalDesignatedFee | Bool | 是否送货上门 |
+| photo | String | 货单照片 |
 
+```js
+{
+  "success": true
+}
+```
+
+---
+### 19. [删除预下单货单](#19-修改货单modifyorder)
+- `removePreOrder`
+- 请求方式：`POST`
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 订单号 |
+
+```js
+{
+  "success": true
+}
+```
 ---
 ### 20. [货主使用app支付货单](#20-货主使用app支付货单payfororderwhensend)
 - `payForOrderWhenSend`

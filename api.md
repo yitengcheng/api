@@ -346,7 +346,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | proxyCharge | Bool | 代收货款金额 |
 | isInsuance | Bool | 是否保价 |
 | isReachPay | Bool | 是否到付 (如果是到付，并且设置了totalDesignatedFee，为指定向收货人收totalDesignatedFee的运费，否则向收货人收初始单计算出来的运费)|
-| totalDesignatedFee | Bool | 指定收款金额 |
+| totalDesignatedFee | Number | 指定收款金额 |
 | photo | String | 货单照片 |
 
 
@@ -495,7 +495,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | proxyCharge | Bool | 代收货款金额 |
 | isInsuance | Bool | 是否保价 |
 | isReachPay | Bool | 是否到付 (如果是到付，并且设置了totalDesignatedFee，为指定向收货人收totalDesignatedFee的运费，否则向收货人收初始单计算出来的运费)|
-| totalDesignatedFee | Bool | 指定收款金额 |
+| totalDesignatedFee | Number | 指定收款金额 |
 | photo | String | 货单照片 |
 
 ```js

@@ -22,23 +22,24 @@
 ##### 19. [修改预下单货单(modifyPreOrder)](#19-修改预下单货单)
 ##### 20. [删除预下单货单(removePreOrder)](#20-删除预下单货单)
 ##### 21. [货主使用app支付货单(payForOrderWhenSend)](#21-货主使用app支付货单)
-##### 22. [结束货单(finishOrder)](#22-结束货单)
-##### 23. [获取订单物流信息(getLogisticsList)](#23-获取订单物流信息)
+##### 22. [结束货单现付(finishOrder)](#22-结束货单现付)
+##### 23. [结束货单线上支付(payForOrderWhenReceive)](#23-结束货单线上支付)
+##### 24. [获取订单物流信息(getLogisticsList)](#24-获取订单物流信息)
 ## 货物api
-##### 24. [获取货物列表(getCargoList)](#24-获取货物列表)
-##### 25. [获取货物详情(getCargoDetail)](#25-获取货物详情)
+##### 25. [获取货物列表(getCargoList)](#25-获取货物列表)
+##### 26. [获取货物详情(getCargoDetail)](#26-获取货物详情)
 ## 路线api
-##### 26. [发布路线(publishRoadmap)](#26-发布路线)
-##### 27. [修改路线(modifyRoadmap)](#27-修改路线)
-##### 28. [删除路线(removeRoadmap)](#28-删除路线)
-##### 29. [获取路线列表(getRoadmapList)](#29-获取路线列表)
-##### 30. [获取路线详情(getRoadmapDetail)](#30-获取路线详情)
-##### 31. [获取分店路线列表(getRoadmapListInShop)](#31-获取分店路线列表)
-##### 32. [获取收货点路线列表(getRoadmapListInAgent)](#32-获取收货点路线列表)
+##### 27. [发布路线(publishRoadmap)](#27-发布路线)
+##### 28. [修改路线(modifyRoadmap)](#28-修改路线)
+##### 29. [删除路线(removeRoadmap)](#29-删除路线)
+##### 30. [获取路线列表(getRoadmapList)](#30-获取路线列表)
+##### 31. [获取路线详情(getRoadmapDetail)](#31-获取路线详情)
+##### 32. [获取分店路线列表(getRoadmapListInShop)](#32-获取分店路线列表)
+##### 33. [获取收货点路线列表(getRoadmapListInAgent)](#33-获取收货点路线列表)
 ## 协议文档
-##### 33. [用户协议(user)](#33-用户协议)
-##### 34. [获取软件许可协议(software)](#34-获取软件许可协议)
-##### 35. [关于(about)](#35-关于)
+##### 34. [用户协议(user)](#34-用户协议)
+##### 35. [获取软件许可协议(software)](#35-获取软件许可协议)
+##### 36. [关于(about)](#36-关于)
 
 ---
 
@@ -531,18 +532,39 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | newPassword | String | 新密码 |
 
 ---
-### 22. [结束货单](#22-结束货单finishorder)
+### 22. [结束货单现付](#22-结束货单现付finishorder)
 - `finishOrder`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| oldPassword | String | 旧密码 |
-| newPassword | String | 新密码 |
+| orderId | ID | 订单Id |
+
+```js
+{
+  "success": true
+}
+```
 
 ---
-### 23. [获取订单物流信息](#23-获取订单物流信息getlogisticslist)
+### 23. [结束货单线上支付](#23-结束货单线上支付payfororderwhenreceive)
+- `payForOrderWhenReceive`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 订单Id |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 24. [获取订单物流信息](#24-获取订单物流信息getlogisticslist)
 - `getLogisticsList`
 - 请求方式：`POST`
 
@@ -568,7 +590,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 ## 货物api
 
 ---
-### 24. [获取货物列表](#24-获取货物列表getcargolist)
+### 25. [获取货物列表](#25-获取货物列表getcargolist)
 - `getCargoList`
 - 请求方式：`POST`
 
@@ -579,7 +601,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | newPassword | String | 新密码 |
 
 ---
-### 25. [获取货物详情](#25-获取货物详情getcargodetail)
+### 26. [获取货物详情](#26-获取货物详情getcargodetail)
 - `getCargoDetail`
 - 请求方式：`POST`
 
@@ -594,7 +616,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 ## 路线api
 
 ---
-### 26. [发布路线](#26-发布路线publishroadmap)
+### 27. [发布路线](#27-发布路线publishroadmap)
 - `publishRoadmap`
 - 请求方式：`POST`
 
@@ -605,7 +627,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | newPassword | String | 新密码 |
 
 ---
-### 27. [修改路线](#27-修改路线modifyroadmap)
+### 28. [修改路线](#28-修改路线modifyroadmap)
 - `modifyRoadmap`
 - 请求方式：`POST`
 
@@ -616,7 +638,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | newPassword | String | 新密码 |
 
 ---
-### 28. [删除路线](#28-删除路线removeroadmap)
+### 29. [删除路线](#29-删除路线removeroadmap)
 - `removeRoadmap`
 - 请求方式：`POST`
 
@@ -627,7 +649,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | newPassword | String | 新密码 |
 
 ---
-### 29. [获取路线列表](#29-获取路线列表getroadmaplist)
+### 30. [获取路线列表](#30-获取路线列表getroadmaplist)
 - `getRoadmapList`
 - 请求方式：`POST`
 
@@ -638,7 +660,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | newPassword | String | 新密码 |
 
 ---
-### 30. [获取路线详情](#30-获取路线详情getroadmapdetail)
+### 31. [获取路线详情](#31-获取路线详情getroadmapdetail)
 - `getRoadmapDetail`
 - 请求方式：`POST`
 
@@ -649,7 +671,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | newPassword | String | 新密码 |
 
 ---
-### 31. [获取分店路线列表](#31-获取分店路线列表getroadmaplistinshop)
+### 32. [获取分店路线列表](#32-获取分店路线列表getroadmaplistinshop)
 - `getRoadmapListInShop`
 - 请求方式：`POST`
 
@@ -707,7 +729,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 ```
 
 ---
-### 32. [获取收货点路线列表](#32-获取收货点路线列表getroadmaplistinagent)
+### 33. [获取收货点路线列表](#33-获取收货点路线列表getroadmaplistinagent)
 - `getRoadmapListInAgent`
 - 请求方式：`POST`
 
@@ -769,18 +791,18 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 
 ---
 
-### 33. [用户协议](#33-用户协议user)
+### 34. [用户协议](#34-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 34. [获取软件许可协议](#34-获取软件许可协议software)
+### 35. [获取软件许可协议](#35-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 35. [关于](#35-关于about)
+### 36. [关于](#36-关于about)
 - `about`
 - url: `protocals/about.html`

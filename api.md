@@ -326,18 +326,22 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
+| orderId | ID | 订单号 |
+| shopId | ID | 指定的某家分店 |
+| agentId | ID | 指定的某家收货点 |
+| startPoint | String | 始发地 |
 | receiverPhone | String | 收货人电话 |
 | receiverName | String | 收货人姓名 |
-| startPoint | String | 始发地 |
 | endPoint | String | 货到地 |
-| totalNumbers | Number | 货物数量 |
-| weight | Number | 重量 |
-| size | Number | 方量 |
+| totalNumbers | Number | 一票货总的件数 |
+| weight | Number | 一票货总的重量 |
+| size | Number | 一票货总的方量 |
 | isSendToDoor | Bool | 是否送货上门 |
 | proxyCharge | Bool | 代收货款金额 |
-| insuanceMount | Number | 保险费 |
-| isReachPay | Bool | 是否到付 |
-| totalDesignatedFee | Bool | 是否送货上门 |
+| isInsuance | Bool | 是否保价 |
+| isReachPay | Bool | 是否到付 (如果是到付，并且设置了totalDesignatedFee，为指定向收货人收totalDesignatedFee的运费，否则向收货人收初始单计算出来的运费)|
+| totalDesignatedFee | Bool | 指定收款金额 |
+| photo | String | 货单照片 |
 
 
 ```js
@@ -472,18 +476,20 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
 | orderId | ID | 订单号 |
+| shopId | ID | 指定的某家分店 |
+| agentId | ID | 指定的某家收货点 |
+| startPoint | String | 始发地 |
 | receiverPhone | String | 收货人电话 |
 | receiverName | String | 收货人姓名 |
-| startPoint | String | 始发地 |
 | endPoint | String | 货到地 |
-| totalNumbers | Number | 货物数量 |
-| weight | Number | 重量 |
-| size | Number | 方量 |
+| totalNumbers | Number | 一票货总的件数 |
+| weight | Number | 一票货总的重量 |
+| size | Number | 一票货总的方量 |
 | isSendToDoor | Bool | 是否送货上门 |
 | proxyCharge | Bool | 代收货款金额 |
-| insuanceMount | Number | 保险费 |
-| isReachPay | Bool | 是否到付 |
-| totalDesignatedFee | Bool | 是否送货上门 |
+| isInsuance | Bool | 是否保价 |
+| isReachPay | Bool | 是否到付 (如果是到付，并且设置了totalDesignatedFee，为指定向收货人收totalDesignatedFee的运费，否则向收货人收初始单计算出来的运费)|
+| totalDesignatedFee | Bool | 指定收款金额 |
 | photo | String | 货单照片 |
 
 ```js

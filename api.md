@@ -119,7 +119,10 @@
 
 ```js
 {
-  "success": true
+  "success": true,
+  "context": {
+    "amount": 99097
+  }
 }
 ```
 
@@ -138,7 +141,10 @@
 
 ```js
 {
-  "success": true
+  "success": true,
+  "context": {
+    "amount": 99097
+  }
 }
 ```
 

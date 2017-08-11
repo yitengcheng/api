@@ -472,8 +472,82 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| oldPassword | String | 旧密码 |
-| newPassword | String | 新密码 |
+| orderId | ID | 货单Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shopId": "这个订单隶属于哪家分店（预下单的情况下为指定的某家分店）",
+    "senderId": "发货的客户 Id (如果是物流公司，就是物流公司的负责人，如果是收货点，就是收货点的负责人)",
+    "endPoint": "终点，精确到镇",
+    "receivePartmentId": "收货的部门",
+    "receiveMemberId": "具体收货制单的人员的Id",
+    "modifyTime": "修改时间",
+    "shipperChairManId": "物流公司董事长Id",
+    "shipperId": "物流公司 Id",
+    "startPoint": "省市（只对预下单有用，如果有 shopId 或 agentId 时，该字段无效）",
+    "receiverName": "订单使用的收货人姓名",
+    "createTime": "下单时间",
+    "stateList": [
+      {
+        "count": 5,
+        "state": 8,
+        "_id": "598d495c108bc60cd2237d11"
+      }
+    ],
+    "needPayInsuanceFee": '132,需要现场付的保险',
+    "needPayTransportFee": '120,需要现场付的运费',
+    "proxyCharge": '0,代收货款金额',
+    "designatedFee": '0,指定收款 (只有payMode为到付的情况下，才可能有指定收款)',
+    "totalDesignatedFee": '1200,全程总的指定收款(只有payMode为到付的情况下有效，实际为到付时向收货人收的运费)',
+    "realFee": '1320,屏幕显示价格 fee+masterProfit+branchProfit',
+    "branchProfit": '110,分部的提成',
+    "masterProfit": '110,总部的提成',
+    "fee": '1100,运输价格（物流公司实际价格，没有经过加价）（自动计算）',
+    "payTool": '现付的情况下支付工具 0：现金支付（PT_CASH），1：支付宝（PT_ALIPAY），2：微信（PT_WEIXIN），3：银行卡（PT_BANK）',
+    "payMode": '支付方式 0：现付（PM_IMMEDIATE），1：到付（PM_REACH），2：混合支付（PM_MIXED 指定收款的部分到付，其余的现付）',
+    "isReachPay": '是否是到付',
+    "insuanceFee": '132,担保保险的费用（客户实际付的钱）(必须现付)[初始订单]',
+    "insuanceMount": '13200,担保保险额度（需要赔偿用户的钱）[初始订单]',
+    "isInsuance": '是否保价 [初始订单]，如果保价，保价个度为运费的setting.insuanceMountRate倍',
+    "isSendToDoor": '是否送货上门',
+    "size": '方量',
+    "weight": '重量',
+    "totalNumbers": '总的货物的件数（具体的数量以这个数量为准）',
+    "roadmapRankIndex": '该订单选择的路线在选择时的排序名次，交易成功后，需要根据这个名次修改 RoadmapMaskModel 的数据',
+    "isSenderRepresentShipper": '发货人是否代表一家物流公司，如果是，需要更新物流公司的账目',
+    "roadmap": {
+      "shipperId": "物流公司 Id",
+      "endPoint": "遵义市湄潭县新南镇",
+      "branchDefaultProfitRate": '分部对路线的提成',
+      "masterDefaultProfitRate": '总部对路线的提成 ',
+      "id": "路线Id"
+    },
+    "receiver": {
+      "phone": "18885192480",
+      "email": "42550564@qq.com",
+      "name": "方运江",
+      "head": "http://192.168.1.111:3000/api/image?id=598aaa2d14573c3611f265fb",
+      "id": "5989a3ccb48db929e46ad724",
+      "phoneList": ""
+    },
+    "id": "598a67b8616e822a6131feaa"
+  }
+}
+
+```
+###### stateList.state的说明：
+```
+货主把货拉倒分店收货部，收货部对其点数，称重，量方量后填单，然后调用 < placeOriginOrder > 成功后为待选线路状态
+0：待选线路（安装所填的数据，给货主显示路线排名，让货主选择一条路线，付款方式，是否交保险，是否代收货款，是否送货上门，选择后显示运费和其他费用的列表和总的费用，点击确认按钮，调用接口 < confirmSelectRoadmap >后，如果是需要付钱的进入待付款状态，否则进入待库存状态）。
+1：待付款状态（1.货主在手机上刷新，使用支付宝等付款，成功后告知收货员，收货员刷新订单，显示收款成功，2.货主将现金给收货员，收货员点击代付款按钮，付款成功后，显示收款成功；之后进入待库存状态）
+2：待库存（指收款成功后搬运人员将货物运到库管处的状态，交给库管成功后，状态进入待装车状态）
+3：待装车（货物送到库管处，每收5吨货就通知物流公司，物流公司自己看有一车的时候会生成一个货车实例<包括司机和货车信息>到检查部审核，审核成功后，将车开到库管处，物流公司会通过竞价联系搬运部，搬运部搬运货物上车，物流公司需要一件一件的扫描，装车完成，需要给库管确认，库管确认之后，进入待出发状态）
+4：待出发 （物流公司将车开到门卫处，门卫扫描驾驶员的二维码，点击放行按钮，进入运输中状态）
+5：运输中 （运输过程中，驾驶员需要开启app，自动上传位置信息）
+6：交货成功 （司机将货物送到目的地之后，会劝说收货人安装app或者扫描小程序，然后让他扫描货物，确认收货的件数，完成交接）
+```
 
 ---
 ### 19. [修改预下单货单](#19-修改预下单货单modifypreorder)

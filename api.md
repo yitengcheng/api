@@ -24,22 +24,23 @@
 ##### 21. [货主使用app支付货单(payForOrderWhenSend)](#21-货主使用app支付货单)
 ##### 22. [结束货单现付(finishOrder)](#22-结束货单现付)
 ##### 23. [结束货单线上支付(payForOrderWhenReceive)](#23-结束货单线上支付)
-##### 24. [获取订单物流信息(getLogisticsList)](#24-获取订单物流信息)
+##### 24. [发送货单线上支付(payForOrderWhenSend)](#24-发送货单线上支付)
+##### 25. [获取订单物流信息(getLogisticsList)](#25-获取订单物流信息)
 ## 货物api
-##### 25. [获取货物列表(getCargoList)](#25-获取货物列表)
-##### 26. [获取货物详情(getCargoDetail)](#26-获取货物详情)
+##### 26. [获取货物列表(getCargoList)](#26-获取货物列表)
+##### 27. [获取货物详情(getCargoDetail)](#27-获取货物详情)
 ## 路线api
-##### 27. [发布路线(publishRoadmap)](#27-发布路线)
-##### 28. [修改路线(modifyRoadmap)](#28-修改路线)
-##### 29. [删除路线(removeRoadmap)](#29-删除路线)
-##### 30. [获取路线列表(getRoadmapList)](#30-获取路线列表)
-##### 31. [获取路线详情(getRoadmapDetail)](#31-获取路线详情)
-##### 32. [获取分店路线列表(getRoadmapListInShop)](#32-获取分店路线列表)
-##### 33. [获取收货点路线列表(getRoadmapListInAgent)](#33-获取收货点路线列表)
+##### 28. [发布路线(publishRoadmap)](#28-发布路线)
+##### 29. [修改路线(modifyRoadmap)](#29-修改路线)
+##### 30. [删除路线(removeRoadmap)](#30-删除路线)
+##### 31. [获取路线列表(getRoadmapList)](#31-获取路线列表)
+##### 32. [获取路线详情(getRoadmapDetail)](#32-获取路线详情)
+##### 33. [获取分店路线列表(getRoadmapListInShop)](#33-获取分店路线列表)
+##### 34. [获取收货点路线列表(getRoadmapListInAgent)](#34-获取收货点路线列表)
 ## 协议文档
-##### 34. [用户协议(user)](#34-用户协议)
-##### 35. [获取软件许可协议(software)](#35-获取软件许可协议)
-##### 36. [关于(about)](#36-关于)
+##### 35. [用户协议(user)](#35-用户协议)
+##### 36. [获取软件许可协议(software)](#36-获取软件许可协议)
+##### 37. [关于(about)](#37-关于)
 
 ---
 
@@ -564,7 +565,23 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 ```
 
 ---
-### 24. [获取订单物流信息](#24-获取订单物流信息getlogisticslist)
+### 24. [发送货单线上支付](#24-发送货单线上支付payfororderwhensend)
+- `payForOrderWhenSend`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 订单Id |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 25. [获取订单物流信息](#25-获取订单物流信息getlogisticslist)
 - `getLogisticsList`
 - 请求方式：`POST`
 
@@ -590,7 +607,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 ## 货物api
 
 ---
-### 25. [获取货物列表](#25-获取货物列表getcargolist)
+### 26. [获取货物列表](#26-获取货物列表getcargolist)
 - `getCargoList`
 - 请求方式：`POST`
 
@@ -601,7 +618,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | newPassword | String | 新密码 |
 
 ---
-### 26. [获取货物详情](#26-获取货物详情getcargodetail)
+### 27. [获取货物详情](#27-获取货物详情getcargodetail)
 - `getCargoDetail`
 - 请求方式：`POST`
 
@@ -616,7 +633,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 ## 路线api
 
 ---
-### 27. [发布路线](#27-发布路线publishroadmap)
+### 28. [发布路线](#28-发布路线publishroadmap)
 - `publishRoadmap`
 - 请求方式：`POST`
 
@@ -627,7 +644,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | newPassword | String | 新密码 |
 
 ---
-### 28. [修改路线](#28-修改路线modifyroadmap)
+### 29. [修改路线](#29-修改路线modifyroadmap)
 - `modifyRoadmap`
 - 请求方式：`POST`
 
@@ -638,7 +655,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | newPassword | String | 新密码 |
 
 ---
-### 29. [删除路线](#29-删除路线removeroadmap)
+### 30. [删除路线](#30-删除路线removeroadmap)
 - `removeRoadmap`
 - 请求方式：`POST`
 
@@ -649,7 +666,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | newPassword | String | 新密码 |
 
 ---
-### 30. [获取路线列表](#30-获取路线列表getroadmaplist)
+### 31. [获取路线列表](#31-获取路线列表getroadmaplist)
 - `getRoadmapList`
 - 请求方式：`POST`
 
@@ -660,7 +677,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | newPassword | String | 新密码 |
 
 ---
-### 31. [获取路线详情](#31-获取路线详情getroadmapdetail)
+### 32. [获取路线详情](#32-获取路线详情getroadmapdetail)
 - `getRoadmapDetail`
 - 请求方式：`POST`
 
@@ -671,7 +688,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 | newPassword | String | 新密码 |
 
 ---
-### 32. [获取分店路线列表](#32-获取分店路线列表getroadmaplistinshop)
+### 33. [获取分店路线列表](#33-获取分店路线列表getroadmaplistinshop)
 - `getRoadmapListInShop`
 - 请求方式：`POST`
 
@@ -729,7 +746,7 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 ```
 
 ---
-### 33. [获取收货点路线列表](#33-获取收货点路线列表getroadmaplistinagent)
+### 34. [获取收货点路线列表](#34-获取收货点路线列表getroadmaplistinagent)
 - `getRoadmapListInAgent`
 - 请求方式：`POST`
 
@@ -791,18 +808,18 @@ authority为用户权限， 1：普通权限 2：拥有领导权限，4：拥有
 
 ---
 
-### 34. [用户协议](#34-用户协议user)
+### 35. [用户协议](#35-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 35. [获取软件许可协议](#35-获取软件许可协议software)
+### 36. [获取软件许可协议](#36-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 36. [关于](#36-关于about)
+### 37. [关于](#37-关于about)
 - `about`
 - url: `protocals/about.html`

@@ -23,21 +23,37 @@
 ##### 20. [结束货单现金支付(finishOrder)](#20-结束货单现金支付)
 ##### 21. [结束货单线上支付(payForOrderWhenReceive)](#21-结束货单线上支付)
 ##### 22. [获取订单物流信息(getLogisticsList)](#22-获取订单物流信息)
+##### 23. [物流公司开始装车(startScanOrder)](#23-物流公司开始装车)
+##### 24. [物流公司扫描货单(scanOrder)](#24-物流公司扫描货单)
+##### 25. [物流公司结束扫描货单(finishScanOrder)](#25-物流公司结束扫描货单)
+##### 26. [物流公司继续扫描货单(continueScanOrder)](#26-物流公司继续扫描货单)
+##### 27. [库管扫描入库(placeStorage)](#27-库管扫描入库)
 ## 货物api
-##### 23. [获取货物列表(getCargoList)](#23-获取货物列表)
-##### 24. [获取货物详情(getCargoDetail)](#24-获取货物详情)
+##### 28. [获取货物列表(getCargoList)](#28-获取货物列表)
+##### 29. [获取货物详情(getCargoDetail)](#29-获取货物详情)
+## 搬运队api
+##### 30. [修改搬运部信息(modifyOwnPartment)](#30-修改搬运部信息)
+##### 31. [获取货搬运队列表(getCarryPartmentList)](#31-获取货搬运队列表)
+##### 32. [选择搬运队(selectCarryPartment)](#32-选择搬运队)
+##### 33. [付搬运费(payForCarryPartment)](#33-付搬运费)
+## 卡车api
+##### 34. [创建卡车(createTruck)](#34-创建卡车)
+##### 35. [保安检查卡车状态(checkTruckPass)](#35-保安检查卡车状态)
+##### 36. [确认卡车认证通过(passExamineTruck)](#36-确认卡车认证通过)
+##### 37. [获取卡车详情(getTruckDetail)](#37-获取卡车详情)
+##### 38. [获取卡车列表(getWorkTruckList)](#38-获取卡车列表)
 ## 路线api
-##### 25. [发布路线(publishRoadmap)](#25-发布路线)
-##### 26. [修改路线(modifyRoadmap)](#26-修改路线)
-##### 27. [删除路线(removeRoadmap)](#27-删除路线)
-##### 28. [获取路线列表(getRoadmapList)](#28-获取路线列表)
-##### 29. [获取路线详情(getRoadmapDetail)](#29-获取路线详情)
-##### 30. [获取分店路线列表(getRoadmapListInShop)](#30-获取分店路线列表)
-##### 31. [获取收货点路线列表(getRoadmapListInAgent)](#31-获取收货点路线列表)
+##### 39. [发布路线(publishRoadmap)](#39-发布路线)
+##### 40. [修改路线(modifyRoadmap)](#40-修改路线)
+##### 41. [删除路线(removeRoadmap)](#41-删除路线)
+##### 42. [获取路线列表(getRoadmapList)](#42-获取路线列表)
+##### 43. [获取路线详情(getRoadmapDetail)](#43-获取路线详情)
+##### 44. [获取分店路线列表(getRoadmapListInShop)](#44-获取分店路线列表)
+##### 45. [获取收货点路线列表(getRoadmapListInAgent)](#45-获取收货点路线列表)
 ## 协议文档
-##### 32. [用户协议(user)](#32-用户协议)
-##### 33. [获取软件许可协议(software)](#33-获取软件许可协议)
-##### 34. [关于(about)](#34-关于)
+##### 46. [用户协议(user)](#46-用户协议)
+##### 47. [获取软件许可协议(software)](#47-获取软件许可协议)
+##### 48. [关于(about)](#48-关于)
 
 ---
 
@@ -738,12 +754,171 @@ authority为用户权限:
   ]
 }
 ```
+
+---
+### 23. [物流公司开始装车](#23-物流公司开始装车startscanorder)
+- `startScanOrder`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| truckId | ID | 卡车Id |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 24. [物流公司扫描货单](#24-物流公司扫描货单scanorder)
+- `scanOrder`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| truckId | ID | 卡车Id |
+| orderId | ID | 货单Id |
+| count | Number | 件数 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "truck": {
+      "shipperId": "59954973d1df03410425a946",
+      "shopId": "5995496cd1df03410425a904",
+      "plateNo": "贵A-778899",
+      "drivingLicense": "A71236717",
+      "truckType": "4.5米 高栏",
+      "driverId": "59954975d1df03410425a94e",
+      "carryPartmentId": "59954970d1df03410425a91d",
+      "scannerId": "59954972d1df03410425a928",
+      "createTime": "2017-08-17 16:07:20",
+      "unloadAllOrderList": [
+        "59954981d1df03410425a953"
+      ],
+      "totalSize": 1,
+      "totalWeight": 10,
+      "totalNumber": 1,
+      "orderCount": 1,
+      "orderList": [
+        "59954981d1df03410425a953"
+      ],
+      "state": 4,
+      "locationList": [],
+      "insuanceMount": 1000000,
+      "carryPrice": 100,
+      "id": "59954eb8d1df03410425a95f"
+    }
+  }
+}
+```
+
+---
+### 25. [物流公司结束扫描货单](#25-物流公司结束扫描货单finishscanorder)
+- `finishScanOrder`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 26. [物流公司继续扫描货单](#26-物流公司继续扫描货单continuescanorder)
+- `continueScanOrder`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 27. [库管扫描入库](#27-库管扫描入库placestorage)
+- `placeStorage`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 订单Id |
+| count | Number | 货物件数 |
+
+```js
+{
+  "success": true,
+  "order": {
+    "storeScannerId": "59954970d1df03410425a91a",
+    "shopId": "5995496cd1df03410425a904",
+    "senderId": "59954981d1df03410425a951",
+    "receiverId": "59954981d1df03410425a952",
+    "receiverName": "18885192481",
+    "endPoint": "北京市东城区景山街道",
+    "endPointLastCode": 110101002,
+    "receivePartmentId": "59954970d1df03410425a917",
+    "receiveMemberId": "59954970d1df03410425a916",
+    "roadmapId": "59954975d1df03410425a94c",
+    "shipperChairManId": "59954972d1df03410425a928",
+    "shipperId": "59954973d1df03410425a946",
+    "createTime": "2017-08-17 15:45:05",
+    "stateList": [
+      {
+        "state": 5,
+        "count": 1,
+        "_id": "59954d7dd1df03410425a95e"
+      },
+      {
+        "state": 4,
+        "count": 4,
+        "_id": "59954982d1df03410425a95a"
+      }
+    ],
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 1200,
+    "proxyChargeProfit": 0,
+    "proxyCharge": 0,
+    "designatedFee": 0,
+    "totalDesignatedFee": 1200,
+    "realFee": 1200,
+    "branchProfit": 100,
+    "masterProfit": 100,
+    "fee": 1000,
+    "payTool": 0,
+    "payMode": 2,
+    "isReachPay": false,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": false,
+    "isSendToDoor": false,
+    "size": 1,
+    "weight": 10,
+    "totalNumbers": 5,
+    "roadmapRankIndex": 0,
+    "isSenderRepresentShipper": false,
+    "id": "59954981d1df03410425a953"
+  }
+}
+```
 ---
 
 ## 货物api
 
 ---
-### 23. [获取货物列表](#23-获取货物列表getcargolist)
+### 28. [获取货物列表](#28-获取货物列表getcargolist)
 - `getCargoList`
 - 请求方式：`POST`
 
@@ -754,7 +929,7 @@ authority为用户权限:
 | newPassword | String | 新密码 |
 
 ---
-### 24. [获取货物详情](#24-获取货物详情getcargodetail)
+### 29. [获取货物详情](#29-获取货物详情getcargodetail)
 - `getCargoDetail`
 - 请求方式：`POST`
 
@@ -766,10 +941,302 @@ authority为用户权限:
 
 ---
 
+## 搬运队api
+
+---
+### 30. [修改搬运部信息](#30-修改搬运部信息modifyownpartment)
+- `modifyOwnPartment`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| partmentId | ID | 部门Id |
+| price | Number | 单价 |
+| enable | Bool | 是否在线 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "name": "搬运部",
+    "descript": "我们活着的意义就是移动",
+    "phoneList": "0851-98989000;0851-98989001",
+    "price": 100,
+    "enable": true,
+    "chargeMan": {
+      "phone": "18385192480",
+      "name": "搬运工负责人",
+      "id": "59954970d1df03410425a91c",
+      "phoneList": ""
+    },
+    "id": "59954970d1df03410425a91d"
+  }
+}
+```
+
+---
+### 31. [获取货搬运队列表](#31-获取货搬运队列表getcarrypartmentlist)
+- `getCarryPartmentList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| truckId | ID | 卡车Id |
+
+
+```js
+{
+  "success": true,
+  "context": {
+    "partmenList": [
+      {
+        "shopId": "5995496cd1df03410425a904",
+        "chargeManId": "59954970d1df03410425a91c",
+        "name": "搬运部",
+        "type": 2,
+        "descript": "我们活着的意义就是移动",
+        "phoneList": "0851-98989000;0851-98989001",
+        "price": 100,
+        "modifyTime": "2017-08-17 16:23:00",
+        "createTime": "2017-08-17 15:44:48",
+        "isBusy": false,
+        "enable": true,
+        "id": "59954970d1df03410425a91d"
+      }
+    ]
+  }
+}
+```
+
+---
+### 32. [选择搬运队](#32-选择搬运队selectcarrypartment)
+- `selectCarryPartment`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| truckId | ID | 卡车Id |
+| carryPartmentId | ID | 搬运队Id |
+
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 33. [付搬运费](#33-付搬运费payforcarrypartment)
+- `payForCarryPartment`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+
+## 卡车api
+
+---
+### 34. [创建卡车](#34-创建卡车createtruck)
+- `createTruck`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| shopId | ID | 分店Id |
+| plateNo | String | 车牌号 |
+| drivingLicense | String | 驾照号 |
+| truckType | String | 卡车类型 |
+| insuanceMount | Number | 保险 |
+| driverId | ID | 司机Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "plateNo": "贵A-778899",
+    "drivingLicense": "A71236717",
+    "truckType": "4.5米 高栏",
+    "driverId": null,
+    "locationList": [],
+    "insuanceMount": 1000000,
+    "driver": null,
+    "id": "59954eb8d1df03410425a95f"
+  }
+}
+```
+
+### 35. [保安检查卡车状态](#35-保安检查卡车状态checktruckpass)
+- `checkTruckPass`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| driverId | ID | 司机Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "isEnter": true
+  }
+}
+```
+
+---
+### 36. [确认卡车认证通过](#36-确认卡车认证通过passexaminetruck)
+- `passExamineTruck`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| truckId | ID | 卡车Id |
+
+```js
+{
+  "success": true
+}
+
+```
+
+---
+### 37. [获取卡车详情](#37-获取卡车详情gettruckdetail)
+- `getTruckDetail`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| truckId | ID | 卡车Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shipperId": "59954973d1df03410425a946",
+    "shopId": "5995496cd1df03410425a904",
+    "plateNo": "贵A-778899",
+    "drivingLicense": "A71236717",
+    "truckType": "4.5米 高栏",
+    "driverId": null,
+    "createTime": "2017-08-17 16:07:20",
+    "unloadAllOrderList": [],
+    "totalSize": 0,
+    "totalWeight": 0,
+    "totalNumber": 0,
+    "orderCount": 0,
+    "orderList": [],
+    "state": 1,
+    "locationList": [],
+    "insuanceMount": 1000000,
+    "carryPrice": 0,
+    "driver": null,
+    "id": "59954eb8d1df03410425a95f"
+  }
+}
+
+```
+---
+### 38. [获取卡车列表](#38-获取卡车列表getworktrucklist)
+- `getWorkTruckList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| truckId | ID | 卡车Id |
+| keyword | String | 关键字 |
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+没开始装车时：
+{
+  "success": true,
+  "context": {
+    "count": 2,
+    "truckList": [
+      {
+        "plateNo": "贵A-778899",
+        "drivingLicense": "A71236717",
+        "truckType": "4.5米 高栏",
+        "driverId": null,
+        "state": 1,
+        "locationList": [],
+        "insuanceMount": 1000000,
+        "driver": null,
+        "id": "59954eb8d1df03410425a95f"
+      },
+      {
+        "plateNo": "贵A-778899",
+        "drivingLicense": "A71236717",
+        "truckType": "4.5米 高栏",
+        "driverId": null,
+        "state": 0,
+        "locationList": [],
+        "insuanceMount": 1000000,
+        "driver": null,
+        "id": "59954976d1df03410425a94f"
+      }
+    ]
+  }
+}
+
+没装完车时：
+{
+  "success": true,
+  "context": {
+    "truck": {
+      "shipperId": "59954973d1df03410425a946",
+      "shopId": "5995496cd1df03410425a904",
+      "plateNo": "贵A-778899",
+      "drivingLicense": "A71236717",
+      "truckType": "4.5米 高栏",
+      "driverId": "59954975d1df03410425a94e",
+      "carryPartmentId": "59954970d1df03410425a91d",
+      "scannerId": "59954972d1df03410425a928",
+      "createTime": "2017-08-17 16:07:20",
+      "unloadAllOrderList": [
+        "59954981d1df03410425a953"
+      ],
+      "totalSize": 1,
+      "totalWeight": 10,
+      "totalNumber": 1,
+      "orderCount": 1,
+      "orderList": [
+        "59954981d1df03410425a953"
+      ],
+      "state": 4,
+      "locationList": [],
+      "insuanceMount": 1000000,
+      "carryPrice": 100,
+      "id": "59954eb8d1df03410425a95f"
+    }
+  }
+}
+
+```
+
+---
+
 ## 路线api
 
 ---
-### 25. [发布路线](#25-发布路线publishroadmap)
+### 39. [发布路线](#39-发布路线publishroadmap)
 - `publishRoadmap`
 - 请求方式：`POST`
 
@@ -780,7 +1247,7 @@ authority为用户权限:
 | newPassword | String | 新密码 |
 
 ---
-### 26. [修改路线](#26-修改路线modifyroadmap)
+### 40. [修改路线](#40-修改路线modifyroadmap)
 - `modifyRoadmap`
 - 请求方式：`POST`
 
@@ -791,7 +1258,7 @@ authority为用户权限:
 | newPassword | String | 新密码 |
 
 ---
-### 27. [删除路线](#27-删除路线removeroadmap)
+### 41. [删除路线](#41-删除路线removeroadmap)
 - `removeRoadmap`
 - 请求方式：`POST`
 
@@ -802,7 +1269,7 @@ authority为用户权限:
 | newPassword | String | 新密码 |
 
 ---
-### 28. [获取路线列表](#28-获取路线列表getroadmaplist)
+### 42. [获取路线列表](#42-获取路线列表getroadmaplist)
 - `getRoadmapList`
 - 请求方式：`POST`
 
@@ -813,7 +1280,7 @@ authority为用户权限:
 | newPassword | String | 新密码 |
 
 ---
-### 29. [获取路线详情](#29-获取路线详情getroadmapdetail)
+### 43. [获取路线详情](#43-获取路线详情getroadmapdetail)
 - `getRoadmapDetail`
 - 请求方式：`POST`
 
@@ -824,7 +1291,7 @@ authority为用户权限:
 | newPassword | String | 新密码 |
 
 ---
-### 30. [获取分店路线列表](#30-获取分店路线列表getroadmaplistinshop)
+### 44. [获取分店路线列表](#44-获取分店路线列表getroadmaplistinshop)
 - `getRoadmapListInShop`
 - 请求方式：`POST`
 
@@ -882,7 +1349,7 @@ authority为用户权限:
 ```
 
 ---
-### 31. [获取收货点路线列表](#31-获取收货点路线列表getroadmaplistinagent)
+### 45. [获取收货点路线列表](#45-获取收货点路线列表getroadmaplistinagent)
 - `getRoadmapListInAgent`
 - 请求方式：`POST`
 
@@ -944,18 +1411,18 @@ authority为用户权限:
 
 ---
 
-### 32. [用户协议](#32-用户协议user)
+### 46. [用户协议](#46-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 33. [获取软件许可协议](#33-获取软件许可协议software)
+### 47. [获取软件许可协议](#47-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 34. [关于](#34-关于about)
+### 48. [关于](#48-关于about)
 - `about`
 - url: `protocals/about.html`

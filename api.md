@@ -165,21 +165,66 @@
 {
   "success": true,
   "context": {
-    "phone": "18885192480",
+    "phone": "18685192480",
     "email": "42550564@qq.com",
-    "registerTime": "2017-08-08 19:43:08",
-    "name": "方运江",
-    "address": "山西长治市长治县西火镇",
-    "head": "http://192.168.1.111:3000/api/image?id=598aaa2d14573c3611f265fb",
-    "birthday": "1982-02-25",
-    "createTime": "2017-08-16T11:37:55.719Z",
-    "authority": [1,2],
+    "registerTime": "2017-08-08 19:43:00",
+    "createTime": "2017-08-17T02:46:25.879Z",
+    "authority": [
+      30000,
+      30001,
+      30002,
+      30003,
+      30004,
+      10005,
+      10006
+    ],
     "sex": 0,
-    "age": 35,
+    "shipper": {
+      "name": "广顺达物流公司",
+      "logo": "http://192.168.1.111:3000/api/image?id=5989a3c5b48db929e46ad6c4",
+      "image": "http://192.168.1.111:3000/api/image?id=5989a3c5b48db929e46ad6c9",
+      "sign": "这是一家非常专业的物流公司",
+      "phoneList": "0851-86190987;18185192480",
+      "address": "贵阳市花果园",
+      "legalName": "方运江",
+      "legalPhone": "18085192480",
+      "createTime": "2017-08-08 19:43:01",
+      "legalIDCard": [
+        "http://192.168.1.111:3000/api/image?id=5989a3c5b48db929e46ad6cd",
+        "http://192.168.1.111:3000/api/image?id=5989a3c5b48db929e46ad6ca"
+      ],
+      "acountAmount": 99930000,
+      "capital": 10000000,
+      "descriptList": [
+        {
+          "img": "http://192.168.1.111:3000/api/image?id=5989a3c5b48db929e46ad6cc",
+          "text": "这是我们公司的车队"
+        }
+      ],
+      "chairMan": {
+        "phone": "18685192480",
+        "id": "5989a3c4b48db929e46ad6b0",
+        "phoneList": ""
+      },
+      "id": "5989a3c5b48db929e46ad6ce",
+      "registerShopList": [
+        {
+          "shop": {
+            "name": "华通物流超市",
+            "address": {
+              "name": "贵州省贵阳市南明区花果园街道花果园L2区"
+            },
+            "id": "5989a3c0b48db929e46ad68d"
+          },
+          "id": "5989a3c6b48db929e46ad6d0"
+        }
+      ]
+    },
     "phoneList": "",
-    "userId": "5989a3ccb48db929e46ad724"
+    "userId": "5989a3c4b48db929e46ad6b0"
   }
 }
+
 ```
 ###### authority的说明：
 ```

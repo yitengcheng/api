@@ -46,14 +46,15 @@
 ##### 39. [发布路线(publishRoadmap)](#39-发布路线)
 ##### 40. [修改路线(modifyRoadmap)](#40-修改路线)
 ##### 41. [删除路线(removeRoadmap)](#41-删除路线)
-##### 42. [获取路线列表(getRoadmapList)](#42-获取路线列表)
-##### 43. [获取路线详情(getRoadmapDetail)](#43-获取路线详情)
-##### 44. [获取分店路线列表(getRoadmapListInShop)](#44-获取分店路线列表)
-##### 45. [获取收货点路线列表(getRoadmapListInAgent)](#45-获取收货点路线列表)
+##### 42. [修改路线价格(setRoadmapPrice)](#42-修改路线价格)
+##### 43. [获取路线列表(getRoadmapList)](#43-获取路线列表)
+##### 44. [获取路线详情(getRoadmapDetail)](#44-获取路线详情)
+##### 45. [获取分店路线列表(getRoadmapListInShop)](#45-获取分店路线列表)
+##### 46. [获取收货点路线列表(getRoadmapListInAgent)](#46-获取收货点路线列表)
 ## 协议文档
-##### 46. [用户协议(user)](#46-用户协议)
-##### 47. [获取软件许可协议(software)](#47-获取软件许可协议)
-##### 48. [关于(about)](#48-关于)
+##### 47. [用户协议(user)](#47-用户协议)
+##### 48. [获取软件许可协议(software)](#48-获取软件许可协议)
+##### 49. [关于(about)](#49-关于)
 
 ---
 
@@ -1243,8 +1244,14 @@ authority为用户权限:
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| oldPassword | String | 旧密码 |
-| newPassword | String | 新密码 |
+| shopId | ID | 分店Id |
+| endPoint | String | 终点 |
+| endPointLastCode | Number | 终点编码 |
+| price | Number | 运费单价 |
+| minFee | Number | 运费起价 |
+| sendToDoorPrice | Number | 送货上门单价 |
+| sendToDoorMinFee | Number | 送货上门起价 |
+| remark | String | 备注 |
 
 ---
 ### 40. [修改路线](#40-修改路线modifyroadmap)
@@ -1253,9 +1260,20 @@ authority为用户权限:
 
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
-| userId | ID | 用户Id |
-| oldPassword | String | 旧密码 |
-| newPassword | String | 新密码 |
+| roadmapId | ID | 路线Id |
+| endPoint | String | 终点 |
+| endPointLastCode | Number | 终点编码 |
+| price | Number | 运费单价 |
+| minFee | Number | 运费起价 |
+| sendToDoorPrice | Number | 送货上门单价 |
+| sendToDoorMinFee | Number | 送货上门起价 |
+| remark | String | 备注 |
+
+```js
+{
+  "success": true
+}
+```
 
 ---
 ### 41. [删除路线](#41-删除路线removeroadmap)
@@ -1265,33 +1283,114 @@ authority为用户权限:
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| oldPassword | String | 旧密码 |
-| newPassword | String | 新密码 |
+| roadmapId | ID | 路线 |
+
+```js
+{
+  "msg": "你没有删除路线的权限"
+}
+```
 
 ---
-### 42. [获取路线列表](#42-获取路线列表getroadmaplist)
+### 42. [修改路线价格](#42-修改路线价格setroadmapprice)
+- `setRoadmapPrice`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| roadmapIdList | Array | 路线Id列表 |
+| typeList | Array | 修改类型列表（0：长途运费单价  1：长途运费起价  2：送货上门单价  3：送货上门起价） |
+| mode | Number | 修改模式 （0: 按照价格调整  1: 按照百分比调整  2: 按照名次调整）|
+| value | Number | 修改量（如果mode为0和1时，正数为增加，负数为减少） |
+
+```js
+{
+  "success": true
+}
+```
+---
+### 43. [获取路线列表](#43-获取路线列表getroadmaplist)
 - `getRoadmapList`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| oldPassword | String | 旧密码 |
-| newPassword | String | 新密码 |
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "count": 1,
+    "roadmapList": [
+      {
+        "endPoint": "北京市东城区景山街道",
+        "endPointLastCode": 110101002,
+        "selfSignRate": 0,
+        "duration": 0,
+        "sendToDoorMinFee": 50,
+        "sendToDoorPrice": 100,
+        "minFee": 50,
+        "price": 100,
+        "startPoint": "贵州省贵阳市南明区花果园街道花果园L2区",
+        "masterDefaultProfitRate": 0.1,
+        "id": "59954975d1df03410425a94c"
+      }
+    ]
+  }
+}
+```
 
 ---
-### 43. [获取路线详情](#43-获取路线详情getroadmapdetail)
+### 44. [获取路线详情](#44-获取路线详情getroadmapdetail)
 - `getRoadmapDetail`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
-| userId | ID | 用户Id |
-| oldPassword | String | 旧密码 |
-| newPassword | String | 新密码 |
+| roadmapId | ID | 路线 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shipperId": "59954973d1df03410425a946",
+    "shipperInBranchShopId": "59954974d1df03410425a948",
+    "endPoint": "北京市东城区景山街道",
+    "endPointLastCode": 110101002,
+    "createTime": "2017-08-17 15:44:53",
+    "monthTradeTimes": 0,
+    "tradeTimes": 0,
+    "selfSignRate": 0,
+    "duration": 0,
+    "updateSendToDoorMinFeeTime": "2017-08-17T07:44:53.230Z",
+    "sendToDoorMinFee": 51,
+    "updateSendToDoorPriceTime": "2017-08-17T07:44:53.230Z",
+    "sendToDoorPrice": 101,
+    "updateMinPriceTime": "2017-08-17T07:44:53.230Z",
+    "minFee": 51,
+    "updatePriceTime": "2017-08-17T07:44:53.230Z",
+    "price": 101,
+    "enable": true,
+    "shop": {
+      "name": "华通物流超市",
+      "address": {
+        "name": "贵州省贵阳市南明区花果园街道花果园L2区"
+      },
+      "id": "5995496cd1df03410425a904"
+    },
+    "startPoint": "贵州省贵阳市南明区花果园街道花果园L2区",
+    "masterDefaultProfitRate": 0.1,
+    "id": "59954975d1df03410425a94c"
+  }
+}
+```
 
 ---
-### 44. [获取分店路线列表](#44-获取分店路线列表getroadmaplistinshop)
+### 45. [获取分店路线列表](#45-获取分店路线列表getroadmaplistinshop)
 - `getRoadmapListInShop`
 - 请求方式：`POST`
 
@@ -1349,7 +1448,7 @@ authority为用户权限:
 ```
 
 ---
-### 45. [获取收货点路线列表](#45-获取收货点路线列表getroadmaplistinagent)
+### 46. [获取收货点路线列表](#46-获取收货点路线列表getroadmaplistinagent)
 - `getRoadmapListInAgent`
 - 请求方式：`POST`
 
@@ -1411,18 +1510,18 @@ authority为用户权限:
 
 ---
 
-### 46. [用户协议](#46-用户协议user)
+### 47. [用户协议](#47-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 47. [获取软件许可协议](#47-获取软件许可协议software)
+### 48. [获取软件许可协议](#48-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 48. [关于](#48-关于about)
+### 49. [关于](#49-关于about)
 - `about`
 - url: `protocals/about.html`

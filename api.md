@@ -30,8 +30,8 @@
 ##### 27. [物流公司继续扫描货单(continueScanOrder)](#27-物流公司继续扫描货单)
 ##### 28. [库管扫描入库(placeStorage)](#28-库管扫描入库)
 ## 货物api
-##### 29. [获取竞得货物列表(getNeedSendOrderSummaryList)](#29-获取竞得货物列表)
-##### 30. [获取竞得货物订单列表(getNeedSendOrderListByEndPoint)](#30-获取竞得货物订单列表)
+##### 29. [物流公司获取竞得货物列表(getNeedSendOrderSummaryList)](#29-物流公司获取竞得货物列表)
+##### 30. [物流公司获取竞得货物订单列表(getNeedSendOrderListByEndPoint)](#30-物流公司获取竞得货物订单列表)
 ## 搬运队api
 ##### 31. [搬运队修改搬运部信息(modifyOwnPartment)](#31-搬运队修改搬运部信息)
 ##### 32. [物流公司获取货搬运队列表(getCarryPartmentList)](#32-物流公司获取货搬运队列表)
@@ -985,7 +985,7 @@ authority为用户权限:
 ## 货物api
 
 ---
-### 29. [获取竞得货物列表](#29-获取竞得货物列表getneedsendordersummarylist)
+### 29. [物流公司获取竞得货物列表](#29-物流公司获取竞得货物列表getneedsendordersummarylist)
 - `getNeedSendOrderSummaryList`
 - 请求方式：`POST`
 
@@ -1016,7 +1016,7 @@ authority为用户权限:
 }
 ```
 ---
-### 30. [获取竞得货物订单列表](#30-获取竞得货物订单列表getneedsendorderlistbyendpoint)
+### 30. [物流公司获取竞得货物订单列表](#30-物流公司获取竞得货物订单列表getneedsendorderlistbyendpoint)
 - `getNeedSendOrderListByEndPoint`
 - 请求方式：`POST`
 

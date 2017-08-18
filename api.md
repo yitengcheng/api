@@ -831,31 +831,54 @@ authority为用户权限:
 {
   "success": true,
   "context": {
-    "truck": {
-      "shipperId": "59954973d1df03410425a946",
-      "shopId": "5995496cd1df03410425a904",
-      "plateNo": "贵A-778899",
-      "drivingLicense": "A71236717",
-      "truckType": "4.5米 高栏",
-      "driverId": "59954975d1df03410425a94e",
-      "carryPartmentId": "59954970d1df03410425a91d",
-      "scannerId": "59954972d1df03410425a928",
-      "createTime": "2017-08-17 16:07:20",
-      "unloadAllOrderList": [
-        "59954981d1df03410425a953"
-      ],
-      "totalSize": 1,
-      "totalWeight": 10,
-      "totalNumber": 1,
-      "orderCount": 1,
-      "orderList": [
-        "59954981d1df03410425a953"
-      ],
-      "state": 4,
-      "locationList": [],
-      "insuanceMount": 1000000,
-      "carryPrice": 100,
-      "id": "59954eb8d1df03410425a95f"
+    "shipperId": "59954973d1df03410425a946",
+    "shopId": "5995496cd1df03410425a904",
+    "plateNo": "贵A-778899",
+    "drivingLicense": "A71236717",
+    "truckType": "4.5米 高栏",
+    "driverId": "599575cc277608472d636e97",
+    "totalNumber": 0,
+    "carryPartmentId": "599641b27338534997932c45",
+    "scannerId": "59954972d1df03410425a928",
+    "createTime": "2017-08-18 09:37:35",
+    "unloadAllOrderList": [
+      {
+        "endPoint": "北京市东城区景山街道",
+        "totalNumbers": 5,
+        "receiver": {
+          "phone": "18885192481"
+        },
+        "sender": {
+          "phone": "18885192480"
+        },
+        "id": "59968f88133e66604b4bb36e",
+        "unloadNumber": 49999
+      }
+    ],
+    "totalSize": 1,
+    "totalWeight": 10,
+    "totalNumbers": 11,
+    "orderCount": 2,
+    "state": 4,
+    "locationList": [],
+    "insuanceMount": 1000000,
+    "carryPrice": 100,
+    "id": "599644df7338534997932c4c",
+    "latestOrder": {
+      "endPoint": "北京市东城区景山街道",
+      "createTime": "2017-08-18 14:56:08",
+      "size": 1,
+      "weight": 10,
+      "totalNumbers": 5,
+      "receiver": {
+        "phone": "18885192481",
+        "id": "59954981d1df03410425a952"
+      },
+      "sender": {
+        "phone": "18885192480",
+        "id": "59954981d1df03410425a951"
+      },
+      "id": "59968f88133e66604b4bb36e"
     }
   }
 }

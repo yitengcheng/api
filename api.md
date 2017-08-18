@@ -15,7 +15,7 @@
 ## 货单api
 ##### 13. [货主预下单(placePreOrder)](#13-货主预下单)
 ##### 14. [货主获取发货单列表(getSendOrderList)](#14-货主获取发货单列表)
-##### 15. [物流公司获取发货单列表(getSendOrderList)](#15-物流公司获取发货单列表)
+##### 15. [物流公司获取货单列表(getOrderList)](#15-物流公司获取货单列表)
 ##### 16. [货主获取收货单列表(getReceiveOrderList)](#16-货主获取收货单列表)
 ##### 17. [货主获取货单详情(getOrderDetail)](#17-货主获取货单详情)
 ##### 18. [货主修改预下单货单(modifyPreOrder)](#18-货主修改预下单货单)
@@ -512,8 +512,8 @@ authority为用户权限:
 ```
 
 ---
-### 15. [物流公司获取发货单列表](#15-物流公司获取发货单列表getsendorderlist)
-- `getSendOrderList`
+### 15. [物流公司获取货单列表](#15-物流公司获取货单列表getorderlist)
+- `getOrderList`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |

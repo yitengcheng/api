@@ -30,8 +30,8 @@
 ##### 27. [物流公司继续扫描货单(continueScanOrder)](#27-物流公司继续扫描货单)
 ##### 28. [库管扫描入库(placeStorage)](#28-库管扫描入库)
 ## 货物api
-##### 29. [获取货物列表(getCargoList)](#29-获取货物列表)
-##### 30. [获取货物详情(getCargoDetail)](#30-获取货物详情)
+##### 29. [获取竞得货物列表(getNeedSendOrderSummaryList)](#29-获取竞得货物列表)
+##### 30. [获取竞得货物订单列表(getNeedSendOrderListByEndPoint)](#30-获取竞得货物订单列表)
 ## 搬运队api
 ##### 31. [搬运队修改搬运部信息(modifyOwnPartment)](#31-搬运队修改搬运部信息)
 ##### 32. [物流公司获取货搬运队列表(getCarryPartmentList)](#32-物流公司获取货搬运队列表)
@@ -962,26 +962,176 @@ authority为用户权限:
 ## 货物api
 
 ---
-### 29. [获取货物列表](#29-获取货物列表getcargolist)
-- `getCargoList`
+### 29. [获取竞得货物列表](#29-获取竞得货物列表getneedsendordersummarylist)
+- `getNeedSendOrderSummaryList`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| oldPassword | String | 旧密码 |
-| newPassword | String | 新密码 |
+| shopId | ID | 分店Id |
+| keyword | String | 关键字|
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
 
+```js
+{
+  "success": true,
+  "context": {
+    "count": 1,
+    "orderList": [
+      {
+        "orderCount": 6,
+        "totalNumbers": 30,
+        "totalSize": 6,
+        "totalWeight": 60,
+        "totalFee": 6060,
+        "endPoint": "北京市东城区景山街道"
+      }
+    ]
+  }
+}
+```
 ---
-### 30. [获取货物详情](#30-获取货物详情getcargodetail)
-- `getCargoDetail`
+### 30. [获取竞得货物订单列表](#30-获取竞得货物订单列表getneedsendorderlistbyendpoint)
+- `getNeedSendOrderListByEndPoint`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| oldPassword | String | 旧密码 |
-| newPassword | String | 新密码 |
+| shopId | ID | 分店Id |
+| endPoint | String | 终点|
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "count": 6,
+    "orderList": [
+      {
+        "shopId": "5995496cd1df03410425a904",
+        "receiverName": "18885192481",
+        "endPoint": "北京市东城区景山街道",
+        "createTime": "2017-08-18 14:38:15",
+        "stateList": [
+          {
+            "state": 5,
+            "count": 5,
+            "_id": "59968b57833c675ed00b9e7d"
+          }
+        ],
+        "needPayInsuanceFee": 0,
+        "proxyCharge": 0,
+        "totalDesignatedFee": 1200,
+        "realFee": 1212,
+        "payMode": 2,
+        "isReachPay": false,
+        "isInsuance": false,
+        "isSendToDoor": false,
+        "size": 1,
+        "weight": 10,
+        "totalNumbers": 5,
+        "roadmap": {
+          "endPoint": "北京市东城区景山街道",
+          "branchDefaultProfitRate": null,
+          "masterDefaultProfitRate": 0.1,
+          "id": "59954975d1df03410425a94c"
+        },
+        "receiver": {
+          "phone": "18885192481",
+          "id": "59954981d1df03410425a952"
+        },
+        "sender": {
+          "phone": "18885192480",
+          "id": "59954981d1df03410425a951"
+        },
+        "id": "59968b57833c675ed00b9e74"
+      },
+      {
+        "shopId": "5995496cd1df03410425a904",
+        "receiverName": "18885192481",
+        "endPoint": "北京市东城区景山街道",
+        "createTime": "2017-08-18 14:38:32",
+        "stateList": [
+          {
+            "state": 5,
+            "count": 5,
+            "_id": "59968b68833c675ed00b9e87"
+          }
+        ],
+        "needPayInsuanceFee": 0,
+        "proxyCharge": 0,
+        "totalDesignatedFee": 1200,
+        "realFee": 1212,
+        "payMode": 2,
+        "isReachPay": false,
+        "isInsuance": false,
+        "isSendToDoor": false,
+        "size": 1,
+        "weight": 10,
+        "totalNumbers": 5,
+        "roadmap": {
+          "endPoint": "北京市东城区景山街道",
+          "branchDefaultProfitRate": null,
+          "masterDefaultProfitRate": 0.1,
+          "id": "59954975d1df03410425a94c"
+        },
+        "receiver": {
+          "phone": "18885192481",
+          "id": "59954981d1df03410425a952"
+        },
+        "sender": {
+          "phone": "18885192480",
+          "id": "59954981d1df03410425a951"
+        },
+        "id": "59968b68833c675ed00b9e7e"
+      },
+      {
+        "shopId": "5995496cd1df03410425a904",
+        "receiverName": "18885192481",
+        "endPoint": "北京市东城区景山街道",
+        "createTime": "2017-08-18 14:38:43",
+        "stateList": [
+          {
+            "state": 5,
+            "count": 5,
+            "_id": "59968b73833c675ed00b9e91"
+          }
+        ],
+        "needPayInsuanceFee": 0,
+        "proxyCharge": 0,
+        "totalDesignatedFee": 1200,
+        "realFee": 1212,
+        "payMode": 2,
+        "isReachPay": false,
+        "isInsuance": false,
+        "isSendToDoor": false,
+        "size": 1,
+        "weight": 10,
+        "totalNumbers": 5,
+        "roadmap": {
+          "endPoint": "北京市东城区景山街道",
+          "branchDefaultProfitRate": null,
+          "masterDefaultProfitRate": 0.1,
+          "id": "59954975d1df03410425a94c"
+        },
+        "receiver": {
+          "phone": "18885192481",
+          "id": "59954981d1df03410425a952"
+        },
+        "sender": {
+          "phone": "18885192480",
+          "id": "59954981d1df03410425a951"
+        },
+        "id": "59968b73833c675ed00b9e88"
+      }
+    ]
+  }
+}
+```
 
 ---
 

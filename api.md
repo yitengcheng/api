@@ -1632,11 +1632,19 @@ authority为用户权限:
 | endPoint | String | 终点 |
 | endPointLastCode | Number | 终点编码 |
 | price | Number | 运费单价 |
+| basePrice | Number | 运费保底价 |
 | minFee | Number | 运费起价 |
+| baseMinFee | Number | 起步价保底价 |
 | sendToDoorPrice | Number | 送货上门单价 |
+| baseSendToDoorPrice | Number | 送货上门单价保底价 |
 | sendToDoorMinFee | Number | 送货上门起价 |
-| remark | String | 备注 |
+| baseSendToDoorMinFee | Number | 送货上门起步价保底价 |
 
+```js
+{
+  "success": true
+}
+```
 ---
 ### 43. [物流公司修改路线](#43-物流公司修改路线modifyroadmap)
 - `modifyRoadmap`
@@ -1644,14 +1652,19 @@ authority为用户权限:
 
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
-| roadmapId | ID | 路线Id |
+| userId | ID | 用户Id |
+| shopId | ID | 分店Id |
 | endPoint | String | 终点 |
 | endPointLastCode | Number | 终点编码 |
 | price | Number | 运费单价 |
+| basePrice | Number | 运费保底价 |
 | minFee | Number | 运费起价 |
+| baseMinFee | Number | 起步价保底价 |
 | sendToDoorPrice | Number | 送货上门单价 |
+| baseSendToDoorPrice | Number | 送货上门单价保底价 |
 | sendToDoorMinFee | Number | 送货上门起价 |
-| remark | String | 备注 |
+| baseSendToDoorMinFee | Number | 送货上门起步价保底价 |
+| enable | Bool | 是否打开路线 |
 
 ```js
 {

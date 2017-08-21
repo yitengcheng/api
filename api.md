@@ -1823,31 +1823,34 @@ authority为用户权限:
     "shipperId": "59954973d1df03410425a946",
     "shipperInBranchShopId": "59954974d1df03410425a948",
     "endPoint": "北京市东城区景山街道",
-    "endPointLastCode": 110101002,
-    "createTime": "2017-08-17 15:44:53",
+    "endPointLastCode": null,
+    "basePrice": null,
+    "baseMinFee": null,
+    "baseSendToDoorPrice": 40,
+    "baseSendToDoorMinFee": null,
+    "modifyTime": "2017-08-21 10:58:35",
+    "createTime": "2017-08-19 10:14:07",
     "monthTradeTimes": 0,
     "tradeTimes": 0,
     "selfSignRate": 0,
     "duration": 0,
-    "updateSendToDoorMinFeeTime": "2017-08-17T07:44:53.230Z",
-    "sendToDoorMinFee": 51,
-    "updateSendToDoorPriceTime": "2017-08-17T07:44:53.230Z",
-    "sendToDoorPrice": 101,
-    "updateMinPriceTime": "2017-08-17T07:44:53.230Z",
-    "minFee": 51,
-    "updatePriceTime": "2017-08-17T07:44:53.230Z",
-    "price": 101,
+    "updateSendToDoorMinFeeTime": "2017-08-19T02:14:07.584Z",
+    "sendToDoorMinFee": 40,
+    "updateSendToDoorPriceTime": "2017-08-19T02:14:07.584Z",
+    "sendToDoorPrice": 20,
+    "updateMinPriceTime": "2017-08-19T02:14:07.584Z",
+    "minFee": 10,
+    "updatePriceTime": "2017-08-19T02:14:07.584Z",
+    "price": 300,
     "enable": true,
     "shop": {
       "name": "华通物流超市",
-      "address": {
-        "name": "贵州省贵阳市南明区花果园街道花果园L2区"
-      },
+      "address": "贵州省贵阳市南明区花果园街道花果园L2区",
       "id": "5995496cd1df03410425a904"
     },
     "startPoint": "贵州省贵阳市南明区花果园街道花果园L2区",
     "masterDefaultProfitRate": 0.1,
-    "id": "59954975d1df03410425a94c"
+    "id": "59979eef74487466abd0dc8b"
   }
 }
 ```

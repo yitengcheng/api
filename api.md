@@ -874,11 +874,38 @@ authority为用户权限:
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| orderId | ID | 订单Id |
 
 ```js
 {
-  "success": true
+  "success": true,
+  "context": {
+    "shipperId": "59954973d1df03410425a946",
+    "shopId": "5995496cd1df03410425a904",
+    "plateNo": "贵A-778899",
+    "drivingLicense": "A71236717",
+    "truckType": "4.5米 高栏",
+    "driverId": "599575cc277608472d636e97",
+    "totalNumber": 0,
+    "carryPartmentId": "599641b27338534997932c45",
+    "scannerId": "59954972d1df03410425a928",
+    "createTime": "2017-08-18 09:37:35",
+    "unloadAllOrderList": [],
+    "totalSize": 1,
+    "totalWeight": 10,
+    "totalNumbers": 81,
+    "orderCount": 4,
+    "orderList": [
+      "599a4e0d42b345056bf4ece7",
+      "599a4c2042b345056bf4ecda",
+      "59968f88133e66604b4bb36e",
+      "59968b76833c675ed00b9ea6"
+    ],
+    "state": 5,
+    "locationList": [],
+    "insuanceMount": 1000000,
+    "carryPrice": 100,
+    "id": "599644df7338534997932c4c"
+  }
 }
 ```
 
@@ -1692,7 +1719,7 @@ authority为用户权限:
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| shopId | ID | 分店Id |
+| roadmapId | ID | 路线 |
 | endPoint | String | 终点 |
 | endPointLastCode | Number | 终点编码 |
 | price | Number | 运费单价 |

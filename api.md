@@ -59,7 +59,7 @@
 ##### 51. [货主获取收货点路线列表(getRoadmapListInAgent)](#51-货主获取收货点路线列表)
 ##### 52. [通过预下单群组id获取路线行情(getRoadmapListWithPreOrderGroup)](#52-通过预下单群组id获取路线行情)
 ##### 53. [通过预下单id获取路线行情(getRoadmapListWithPreOrder)](#53-通过预下单id获取路线行情)
-##### 54. [通过预下单id获取路线行情(getPreOrderListInGroup)](#54-通过预下单id获取路线行情)
+##### 54. [获取预下单群组中的预下单列表(getPreOrderListInGroup)](#54-获取预下单群组中的预下单列表)
 ## 协议文档
 ##### 55. [用户协议(user)](#55-用户协议)
 ##### 56. [获取软件许可协议(software)](#56-获取软件许可协议)
@@ -2076,7 +2076,7 @@ authority为用户权限:
 ```
 
 ---
-### 54. [通过预下单id获取路线行情](#54-通过预下单id获取路线行情getpreorderlistingroup)
+### 53. [通过预下单id获取路线行情](#53-通过预下单id获取路线行情getroadmaplistwithpreorder)
 - `getRoadmapListWithPreOrder`
 - 请求方式：`POST`
 
@@ -2100,7 +2100,7 @@ authority为用户权限:
 ```
 
 ---
-### 54. [获取预下单群组中的预下单列表](#54-通过预下单id获取路线行情getpreorderlistingroup)
+### 54. [获取预下单群组中的预下单列表](#54-获取预下单群组中的预下单列表getpreorderlistingroup)
 - `getPreOrderListInGroup`
 - 请求方式：`POST`
 

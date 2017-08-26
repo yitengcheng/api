@@ -41,25 +41,26 @@
 ## 卡车api
 ##### 36. [物流公司创建卡车(createTruck)](#36-物流公司创建卡车)
 ##### 37. [保安部检查卡车状态(checkTruckPass)](#37-保安部检查卡车状态)
-##### 38. [总部确认卡车认证通过(passExamineTruck)](#38-总部确认卡车认证通过)
-##### 39. [物流公司获取卡车详情(getTruckDetail)](#39-物流公司获取卡车详情)
-##### 40. [物流公司获取卡车列表(getWorkTruckList)](#40-物流公司获取卡车列表)
-##### 41. [物流公司获取历史审核过的卡车列表(getHistoryTruckList)](#41-物流公司获取历史审核过的卡车列表)
+##### 38. [物流公司获取未完成卡车信息(getUnfinishTruck)](#38-物流公司获取未完成卡车信息)
+##### 39. [总部确认卡车认证通过(passExamineTruck)](#39-总部确认卡车认证通过)
+##### 40. [物流公司获取卡车详情(getTruckDetail)](#40-物流公司获取卡车详情)
+##### 41. [物流公司获取卡车列表(getWorkTruckList)](#41-物流公司获取卡车列表)
+##### 42. [物流公司获取历史审核过的卡车列表(getHistoryTruckList)](#42-物流公司获取历史审核过的卡车列表)
 ## 司机api
-##### 42. [物流公司通过司机手机号获取司机信息(getDriverInfoByPhone)](#42-物流公司通过司机手机号获取司机信息)
+##### 43. [物流公司通过司机手机号获取司机信息(getDriverInfoByPhone)](#43-物流公司通过司机手机号获取司机信息)
 ## 路线api
-##### 43. [物流公司发布路线(publishRoadmap)](#43-物流公司发布路线)
-##### 44. [物流公司修改路线(modifyRoadmap)](#44-物流公司修改路线)
-##### 45. [物流公司删除路线(removeRoadmap)](#45-物流公司删除路线)
-##### 46. [物流公司修改路线价格(setRoadmapPrice)](#46-物流公司修改路线价格)
-##### 47. [物流公司获取路线列表(getRoadmapList)](#47-物流公司获取路线列表)
-##### 48. [物流公司获取路线详情(getRoadmapDetail)](#48-物流公司获取路线详情)
-##### 49. [货主获取分店路线列表(getRoadmapListInShop)](#49-货主获取分店路线列表)
-##### 50. [货主获取收货点路线列表(getRoadmapListInAgent)](#50-货主获取收货点路线列表)
+##### 44. [物流公司发布路线(publishRoadmap)](#44-物流公司发布路线)
+##### 45. [物流公司修改路线(modifyRoadmap)](#45-物流公司修改路线)
+##### 46. [物流公司删除路线(removeRoadmap)](#46-物流公司删除路线)
+##### 47. [物流公司修改路线价格(setRoadmapPrice)](#47-物流公司修改路线价格)
+##### 48. [物流公司获取路线列表(getRoadmapList)](#48-物流公司获取路线列表)
+##### 49. [物流公司获取路线详情(getRoadmapDetail)](#49-物流公司获取路线详情)
+##### 50. [货主获取分店路线列表(getRoadmapListInShop)](#50-货主获取分店路线列表)
+##### 51. [货主获取收货点路线列表(getRoadmapListInAgent)](#51-货主获取收货点路线列表)
 ## 协议文档
-##### 51. [用户协议(user)](#51-用户协议)
-##### 52. [获取软件许可协议(software)](#52-获取软件许可协议)
-##### 53. [关于(about)](#53-关于)
+##### 52. [用户协议(user)](#52-用户协议)
+##### 53. [获取软件许可协议(software)](#53-获取软件许可协议)
+##### 54. [关于(about)](#54-关于)
 
 ---
 
@@ -1462,8 +1463,60 @@ authority为用户权限:
 }
 ```
 
+### 38. [物流公司获取未完成卡车信息](#38-物流公司获取未完成卡车信息getunfinishtruck)
+- `getUnfinishTruck`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| shopId | ID | 分店Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shipperId": "59954973d1df03410425a946",
+    "shopId": "5995496cd1df03410425a904",
+    "plateNo": "贵A-778899",
+    "drivingLicense": "A71236717",
+    "truckType": "4.5米 高栏",
+    "driverId": "599575cc277608472d636e97",
+    "carryPartmentId": "599641b27338534997932c45",
+    "scannerId": "59954972d1df03410425a928",
+    "createTime": "2017-08-21 11:59:11",
+    "unloadAllOrderList": [],
+    "totalSize": 1,
+    "totalWeight": 10,
+    "totalNumbers": 13,
+    "orderCount": 1,
+    "state": 5,
+    "locationList": [],
+    "insuanceMount": 1000000,
+    "carryPrice": 100,
+    "id": "599a5a8f42b345056bf4ecfe",
+    "latestOrder": {
+      "endPoint": "北京市东城区景山街道",
+      "createTime": "2017-08-21 11:58:32",
+      "size": 1,
+      "weight": 10,
+      "totalNumbers": 5,
+      "receiver": {
+        "phone": "18885192481",
+        "id": "59954981d1df03410425a952"
+      },
+      "sender": {
+        "phone": "18885192480",
+        "id": "59954981d1df03410425a951"
+      },
+      "id": "599a5a6842b345056bf4ecf8"
+    }
+  }
+}
+```
+
 ---
-### 38. [总部确认卡车认证通过](#38-总部确认卡车认证通过passexaminetruck)
+### 39. [总部确认卡车认证通过](#39-总部确认卡车认证通过passexaminetruck)
 - `passExamineTruck`
 - 请求方式：`POST`
 
@@ -1480,7 +1533,7 @@ authority为用户权限:
 ```
 
 ---
-### 39. [物流公司获取卡车详情](#39-物流公司获取卡车详情gettruckdetail)
+### 40. [物流公司获取卡车详情](#40-物流公司获取卡车详情gettruckdetail)
 - `getTruckDetail`
 - 请求方式：`POST`
 
@@ -1517,14 +1570,14 @@ authority为用户权限:
 
 ```
 ---
-### 40. [物流公司获取卡车列表](#40-物流公司获取卡车列表getworktrucklist)
+### 41. [物流公司获取卡车列表](#41-物流公司获取卡车列表getworktrucklist)
 - `getWorkTruckList`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| truckId | ID | 卡车Id |
+| shopId | ID | 分店Id |
 | keyword | String | 关键字 |
 | pageNo | Number | 页码 |
 | pageSize | Number | 每一页大小 |
@@ -1610,14 +1663,14 @@ authority为用户权限:
 ```
 
 ---
-### 41. [物流公司获取历史审核过的卡车列表](#41-物流公司获取历史审核过的卡车列表gethistorytrucklist)
+### 42. [物流公司获取历史审核过的卡车列表](#42-物流公司获取历史审核过的卡车列表gethistorytrucklist)
 - `getHistoryTruckList`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| shopId | ID | 卡车Id |
+| shopId | ID | 分店Id |
 | keyword | String | 关键字 |
 | pageNo | Number | 页码 |
 | pageSize | Number | 每一页大小 |
@@ -1652,7 +1705,7 @@ authority为用户权限:
 ## 司机api
 
 ---
-### 42. [物流公司通过司机手机号获取司机信息](#42-物流公司通过司机手机号获取司机信息getdriverinfobyphone)
+### 43. [物流公司通过司机手机号获取司机信息](#43-物流公司通过司机手机号获取司机信息getdriverinfobyphone)
 - `getDriverInfoByPhone`
 - 请求方式：`POST`
 
@@ -1687,7 +1740,7 @@ authority为用户权限:
 ## 路线api
 
 ---
-### 43. [物流公司发布路线](#43-物流公司发布路线publishroadmap)
+### 44. [物流公司发布路线](#44-物流公司发布路线publishroadmap)
 - `publishRoadmap`
 - 请求方式：`POST`
 
@@ -1712,7 +1765,7 @@ authority为用户权限:
 }
 ```
 ---
-### 44. [物流公司修改路线](#44-物流公司修改路线modifyroadmap)
+### 45. [物流公司修改路线](#45-物流公司修改路线modifyroadmap)
 - `modifyRoadmap`
 - 请求方式：`POST`
 
@@ -1739,7 +1792,7 @@ authority为用户权限:
 ```
 
 ---
-### 45. [物流公司删除路线](#45-物流公司删除路线removeroadmap)
+### 46. [物流公司删除路线](#46-物流公司删除路线removeroadmap)
 - `removeRoadmap`
 - 请求方式：`POST`
 
@@ -1755,7 +1808,7 @@ authority为用户权限:
 ```
 
 ---
-### 46. [物流公司修改路线价格](#46-物流公司修改路线价格setroadmapprice)
+### 47. [物流公司修改路线价格](#47-物流公司修改路线价格setroadmapprice)
 - `setRoadmapPrice`
 - 请求方式：`POST`
 
@@ -1773,7 +1826,7 @@ authority为用户权限:
 }
 ```
 ---
-### 47. [物流公司获取路线列表](#47-物流公司获取路线列表getroadmaplist)
+### 48. [物流公司获取路线列表](#48-物流公司获取路线列表getroadmaplist)
 - `getRoadmapList`
 - 请求方式：`POST`
 
@@ -1808,7 +1861,7 @@ authority为用户权限:
 ```
 
 ---
-### 48. [物流公司获取路线详情](#48-物流公司获取路线详情getroadmapdetail)
+### 49. [物流公司获取路线详情](#49-物流公司获取路线详情getroadmapdetail)
 - `getRoadmapDetail`
 - 请求方式：`POST`
 
@@ -1856,7 +1909,7 @@ authority为用户权限:
 ```
 
 ---
-### 49. [货主获取分店路线列表](#49-货主获取分店路线列表getroadmaplistinshop)
+### 50. [货主获取分店路线列表](#50-货主获取分店路线列表getroadmaplistinshop)
 - `getRoadmapListInShop`
 - 请求方式：`POST`
 
@@ -1914,7 +1967,7 @@ authority为用户权限:
 ```
 
 ---
-### 50. [货主获取收货点路线列表](#50-货主获取收货点路线列表getroadmaplistinagent)
+### 51. [货主获取收货点路线列表](#51-货主获取收货点路线列表getroadmaplistinagent)
 - `getRoadmapListInAgent`
 - 请求方式：`POST`
 
@@ -1976,18 +2029,18 @@ authority为用户权限:
 
 ---
 
-### 51. [用户协议](#51-用户协议user)
+### 52. [用户协议](#52-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 52. [获取软件许可协议](#52-获取软件许可协议software)
+### 53. [获取软件许可协议](#53-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 53. [关于](#53-关于about)
+### 54. [关于](#54-关于about)
 - `about`
 - url: `protocals/about.html`

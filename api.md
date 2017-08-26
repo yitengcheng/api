@@ -57,10 +57,13 @@
 ##### 49. [物流公司获取路线详情(getRoadmapDetail)](#49-物流公司获取路线详情)
 ##### 50. [货主获取分店路线列表(getRoadmapListInShop)](#50-货主获取分店路线列表)
 ##### 51. [货主获取收货点路线列表(getRoadmapListInAgent)](#51-货主获取收货点路线列表)
+##### 52. [通过预下单群组id获取路线行情(getRoadmapListWithPreOrderGroup)](#52-通过预下单群组id获取路线行情)
+##### 53. [通过预下单id获取路线行情(getRoadmapListWithPreOrder)](#53-通过预下单id获取路线行情)
+##### 54. [通过预下单id获取路线行情(getPreOrderListInGroup)](#54-通过预下单id获取路线行情)
 ## 协议文档
-##### 52. [用户协议(user)](#52-用户协议)
-##### 53. [获取软件许可协议(software)](#53-获取软件许可协议)
-##### 54. [关于(about)](#54-关于)
+##### 55. [用户协议(user)](#55-用户协议)
+##### 56. [获取软件许可协议(software)](#56-获取软件许可协议)
+##### 57. [关于(about)](#57-关于)
 
 ---
 
@@ -2024,23 +2027,139 @@ authority为用户权限:
 ```
 
 ---
+### 52. [通过预下单群组id获取路线行情](#52-通过预下单群组id获取路线行情getroadmaplistwithpreordergroup)
+- `getRoadmapListWithPreOrderGroup`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderGroupId | ID | 货单群组Id |
+| location | Array | 坐标 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shopList": [
+      {
+        "totalTransportFee": 0,
+        "name": "华通物流超市",
+        "address": "贵州省贵阳市南明区花果园街道花果园L2区",
+        "distance": 0.6651347015721002,
+        "unfindOrderList": [
+          {
+            "endPoint": "内蒙古自治区通辽市库伦旗额勒顺镇",
+            "proxyCharge": 1,
+            "totalDesignatedFee": 1,
+            "isReachPay": false,
+            "isSendToDoor": false,
+            "size": 1,
+            "weight": 1,
+            "id": "599f8c4a206d103b2a3de444"
+          },
+          {
+            "endPoint": "北京市东城区景山街道",
+            "proxyCharge": 0,
+            "totalDesignatedFee": 1200,
+            "isReachPay": true,
+            "isSendToDoor": false,
+            "size": 1,
+            "weight": 10,
+            "id": "599d4d58d4ad6318177f05dc"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+---
+### 54. [通过预下单id获取路线行情](#54-通过预下单id获取路线行情getpreorderlistingroup)
+- `getRoadmapListWithPreOrder`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+| location | Array | 坐标 |
+| orderBy | Number | 排序类型 |
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "count": 0,
+    "roadmapList": []
+  }
+}
+```
+
+---
+### 54. [通过预下单id获取路线行情](#54-通过预下单id获取路线行情getpreorderlistingroup)
+- `getPreOrderListInGroup`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderGroupId | ID | 货单群组Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "orderList": [
+      {
+        "startPoint": "贵州省贵阳市华通物流超市",
+        "receiverName": "111",
+        "endPoint": "内蒙古自治区通辽市库伦旗额勒顺镇",
+        "proxyCharge": 1,
+        "totalDesignatedFee": 1,
+        "isReachPay": false,
+        "isInsuance": false,
+        "isSendToDoor": false,
+        "size": 1,
+        "weight": 1,
+        "totalNumbers": 1,
+        "shop": {
+          "name": "华通物流超市",
+          "id": "5995496cd1df03410425a904"
+        },
+        "receiver": {
+          "phone": "13333333333",
+          "name": "111",
+          "id": "599f8c4a206d103b2a3de443"
+        },
+        "id": "599f8c4a206d103b2a3de444"
+      }
+    ]
+  }
+}
+```
+
+---
 
 ## 协议文档
 
 ---
 
-### 52. [用户协议](#52-用户协议user)
+### 55. [用户协议](#55-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 53. [获取软件许可协议](#53-获取软件许可协议software)
+### 56. [获取软件许可协议](#56-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 54. [关于](#54-关于about)
+### 57. [关于](#57-关于about)
 - `about`
 - url: `protocals/about.html`

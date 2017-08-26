@@ -59,11 +59,12 @@
 ##### 51. [货主获取收货点路线列表(getRoadmapListInAgent)](#51-货主获取收货点路线列表)
 ##### 52. [通过预下单群组id获取路线行情(getRoadmapListWithPreOrderGroup)](#52-通过预下单群组id获取路线行情)
 ##### 53. [通过预下单id获取路线行情(getRoadmapListWithPreOrder)](#53-通过预下单id获取路线行情)
-##### 54. [获取预下单群组中的预下单列表(getPreOrderListInGroup)](#54-获取预下单群组中的预下单列表)
+##### 54. [修改预下单群组详情(modifyPreOrderGroup)](#54-修改预下单群组详情)
+##### 55. [获取预下单群组中的预下单列表(getPreOrderListInGroup)](#55-获取预下单群组中的预下单列表)
 ## 协议文档
-##### 55. [用户协议(user)](#55-用户协议)
-##### 56. [获取软件许可协议(software)](#56-获取软件许可协议)
-##### 57. [关于(about)](#57-关于)
+##### 56. [用户协议(user)](#56-用户协议)
+##### 57. [获取软件许可协议(software)](#57-获取软件许可协议)
+##### 58. [关于(about)](#58-关于)
 
 ---
 
@@ -2100,7 +2101,27 @@ authority为用户权限:
 ```
 
 ---
-### 54. [获取预下单群组中的预下单列表](#54-获取预下单群组中的预下单列表getpreorderlistingroup)
+### 54. [修改预下单群组详情](#54-修改预下单群组详情modifypreordergroup)
+- `modifyPreOrderGroup`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderGroupId | ID | 群组Id |
+| shopId | ID | 分店Id（无为null） |
+| agentId | ID | 收货点Id（无为null） |
+| startPoint | String | 起点 |
+| groupName | String | 群组名 |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 55. [获取预下单群组中的预下单列表](#55-获取预下单群组中的预下单列表getpreorderlistingroup)
 - `getPreOrderListInGroup`
 - 请求方式：`POST`
 
@@ -2148,18 +2169,18 @@ authority为用户权限:
 
 ---
 
-### 55. [用户协议](#55-用户协议user)
+### 56. [用户协议](#56-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 56. [获取软件许可协议](#56-获取软件许可协议software)
+### 57. [获取软件许可协议](#57-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 57. [关于](#57-关于about)
+### 58. [关于](#58-关于about)
 - `about`
 - url: `protocals/about.html`

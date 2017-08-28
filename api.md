@@ -2101,6 +2101,46 @@ authority为用户权限:
 ```
 
 ---
+### 53. [通过终点获取路线行情](#53-通过预下单id获取路线行情getroadmaplistwithpreorder)
+- `getRoadmapListWithEndPoint`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| shopId | ID | 分店Id |
+| location | Array | 坐标 |
+| orderBy | Number | 排序类型 |
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shop": {
+      "count": 1,
+      "roadmapList": [
+        {
+          "endPoint": "北京市东城区交道口街道",
+          "selfSignRate": 0,
+          "duration": 0,
+          "shipperName": "广顺达物流公司",
+          "shopName": "华通物流超市",
+          "shopAddress": "贵州省贵阳市南明区花果园街道花果园L2区",
+          "id": "599f78ec206d103b2a3de434",
+          "price": 0,
+          "minFee": 0,
+          "sendToDoorPrice": 0,
+          "sendToDoorMinFee": 0
+        }
+      ]
+    }
+  }
+}
+```
+
+---
 ### 54. [修改预下单群组详情](#54-修改预下单群组详情modifypreordergroup)
 - `modifyPreOrderGroup`
 - 请求方式：`POST`
@@ -2163,6 +2203,52 @@ authority为用户权限:
 }
 ```
 
+---
+
+## 分店文档
+
+---
+### 55. [获取预下单群组中的预下单列表](#55-获取预下单群组中的预下单列表getpreorderlistingroup)
+- `getPreOrderListInGroup`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderGroupId | ID | 货单群组Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "orderList": [
+      {
+        "startPoint": "贵州省贵阳市华通物流超市",
+        "receiverName": "111",
+        "endPoint": "内蒙古自治区通辽市库伦旗额勒顺镇",
+        "proxyCharge": 1,
+        "totalDesignatedFee": 1,
+        "isReachPay": false,
+        "isInsuance": false,
+        "isSendToDoor": false,
+        "size": 1,
+        "weight": 1,
+        "totalNumbers": 1,
+        "shop": {
+          "name": "华通物流超市",
+          "id": "5995496cd1df03410425a904"
+        },
+        "receiver": {
+          "phone": "13333333333",
+          "name": "111",
+          "id": "599f8c4a206d103b2a3de443"
+        },
+        "id": "599f8c4a206d103b2a3de444"
+      }
+    ]
+  }
+}
+```
 ---
 
 ## 协议文档

@@ -59,12 +59,18 @@
 ##### 51. [货主获取收货点路线列表(getRoadmapListInAgent)](#51-货主获取收货点路线列表)
 ##### 52. [通过预下单群组id获取路线行情(getRoadmapListWithPreOrderGroup)](#52-通过预下单群组id获取路线行情)
 ##### 53. [通过预下单id获取路线行情(getRoadmapListWithPreOrder)](#53-通过预下单id获取路线行情)
-##### 54. [修改预下单群组详情(modifyPreOrderGroup)](#54-修改预下单群组详情)
-##### 55. [获取预下单群组中的预下单列表(getPreOrderListInGroup)](#55-获取预下单群组中的预下单列表)
+##### 54. [通过终点获取路线行情(getRoadmapListWithEndPoint)](#54-通过终点获取路线行情)
+##### 55. [修改预下单群组详情(modifyPreOrderGroup)](#55-修改预下单群组详情)
+##### 56. [获取预下单群组中的预下单列表(getPreOrderListInGroup)](#56-获取预下单群组中的预下单列表)
+## 分店api
+##### 57. [收货部获取需要上传照片的订单(getLastestOrderByReceivePartment)](#57-收货部获取需要上传照片的订单)
+##### 58. [收货部为货单上传照片(setPhotoForOriginOrder)](#58-收货部为货单上传照片)
+##### 59. [获取订单(getOrders)](#59-获取订单)
+##### 60. [库管部扫描入库(placeStorage)](#60-库管部扫描入库)
 ## 协议文档
-##### 56. [用户协议(user)](#56-用户协议)
-##### 57. [获取软件许可协议(software)](#57-获取软件许可协议)
-##### 58. [关于(about)](#58-关于)
+##### 61. [用户协议(user)](#61-用户协议)
+##### 62. [获取软件许可协议(software)](#62-获取软件许可协议)
+##### 63. [关于(about)](#63-关于)
 
 ---
 
@@ -2101,7 +2107,7 @@ authority为用户权限:
 ```
 
 ---
-### 53. [通过终点获取路线行情](#53-通过预下单id获取路线行情getroadmaplistwithpreorder)
+### 54. [通过终点获取路线行情](#54-通过终点获取路线行情getroadmaplistwithendpoint)
 - `getRoadmapListWithEndPoint`
 - 请求方式：`POST`
 
@@ -2141,7 +2147,7 @@ authority为用户权限:
 ```
 
 ---
-### 54. [修改预下单群组详情](#54-修改预下单群组详情modifypreordergroup)
+### 55. [修改预下单群组详情](#55-修改预下单群组详情modifypreordergroup)
 - `modifyPreOrderGroup`
 - 请求方式：`POST`
 
@@ -2161,7 +2167,7 @@ authority为用户权限:
 ```
 
 ---
-### 55. [获取预下单群组中的预下单列表](#55-获取预下单群组中的预下单列表getpreorderlistingroup)
+### 56. [获取预下单群组中的预下单列表](#56-获取预下单群组中的预下单列表getpreorderlistingroup)
 - `getPreOrderListInGroup`
 - 请求方式：`POST`
 
@@ -2205,47 +2211,356 @@ authority为用户权限:
 
 ---
 
-## 分店文档
+## 分店api
 
 ---
-### 55. [获取预下单群组中的预下单列表](#55-获取预下单群组中的预下单列表getpreorderlistingroup)
-- `getPreOrderListInGroup`
+### 57. [收货部获取需要上传照片的订单](#57-收货部获取需要上传照片的订单getlastestorderbyreceivepartment)
+- `getLastestOrderByReceivePartment`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| orderGroupId | ID | 货单群组Id |
 
 ```js
 {
   "success": true,
   "context": {
-    "orderList": [
+    "shopId": "5995496cd1df03410425a904",
+    "receiverName": "18885192481",
+    "endPoint": "北京市东城区东华门街道",
+    "endPointLastCode": 110101001,
+    "receivePartmentId": "59954970d1df03410425a917",
+    "receiveMemberId": "59954970d1df03410425a916",
+    "createTime": "2017-08-22 16:09:42",
+    "stateList": [
       {
-        "startPoint": "贵州省贵阳市华通物流超市",
-        "receiverName": "111",
-        "endPoint": "内蒙古自治区通辽市库伦旗额勒顺镇",
-        "proxyCharge": 1,
-        "totalDesignatedFee": 1,
-        "isReachPay": false,
-        "isInsuance": false,
-        "isSendToDoor": false,
-        "size": 1,
-        "weight": 1,
-        "totalNumbers": 1,
-        "shop": {
-          "name": "华通物流超市",
-          "id": "5995496cd1df03410425a904"
-        },
-        "receiver": {
-          "phone": "13333333333",
-          "name": "111",
-          "id": "599f8c4a206d103b2a3de443"
-        },
-        "id": "599f8c4a206d103b2a3de444"
+        "state": 0,
+        "count": 5,
+        "_id": "599be6c68e337d17123e9c1f"
       }
-    ]
+    ],
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 0,
+    "proxyChargeProfit": 0,
+    "proxyCharge": 0,
+    "designatedFee": 0,
+    "totalDesignatedFee": 1200,
+    "realFee": 0,
+    "branchProfit": 0,
+    "masterProfit": 0,
+    "fee": 0,
+    "payTool": 0,
+    "payMode": 1,
+    "isReachPay": true,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": true,
+    "isSendToDoor": true,
+    "size": 1,
+    "weight": 10,
+    "totalNumbers": 5,
+    "roadmapRankIndex": -1,
+    "isSenderRepresentShipper": false,
+    "receiver": {
+      "phone": "18885192481",
+      "id": "59954981d1df03410425a952"
+    },
+    "sender": {
+      "phone": "18885192480",
+      "id": "59954981d1df03410425a951"
+    },
+    "id": "599be6c68e337d17123e9c1e",
+    "state": 0
+  }
+}
+```
+
+---
+### 58. [收货部为货单上传照片](#58-收货部为货单上传照片setphotofororiginorder)
+- `setPhotoForOriginOrder`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+| photo | String | 图片地址 |
+
+```js
+{
+  "msg": "没有该订单"
+}
+```
+
+---
+### 59. [获取订单](#59-获取订单getorders)
+- `getOrders`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| type | String | 类型 (tostore,stored)|
+| keyword | String | 关键字|
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "topay": {
+      "count": 0,
+      "list": []
+    },
+    "toprint": {
+      "count": 0,
+      "list": []
+    },
+    "tostore": {
+      "count": 2,
+      "list": [
+        {
+          "endPoint": "北京市东城区景山街道",
+          "stateList": [
+            {
+              "state": 5,
+              "count": 5,
+              "_id": "599e7fb2ead9861cc2a8e262"
+            }
+          ],
+          "needPayInsuanceFee": 0,
+          "needPayTransportFee": 48,
+          "size": 1,
+          "weight": 10,
+          "totalNumbers": 5,
+          "receiveMember": {
+            "phone": "18185192480",
+            "name": "收货部负责人",
+            "id": "59954970d1df03410425a916"
+          },
+          "shipper": {
+            "name": "广顺达物流公司",
+            "id": "59954973d1df03410425a946"
+          },
+          "receiver": {
+            "phone": "18885192481",
+            "id": "59954981d1df03410425a952"
+          },
+          "sender": {
+            "phone": "18885192480",
+            "id": "59954981d1df03410425a951"
+          },
+          "id": "599e7fb2ead9861cc2a8e259"
+        },
+        {
+          "endPoint": "北京市东城区景山街道",
+          "stateList": [
+            {
+              "state": 5,
+              "count": 5,
+              "_id": "599e7fb1ead9861cc2a8e258"
+            }
+          ],
+          "needPayInsuanceFee": 0,
+          "needPayTransportFee": 48,
+          "size": 1,
+          "weight": 10,
+          "totalNumbers": 5,
+          "receiveMember": {
+            "phone": "18185192480",
+            "name": "收货部负责人",
+            "id": "59954970d1df03410425a916"
+          },
+          "shipper": {
+            "name": "广顺达物流公司",
+            "id": "59954973d1df03410425a946"
+          },
+          "receiver": {
+            "phone": "18885192481",
+            "id": "59954981d1df03410425a952"
+          },
+          "sender": {
+            "phone": "18885192480",
+            "id": "59954981d1df03410425a951"
+          },
+          "id": "599e7fb1ead9861cc2a8e24f"
+        }
+      ]
+    },
+    "stored": {
+      "count": 15,
+      "list": [
+        {
+          "endPoint": "北京市东城区景山街道",
+          "stateList": [
+            {
+              "state": 6,
+              "count": 5,
+              "_id": "599fea3c0db48253c419d84d"
+            }
+          ],
+          "needPayInsuanceFee": 0,
+          "needPayTransportFee": 48,
+          "size": 1,
+          "weight": 10,
+          "totalNumbers": 5,
+          "receiveMember": {
+            "phone": "18185192480",
+            "name": "收货部负责人",
+            "id": "59954970d1df03410425a916"
+          },
+          "shipper": {
+            "name": "广顺达物流公司",
+            "id": "59954973d1df03410425a946"
+          },
+          "receiver": {
+            "phone": "18885192481",
+            "id": "59954981d1df03410425a952"
+          },
+          "sender": {
+            "phone": "18885192480",
+            "id": "59954981d1df03410425a951"
+          },
+          "id": "599e7fb0ead9861cc2a8e245"
+        },
+        {
+          "endPoint": "北京市东城区景山街道",
+          "stateList": [
+            {
+              "state": 7,
+              "count": 5,
+              "_id": "599fe94a0db48253c419d83f"
+            }
+          ],
+          "needPayInsuanceFee": 0,
+          "needPayTransportFee": 48,
+          "size": 1,
+          "weight": 10,
+          "totalNumbers": 5,
+          "receiveMember": {
+            "phone": "18185192480",
+            "name": "收货部负责人",
+            "id": "59954970d1df03410425a916"
+          },
+          "shipper": {
+            "name": "广顺达物流公司",
+            "id": "59954973d1df03410425a946"
+          },
+          "receiver": {
+            "phone": "18885192481",
+            "id": "59954981d1df03410425a952"
+          },
+          "sender": {
+            "phone": "18885192480",
+            "id": "59954981d1df03410425a951"
+          },
+          "id": "599e7fafead9861cc2a8e23b"
+        },
+        {
+          "endPoint": "北京市东城区景山街道",
+          "stateList": [
+            {
+              "state": 7,
+              "count": 5,
+              "_id": "599fe5e50db48253c419d835"
+            }
+          ],
+          "needPayInsuanceFee": 0,
+          "needPayTransportFee": 48,
+          "size": 1,
+          "weight": 10,
+          "totalNumbers": 5,
+          "receiveMember": {
+            "phone": "18185192480",
+            "name": "收货部负责人",
+            "id": "59954970d1df03410425a916"
+          },
+          "shipper": {
+            "name": "广顺达物流公司",
+            "id": "59954973d1df03410425a946"
+          },
+          "receiver": {
+            "phone": "18885192481",
+            "id": "59954981d1df03410425a952"
+          },
+          "sender": {
+            "phone": "18885192480",
+            "id": "59954981d1df03410425a951"
+          },
+          "id": "599e7faeead9861cc2a8e231"
+        }
+      ]
+    }
+  }
+}
+
+```
+
+---
+### 60. [库管部扫描入库](#60-库管部扫描入库placestorage)
+- `placeStorage`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+| count | Number | 数量 |
+
+```js
+{
+  "success": true,
+  "order": {
+    "shopId": "5995496cd1df03410425a904",
+    "senderId": "59954981d1df03410425a951",
+    "receiverId": "59954981d1df03410425a952",
+    "receiverName": "18885192481",
+    "endPoint": "北京市东城区景山街道",
+    "endPointLastCode": 110101002,
+    "receivePartmentId": "59954970d1df03410425a917",
+    "receiveMemberId": "59954970d1df03410425a916",
+    "roadmapId": "599d22fec71183033861fd74",
+    "shipperChairManId": "59954972d1df03410425a928",
+    "shipperId": "59954973d1df03410425a946",
+    "storeScannerId": "59954970d1df03410425a91a",
+    "createTime": "2017-08-24 15:26:41",
+    "stateList": [
+      {
+        "state": 6,
+        "count": 1,
+        "_id": "59a405d0a655283c6ff39d05"
+      },
+      {
+        "state": 5,
+        "count": 4,
+        "_id": "599e7fb1ead9861cc2a8e258"
+      }
+    ],
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 48,
+    "proxyChargeProfit": 0,
+    "proxyCharge": 0,
+    "designatedFee": 0,
+    "totalDesignatedFee": 1200,
+    "realFee": 48,
+    "branchProfit": 4,
+    "masterProfit": 4,
+    "fee": 40,
+    "payTool": 0,
+    "payMode": 2,
+    "isReachPay": false,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": false,
+    "isSendToDoor": false,
+    "size": 1,
+    "weight": 10,
+    "totalNumbers": 5,
+    "roadmapRankIndex": 0,
+    "isSenderRepresentShipper": false,
+    "id": "599e7fb1ead9861cc2a8e24f"
   }
 }
 ```
@@ -2255,18 +2570,18 @@ authority为用户权限:
 
 ---
 
-### 56. [用户协议](#56-用户协议user)
+### 61. [用户协议](#61-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 57. [获取软件许可协议](#57-获取软件许可协议software)
+### 62. [获取软件许可协议](#62-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 58. [关于](#58-关于about)
+### 63. [关于](#63-关于about)
 - `about`
 - url: `protocals/about.html`

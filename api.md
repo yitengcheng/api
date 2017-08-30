@@ -1468,7 +1468,21 @@ authority为用户权限:
 {
   "success": true,
   "context": {
-    "isEnter": true
+    "isEnter": true,
+    "driver": {
+      "phone": "18985192480",
+      "email": "42550564@qq.com",
+      "name": "方运江",
+      "head": "http://192.168.1.111:3000/api/image?id=599577a97aad4147a4f845db",
+      "birthday": "1982-02-25",
+      "address": "贵州省贵阳市",
+      "license": "599577a97aad4147a4f845db",
+      "licenseNo": "123123123",
+      "registerTime": "2017-08-17 18:54:04",
+      "sex": 0,
+      "age": 35,
+      "id": "599575cc277608472d636e97"
+    }
   }
 }
 ```

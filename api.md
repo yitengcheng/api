@@ -2,75 +2,77 @@
 ## 基础api
 ##### 1. [登录(login)](#1-登录)
 ##### 2. [注册(register)](#2-注册)
-##### 3. [货主获取账户余额(getRemainAmount)](#3-货主获取账户余额)
-##### 4. [货主账户充值(recharge)](#4-货主账户充值)
-##### 5. [货主账户提现(withdraw)](#5-货主账户提现)
-##### 6. [获取个人信息(getPersonalInfo)](#6-获取个人信息)
-##### 7. [修改个人信息(modifyPersonalInfo)](#7-修改个人信息)
-##### 8. [修改密码(modifyPassword)](#8-修改密码)
-##### 9. [意见反馈(submitFeedback)](#9-意见反馈)
-##### 10. [货主获取交易记录(getBillList)](#10-货主获取交易记录)
-##### 11. [获取中国区划地址(getRegionAddress)](#11-获取中国区划地址)
-##### 12. [获取发货点地址(getStartPointAddress)](#12-获取发货点地址)
+##### 3. [修改支付密码(modifyPaymentPassword)](#3-修改支付密码)
+##### 4. [货主获取账户余额(getRemainAmount)](#4-货主获取账户余额)
+##### 5. [货主账户充值(recharge)](#5-货主账户充值)
+##### 6. [货主账户提现(withdraw)](#6-货主账户提现)
+##### 7. [获取个人信息(getPersonalInfo)](#7-获取个人信息)
+##### 8. [修改个人信息(modifyPersonalInfo)](#8-修改个人信息)
+##### 9. [修改密码(modifyPassword)](#9-修改密码)
+##### 10. [意见反馈(submitFeedback)](#10-意见反馈)
+##### 11. [货主获取交易记录(getBillList)](#11-货主获取交易记录)
+##### 12. [获取中国区划地址(getRegionAddress)](#12-获取中国区划地址)
+##### 13. [获取发货点地址(getStartPointAddress)](#13-获取发货点地址)
 ## 货单api
-##### 13. [货主预下单(placePreOrder)](#13-货主预下单)
-##### 14. [货主获取发货单列表(getSendOrderList)](#14-货主获取发货单列表)
-##### 15. [物流公司获取已装货单卡车列表(getTrucks)](#15-物流公司获取已装货单卡车列表)
-##### 16. [物流公司获取货车里的货单列表(getOrderListInTruck)](#16-物流公司获取货车里的货单列表)
-##### 17. [货主获取收货单列表(getReceiveOrderList)](#17-货主获取收货单列表)
-##### 18. [货主获取货单详情(getOrderDetail)](#18-货主获取货单详情)
-##### 19. [货主修改预下单货单(modifyPreOrder)](#19-货主修改预下单货单)
-##### 20. [货主删除预下单货单(removePreOrder)](#20-货主删除预下单货单)
-##### 21. [货主发送货单线上支付(payForOrderWhenSend)](#21-货主发送货单线上支付)
-##### 22. [货主结束货单现金支付(finishOrder)](#22-货主结束货单现金支付)
-##### 23. [货主结束货单线上支付(payForOrderWhenReceive)](#23-货主结束货单线上支付)
-##### 24. [获取订单物流信息(getLogisticsList)](#24-获取订单物流信息)
-##### 25. [物流公司开始装车(startScanOrder)](#25-物流公司开始装车)
-##### 26. [物流公司扫描货单(scanOrder)](#26-物流公司扫描货单)
-##### 27. [物流公司结束扫描货单(finishScanOrder)](#27-物流公司结束扫描货单)
-##### 28. [物流公司继续扫描货单(continueScanOrder)](#28-物流公司继续扫描货单)
-##### 29. [库管扫描入库(placeStorage)](#29-库管扫描入库)
+##### 14. [货主预下单(placePreOrder)](#14-货主预下单)
+##### 15. [货主获取发货单列表(getSendOrderList)](#15-货主获取发货单列表)
+##### 16. [物流公司获取已装货单卡车列表(getTrucks)](#16-物流公司获取已装货单卡车列表)
+##### 17. [物流公司获取货车里的货单列表(getOrderListInTruck)](#17-物流公司获取货车里的货单列表)
+##### 18. [货主获取收货单列表(getReceiveOrderList)](#18-货主获取收货单列表)
+##### 19. [货主获取货单详情(getOrderDetail)](#19-货主获取货单详情)
+##### 20. [货主修改预下单货单(modifyPreOrder)](#20-货主修改预下单货单)
+##### 21. [货主删除预下单货单(removePreOrder)](#21-货主删除预下单货单)
+##### 22. [货主发送货单线上支付(payForOrderWhenSend)](#22-货主发送货单线上支付)
+##### 23. [货主结束货单现金支付(finishOrder)](#23-货主结束货单现金支付)
+##### 24. [货主结束货单线上支付(payForOrderWhenReceive)](#24-货主结束货单线上支付)
+##### 25. [获取订单物流信息(getLogisticsList)](#25-获取订单物流信息)
+##### 26. [物流公司开始装车(startScanOrder)](#26-物流公司开始装车)
+##### 27. [物流公司扫描货单(scanOrder)](#27-物流公司扫描货单)
+##### 28. [物流公司结束扫描货单(finishScanOrder)](#28-物流公司结束扫描货单)
+##### 29. [物流公司继续扫描货单(continueScanOrder)](#29-物流公司继续扫描货单)
+##### 30. [库管扫描入库(placeStorage)](#30-库管扫描入库)
 ## 货物api
-##### 30. [物流公司获取竞得货物列表(getNeedSendOrderSummaryList)](#30-物流公司获取竞得货物列表)
-##### 31. [物流公司获取竞得货物订单列表(getNeedSendOrderListByEndPoint)](#31-物流公司获取竞得货物订单列表)
+##### 31. [物流公司获取竞得货物列表(getNeedSendOrderSummaryList)](#31-物流公司获取竞得货物列表)
+##### 32. [物流公司获取竞得货物订单列表(getNeedSendOrderListByEndPoint)](#32-物流公司获取竞得货物订单列表)
+##### 33. [物流公司获取成员列表(getMemberList)](#33-物流公司获取成员列表)
 ## 搬运队api
-##### 32. [搬运队修改搬运部信息(modifyOwnPartment)](#32-搬运队修改搬运部信息)
-##### 33. [物流公司获取货搬运队列表(getCarryPartmentList)](#33-物流公司获取货搬运队列表)
-##### 34. [物流公司选择搬运队(selectCarryPartment)](#34-物流公司选择搬运队)
-##### 35. [物流公司付搬运费(payForCarryPartment)](#35-物流公司付搬运费)
+##### 34. [搬运队修改搬运部信息(modifyOwnPartment)](#34-搬运队修改搬运部信息)
+##### 35. [物流公司获取货搬运队列表(getCarryPartmentList)](#35-物流公司获取货搬运队列表)
+##### 36. [物流公司选择搬运队(selectCarryPartment)](#36-物流公司选择搬运队)
+##### 37. [物流公司付搬运费(payForCarryPartment)](#37-物流公司付搬运费)
 ## 卡车api
-##### 36. [物流公司创建卡车(createTruck)](#36-物流公司创建卡车)
-##### 37. [物流公司获取未完成卡车信息(getUnfinishTruck)](#37-物流公司获取未完成卡车信息)
-##### 38. [总部确认卡车认证通过(passExamineTruck)](#38-总部确认卡车认证通过)
-##### 39. [物流公司获取卡车详情(getTruckDetail)](#39-物流公司获取卡车详情)
-##### 40. [物流公司获取卡车列表(getWorkTruckList)](#40-物流公司获取卡车列表)
-##### 41. [物流公司获取历史审核过的卡车列表(getHistoryTruckList)](#41-物流公司获取历史审核过的卡车列表)
+##### 38. [物流公司创建卡车(createTruck)](#38-物流公司创建卡车)
+##### 39. [物流公司获取未完成卡车信息(getUnfinishTruck)](#39-物流公司获取未完成卡车信息)
+##### 40. [总部确认卡车认证通过(passExamineTruck)](#40-总部确认卡车认证通过)
+##### 41. [物流公司获取卡车详情(getTruckDetail)](#41-物流公司获取卡车详情)
+##### 42. [物流公司获取卡车列表(getWorkTruckList)](#42-物流公司获取卡车列表)
+##### 43. [物流公司获取历史审核过的卡车列表(getHistoryTruckList)](#43-物流公司获取历史审核过的卡车列表)
 ## 司机api
-##### 42. [物流公司通过司机手机号获取司机信息(getDriverInfoByPhone)](#42-物流公司通过司机手机号获取司机信息)
+##### 44. [物流公司通过司机手机号获取司机信息(getDriverInfoByPhone)](#44-物流公司通过司机手机号获取司机信息)
 ## 路线api
-##### 43. [物流公司发布路线(publishRoadmap)](#43-物流公司发布路线)
-##### 44. [物流公司修改路线(modifyRoadmap)](#44-物流公司修改路线)
-##### 45. [物流公司删除路线(removeRoadmap)](#45-物流公司删除路线)
-##### 46. [物流公司修改路线价格(setRoadmapPrice)](#46-物流公司修改路线价格)
-##### 47. [物流公司获取路线列表(getRoadmapList)](#47-物流公司获取路线列表)
-##### 48. [物流公司获取路线详情(getRoadmapDetail)](#48-物流公司获取路线详情)
-##### 49. [货主获取分店路线列表(getRoadmapListInShop)](#49-货主获取分店路线列表)
-##### 50. [货主获取收货点路线列表(getRoadmapListInAgent)](#50-货主获取收货点路线列表)
-##### 51. [通过预下单群组id获取路线行情(getRoadmapListWithPreOrderGroup)](#51-通过预下单群组id获取路线行情)
-##### 52. [通过预下单id获取路线行情(getRoadmapListWithPreOrder)](#52-通过预下单id获取路线行情)
-##### 53. [通过终点获取路线行情(getRoadmapListWithEndPoint)](#53-通过终点获取路线行情)
-##### 54. [修改预下单群组详情(modifyPreOrderGroup)](#54-修改预下单群组详情)
-##### 55. [获取预下单群组中的预下单列表(getPreOrderListInGroup)](#55-获取预下单群组中的预下单列表)
+##### 45. [物流公司发布路线(publishRoadmap)](#45-物流公司发布路线)
+##### 46. [物流公司修改路线(modifyRoadmap)](#46-物流公司修改路线)
+##### 47. [物流公司删除路线(removeRoadmap)](#47-物流公司删除路线)
+##### 48. [物流公司修改路线价格(setRoadmapPrice)](#48-物流公司修改路线价格)
+##### 49. [物流公司获取路线列表(getRoadmapList)](#49-物流公司获取路线列表)
+##### 50. [物流公司获取路线详情(getRoadmapDetail)](#50-物流公司获取路线详情)
+##### 51. [货主获取分店路线列表(getRoadmapListInShop)](#51-货主获取分店路线列表)
+##### 52. [货主获取收货点路线列表(getRoadmapListInAgent)](#52-货主获取收货点路线列表)
+##### 53. [通过预下单群组id获取路线行情(getRoadmapListWithPreOrderGroup)](#53-通过预下单群组id获取路线行情)
+##### 54. [通过预下单id获取路线行情(getRoadmapListWithPreOrder)](#54-通过预下单id获取路线行情)
+##### 55. [通过终点获取路线行情(getRoadmapListWithEndPoint)](#55-通过终点获取路线行情)
+##### 56. [修改预下单群组详情(modifyPreOrderGroup)](#56-修改预下单群组详情)
+##### 57. [获取预下单群组中的预下单列表(getPreOrderListInGroup)](#57-获取预下单群组中的预下单列表)
 ## 分店api
-##### 56. [收货部获取需要上传照片的订单(getLastestOrderByReceivePartment)](#56-收货部获取需要上传照片的订单)
-##### 57. [收货部为货单上传照片(setPhotoForOriginOrder)](#57-收货部为货单上传照片)
-##### 58. [获取订单(getOrders)](#58-获取订单)
-##### 59. [库管部扫描入库(placeStorage)](#59-库管部扫描入库)
-##### 60. [保安部检查卡车状态(checkTruckPass)](#60-保安部检查卡车状态)
+##### 58. [收货部获取需要上传照片的订单(getLastestOrderByReceivePartment)](#58-收货部获取需要上传照片的订单)
+##### 59. [收货部为货单上传照片(setPhotoForOriginOrder)](#59-收货部为货单上传照片)
+##### 60. [获取订单(getOrders)](#60-获取订单)
+##### 61. [库管部扫描入库(placeStorage)](#61-库管部扫描入库)
+##### 62. [保安部检查卡车状态(checkTruckPass)](#62-保安部检查卡车状态)
 ## 协议文档
-##### 61. [用户协议(user)](#61-用户协议)
-##### 62. [获取软件许可协议(software)](#62-获取软件许可协议)
-##### 63. [关于(about)](#63-关于)
+##### 63. [用户协议(user)](#63-用户协议)
+##### 64. [获取软件许可协议(software)](#64-获取软件许可协议)
+##### 65. [关于(about)](#65-关于)
 
 ---
 
@@ -117,7 +119,26 @@
 
 ---
 
-### 3. [货主获取账户余额](#3-货主获取账户余额getremainamount)
+### 3. [修改支付密码](#3-修改支付密码modifypaymentpassword)
+- `modifyPaymentPassword`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| phone | String | 登录手机号码 |
+| oldPassword | String | 老密码（初始密码为登录密码） |
+| newPassword | String | 新密码 |
+
+
+```js
+{
+    "success": true
+}
+```
+
+---
+
+### 4. [货主获取账户余额](#4-货主获取账户余额getremainamount)
 - `getRemainAmount`
 - 请求方式：`POST`
 
@@ -138,7 +159,7 @@
 
 ---
 
-### 4. [货主账户充值](#4-货主账户充值recharge)
+### 5. [货主账户充值](#5-货主账户充值recharge)
 - `recharge`
 - 请求方式：`POST`
 
@@ -160,7 +181,7 @@
 
 ---
 
-### 5. [货主账户提现](#5-货主账户提现withdraw)
+### 6. [货主账户提现](#6-货主账户提现withdraw)
 - `withdraw`
 - 请求方式：`POST`
 
@@ -182,7 +203,7 @@
 
 ---
 
-### 6. [获取个人信息](#6-获取个人信息getpersonalinfo)
+### 7. [获取个人信息](#7-获取个人信息getpersonalinfo)
 - `getPersonalInfo`
 - 请求方式：`POST`
 
@@ -307,7 +328,7 @@ authority为用户权限:
 ```
 ---
 
-### 7. [修改个人信息](#7-修改个人信息modifypersonalinfo)
+### 8. [修改个人信息](#8-修改个人信息modifypersonalinfo)
 - `modifyPersonalInfo`
 - 请求方式：`POST`
 
@@ -328,7 +349,7 @@ authority为用户权限:
 
 ---
 
-### 8. [修改密码](#8-修改密码modifypassword)
+### 9. [修改密码](#9-修改密码modifypassword)
 - `modifyPassword`
 - 请求方式：`POST`
 
@@ -346,7 +367,7 @@ authority为用户权限:
 
 ---
 
-### 9. [意见反馈](#9-意见反馈submitfeedback)
+### 10. [意见反馈](#10-意见反馈submitfeedback)
 - `submitFeedback`
 - 请求方式：`POST`
 
@@ -364,7 +385,7 @@ authority为用户权限:
 
 ---
 
-### 10. [货主获取交易记录](#10-货主获取交易记录getbilllist)
+### 11. [货主获取交易记录](#11-货主获取交易记录getbilllist)
 - `getBillList`
 - 请求方式：`POST`
 
@@ -395,7 +416,7 @@ authority为用户权限:
 ```
 ---
 
-### 11. [获取中国区划地址](#11-获取中国区划地址getregionaddress)
+### 12. [获取中国区划地址](#12-获取中国区划地址getregionaddress)
 - `getRegionAddress`
 - 请求方式：`POST`
 
@@ -422,7 +443,7 @@ authority为用户权限:
 ```
 ---
 
-### 12. [获取发货点地址](#12-获取发货点地址getstartpointaddress)
+### 13. [获取发货点地址](#13-获取发货点地址getstartpointaddress)
 - `getStartPointAddress`
 - 请求方式：`POST`
 
@@ -454,7 +475,7 @@ authority为用户权限:
 ## 货单api
 
 ---
-### 13. [货主预下单](#13-货主预下单placepreorder)
+### 14. [货主预下单](#14-货主预下单placepreorder)
 - `placePreOrder`
 - 请求方式：`POST`
 
@@ -486,7 +507,7 @@ authority为用户权限:
 ```
 
 ---
-### 14. [货主获取发货单列表](#14-货主获取发货单列表getsendorderlist)
+### 15. [货主获取发货单列表](#15-货主获取发货单列表getsendorderlist)
 - `getSendOrderList`
 - 请求方式：`POST`
 
@@ -525,7 +546,7 @@ authority为用户权限:
 ```
 
 ---
-### 15. [物流公司获取已装货单卡车列表](#15-物流公司获取已装货单卡车列表gettrucks)
+### 16. [物流公司获取已装货单卡车列表](#16-物流公司获取已装货单卡车列表gettrucks)
 - `getTrucks`
 - 请求方式：`POST`
 
@@ -590,7 +611,7 @@ authority为用户权限:
 
 ```
 ---
-### 16. [物流公司获取货车里的货单列表](#16-物流公司获取货车里的货单列表getorderlistintruck)
+### 17. [物流公司获取货车里的货单列表](#17-物流公司获取货车里的货单列表getorderlistintruck)
 - `getOrderListInTruck`
 - 请求方式：`POST`
 
@@ -685,7 +706,7 @@ authority为用户权限:
 ```
 
 ---
-### 17. [货主获取收货单列表](#17-货主获取收货单列表getreceiveorderlist)
+### 18. [货主获取收货单列表](#18-货主获取收货单列表getreceiveorderlist)
 - `getReceiveOrderList`
 - 请求方式：`POST`
 
@@ -730,7 +751,7 @@ authority为用户权限:
 ```
 
 ---
-### 18. [货主获取货单详情](#18-货主获取货单详情getorderdetail)
+### 19. [货主获取货单详情](#19-货主获取货单详情getorderdetail)
 - `getOrderDetail`
 - 请求方式：`POST`
 
@@ -815,7 +836,7 @@ authority为用户权限:
 ```
 
 ---
-### 19. [货主修改预下单货单](#19-货主修改预下单货单modifypreorder)
+### 20. [货主修改预下单货单](#20-货主修改预下单货单modifypreorder)
 - `modifyPreOrder`
 - 请求方式：`POST`
 
@@ -846,7 +867,7 @@ authority为用户权限:
 ```
 
 ---
-### 20. [货主删除预下单货单](#20-货主删除预下单货单removepreorder)
+### 21. [货主删除预下单货单](#21-货主删除预下单货单removepreorder)
 - `removePreOrder`
 - 请求方式：`POST`
 
@@ -862,7 +883,7 @@ authority为用户权限:
 ```
 
 ---
-### 21. [货主发送货单线上支付](#21-货主发送货单线上支付payfororderwhensend)
+### 22. [货主发送货单线上支付](#22-货主发送货单线上支付payfororderwhensend)
 - `payForOrderWhenSend`
 - 请求方式：`POST`
 
@@ -878,7 +899,7 @@ authority为用户权限:
 ```
 
 ---
-### 22. [货主结束货单现金支付](#22-货主结束货单现金支付finishorder)
+### 23. [货主结束货单现金支付](#23-货主结束货单现金支付finishorder)
 - `finishOrder`
 - 请求方式：`POST`
 
@@ -921,7 +942,7 @@ authority为用户权限:
 ```
 
 ---
-### 23. [货主结束货单线上支付](#23-货主结束货单线上支付payfororderwhenreceive)
+### 24. [货主结束货单线上支付](#24-货主结束货单线上支付payfororderwhenreceive)
 - `payForOrderWhenReceive`
 - 请求方式：`POST`
 
@@ -937,7 +958,7 @@ authority为用户权限:
 ```
 
 ---
-### 24. [获取订单物流信息](#24-获取订单物流信息getlogisticslist)
+### 25. [获取订单物流信息](#25-获取订单物流信息getlogisticslist)
 - `getLogisticsList`
 - 请求方式：`POST`
 
@@ -960,7 +981,7 @@ authority为用户权限:
 ```
 
 ---
-### 25. [物流公司开始装车](#25-物流公司开始装车startscanorder)
+### 26. [物流公司开始装车](#26-物流公司开始装车startscanorder)
 - `startScanOrder`
 - 请求方式：`POST`
 
@@ -976,7 +997,7 @@ authority为用户权限:
 ```
 
 ---
-### 26. [物流公司扫描货单](#26-物流公司扫描货单scanorder)
+### 27. [物流公司扫描货单](#27-物流公司扫描货单scanorder)
 - `scanOrder`
 - 请求方式：`POST`
 
@@ -1045,7 +1066,7 @@ authority为用户权限:
 ```
 
 ---
-### 27. [物流公司结束扫描货单](#27-物流公司结束扫描货单finishscanorder)
+### 28. [物流公司结束扫描货单](#28-物流公司结束扫描货单finishscanorder)
 - `finishScanOrder`
 - 请求方式：`POST`
 
@@ -1060,7 +1081,7 @@ authority为用户权限:
 ```
 
 ---
-### 28. [物流公司继续扫描货单](#28-物流公司继续扫描货单continuescanorder)
+### 29. [物流公司继续扫描货单](#29-物流公司继续扫描货单continuescanorder)
 - `continueScanOrder`
 - 请求方式：`POST`
 
@@ -1075,7 +1096,7 @@ authority为用户权限:
 ```
 
 ---
-### 29. [库管扫描入库](#29-库管扫描入库placestorage)
+### 30. [库管扫描入库](#30-库管扫描入库placestorage)
 - `placeStorage`
 - 请求方式：`POST`
 
@@ -1145,7 +1166,7 @@ authority为用户权限:
 ## 货物api
 
 ---
-### 30. [物流公司获取竞得货物列表](#30-物流公司获取竞得货物列表getneedsendordersummarylist)
+### 31. [物流公司获取竞得货物列表](#31-物流公司获取竞得货物列表getneedsendordersummarylist)
 - `getNeedSendOrderSummaryList`
 - 请求方式：`POST`
 
@@ -1176,7 +1197,7 @@ authority为用户权限:
 }
 ```
 ---
-### 31. [物流公司获取竞得货物订单列表](#31-物流公司获取竞得货物订单列表getneedsendorderlistbyendpoint)
+### 32. [物流公司获取竞得货物订单列表](#32-物流公司获取竞得货物订单列表getneedsendorderlistbyendpoint)
 - `getNeedSendOrderListByEndPoint`
 - 请求方式：`POST`
 
@@ -1317,11 +1338,69 @@ authority为用户权限:
 ```
 
 ---
+### 33. [物流公司获取成员列表](#33-物流公司获取成员列表getmemberlist)
+- `getMemberList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true,
+  "memberList": [
+    {
+      "phone": "18685192481",
+      "email": "42550564@qq.com",
+      "registerTime": "2017-08-17 15:44:50",
+      "shipperId": "59954973d1df03410425a946",
+      "createTime": "2017-08-17T07:44:50.524Z",
+      "authority": [
+        30001,
+        30002,
+        30003
+      ],
+      "sex": 0,
+      "id": "59954972d1df03410425a929"
+    },
+    {
+      "phone": "18685192480",
+      "email": "42550564@qq.com",
+      "registerTime": "2017-08-17 15:44:50",
+      "shipperId": "59954973d1df03410425a946",
+      "name": "朱元璋",
+      "address": "北京市西城区西长安街街道",
+      "createTime": "2017-08-17T07:44:50.522Z",
+      "authority": [
+        30000,
+        30001,
+        30002,
+        30003,
+        30004,
+        30005,
+        30006,
+        30007,
+        30008,
+        30009,
+        30010,
+        30011,
+        10005,
+        10006
+      ],
+      "sex": 1,
+      "id": "59954972d1df03410425a928"
+    }
+  ]
+}
+```
+
+---
 
 ## 搬运队api
 
 ---
-### 32. [搬运队修改搬运部信息](#32-搬运队修改搬运部信息modifyownpartment)
+### 34. [搬运队修改搬运部信息](#34-搬运队修改搬运部信息modifyownpartment)
 - `modifyOwnPartment`
 - 请求方式：`POST`
 
@@ -1353,7 +1432,7 @@ authority为用户权限:
 ```
 
 ---
-### 33. [物流公司获取货搬运队列表](#33-物流公司获取货搬运队列表getcarrypartmentlist)
+### 35. [物流公司获取货搬运队列表](#35-物流公司获取货搬运队列表getcarrypartmentlist)
 - `getCarryPartmentList`
 - 请求方式：`POST`
 
@@ -1388,7 +1467,7 @@ authority为用户权限:
 ```
 
 ---
-### 34. [物流公司选择搬运队](#34-物流公司选择搬运队selectcarrypartment)
+### 36. [物流公司选择搬运队](#36-物流公司选择搬运队selectcarrypartment)
 - `selectCarryPartment`
 - 请求方式：`POST`
 
@@ -1406,7 +1485,7 @@ authority为用户权限:
 ```
 
 ---
-### 35. [物流公司付搬运费](#35-物流公司付搬运费payforcarrypartment)
+### 37. [物流公司付搬运费](#37-物流公司付搬运费payforcarrypartment)
 - `payForCarryPartment`
 - 请求方式：`POST`
 
@@ -1425,7 +1504,7 @@ authority为用户权限:
 ## 卡车api
 
 ---
-### 36. [物流公司创建卡车](#36-物流公司创建卡车createtruck)
+### 38. [物流公司创建卡车](#38-物流公司创建卡车createtruck)
 - `createTruck`
 - 请求方式：`POST`
 
@@ -1456,7 +1535,7 @@ authority为用户权限:
 ```
 
 
-### 37. [物流公司获取未完成卡车信息](#37-物流公司获取未完成卡车信息getunfinishtruck)
+### 39. [物流公司获取未完成卡车信息](#39-物流公司获取未完成卡车信息getunfinishtruck)
 - `getUnfinishTruck`
 - 请求方式：`POST`
 
@@ -1509,7 +1588,7 @@ authority为用户权限:
 ```
 
 ---
-### 38. [总部确认卡车认证通过](#38-总部确认卡车认证通过passexaminetruck)
+### 40. [总部确认卡车认证通过](#40-总部确认卡车认证通过passexaminetruck)
 - `passExamineTruck`
 - 请求方式：`POST`
 
@@ -1526,7 +1605,7 @@ authority为用户权限:
 ```
 
 ---
-### 39. [物流公司获取卡车详情](#39-物流公司获取卡车详情gettruckdetail)
+### 41. [物流公司获取卡车详情](#41-物流公司获取卡车详情gettruckdetail)
 - `getTruckDetail`
 - 请求方式：`POST`
 
@@ -1563,7 +1642,7 @@ authority为用户权限:
 
 ```
 ---
-### 40. [物流公司获取卡车列表](#40-物流公司获取卡车列表getworktrucklist)
+### 42. [物流公司获取卡车列表](#42-物流公司获取卡车列表getworktrucklist)
 - `getWorkTruckList`
 - 请求方式：`POST`
 
@@ -1656,7 +1735,7 @@ authority为用户权限:
 ```
 
 ---
-### 41. [物流公司获取历史审核过的卡车列表](#41-物流公司获取历史审核过的卡车列表gethistorytrucklist)
+### 43. [物流公司获取历史审核过的卡车列表](#43-物流公司获取历史审核过的卡车列表gethistorytrucklist)
 - `getHistoryTruckList`
 - 请求方式：`POST`
 
@@ -1698,7 +1777,7 @@ authority为用户权限:
 ## 司机api
 
 ---
-### 42. [物流公司通过司机手机号获取司机信息](#42-物流公司通过司机手机号获取司机信息getdriverinfobyphone)
+### 44. [物流公司通过司机手机号获取司机信息](#44-物流公司通过司机手机号获取司机信息getdriverinfobyphone)
 - `getDriverInfoByPhone`
 - 请求方式：`POST`
 
@@ -1733,7 +1812,7 @@ authority为用户权限:
 ## 路线api
 
 ---
-### 43. [物流公司发布路线](#43-物流公司发布路线publishroadmap)
+### 45. [物流公司发布路线](#45-物流公司发布路线publishroadmap)
 - `publishRoadmap`
 - 请求方式：`POST`
 
@@ -1758,7 +1837,7 @@ authority为用户权限:
 }
 ```
 ---
-### 44. [物流公司修改路线](#44-物流公司修改路线modifyroadmap)
+### 46. [物流公司修改路线](#46-物流公司修改路线modifyroadmap)
 - `modifyRoadmap`
 - 请求方式：`POST`
 
@@ -1785,7 +1864,7 @@ authority为用户权限:
 ```
 
 ---
-### 45. [物流公司删除路线](#45-物流公司删除路线removeroadmap)
+### 47. [物流公司删除路线](#47-物流公司删除路线removeroadmap)
 - `removeRoadmap`
 - 请求方式：`POST`
 
@@ -1801,7 +1880,7 @@ authority为用户权限:
 ```
 
 ---
-### 46. [物流公司修改路线价格](#46-物流公司修改路线价格setroadmapprice)
+### 48. [物流公司修改路线价格](#48-物流公司修改路线价格setroadmapprice)
 - `setRoadmapPrice`
 - 请求方式：`POST`
 
@@ -1819,7 +1898,7 @@ authority为用户权限:
 }
 ```
 ---
-### 47. [物流公司获取路线列表](#47-物流公司获取路线列表getroadmaplist)
+### 49. [物流公司获取路线列表](#49-物流公司获取路线列表getroadmaplist)
 - `getRoadmapList`
 - 请求方式：`POST`
 
@@ -1854,7 +1933,7 @@ authority为用户权限:
 ```
 
 ---
-### 48. [物流公司获取路线详情](#48-物流公司获取路线详情getroadmapdetail)
+### 50. [物流公司获取路线详情](#50-物流公司获取路线详情getroadmapdetail)
 - `getRoadmapDetail`
 - 请求方式：`POST`
 
@@ -1902,7 +1981,7 @@ authority为用户权限:
 ```
 
 ---
-### 49. [货主获取分店路线列表](#49-货主获取分店路线列表getroadmaplistinshop)
+### 51. [货主获取分店路线列表](#51-货主获取分店路线列表getroadmaplistinshop)
 - `getRoadmapListInShop`
 - 请求方式：`POST`
 
@@ -1960,7 +2039,7 @@ authority为用户权限:
 ```
 
 ---
-### 50. [货主获取收货点路线列表](#50-货主获取收货点路线列表getroadmaplistinagent)
+### 52. [货主获取收货点路线列表](#52-货主获取收货点路线列表getroadmaplistinagent)
 - `getRoadmapListInAgent`
 - 请求方式：`POST`
 
@@ -2017,7 +2096,7 @@ authority为用户权限:
 ```
 
 ---
-### 51. [通过预下单群组id获取路线行情](#51-通过预下单群组id获取路线行情getroadmaplistwithpreordergroup)
+### 53. [通过预下单群组id获取路线行情](#53-通过预下单群组id获取路线行情getroadmaplistwithpreordergroup)
 - `getRoadmapListWithPreOrderGroup`
 - 请求方式：`POST`
 
@@ -2066,7 +2145,7 @@ authority为用户权限:
 ```
 
 ---
-### 52. [通过预下单id获取路线行情](#52-通过预下单id获取路线行情getroadmaplistwithpreorder)
+### 54. [通过预下单id获取路线行情](#54-通过预下单id获取路线行情getroadmaplistwithpreorder)
 - `getRoadmapListWithPreOrder`
 - 请求方式：`POST`
 
@@ -2090,7 +2169,7 @@ authority为用户权限:
 ```
 
 ---
-### 53. [通过终点获取路线行情](#53-通过终点获取路线行情getroadmaplistwithendpoint)
+### 55. [通过终点获取路线行情](#55-通过终点获取路线行情getroadmaplistwithendpoint)
 - `getRoadmapListWithEndPoint`
 - 请求方式：`POST`
 
@@ -2130,7 +2209,7 @@ authority为用户权限:
 ```
 
 ---
-### 54. [修改预下单群组详情](#54-修改预下单群组详情modifypreordergroup)
+### 56. [修改预下单群组详情](#56-修改预下单群组详情modifypreordergroup)
 - `modifyPreOrderGroup`
 - 请求方式：`POST`
 
@@ -2150,7 +2229,7 @@ authority为用户权限:
 ```
 
 ---
-### 55. [获取预下单群组中的预下单列表](#55-获取预下单群组中的预下单列表getpreorderlistingroup)
+### 57. [获取预下单群组中的预下单列表](#57-获取预下单群组中的预下单列表getpreorderlistingroup)
 - `getPreOrderListInGroup`
 - 请求方式：`POST`
 
@@ -2197,7 +2276,7 @@ authority为用户权限:
 ## 分店api
 
 ---
-### 56. [收货部获取需要上传照片的订单](#56-收货部获取需要上传照片的订单getlastestorderbyreceivepartment)
+### 58. [收货部获取需要上传照片的订单](#58-收货部获取需要上传照片的订单getlastestorderbyreceivepartment)
 - `getLastestOrderByReceivePartment`
 - 请求方式：`POST`
 
@@ -2260,7 +2339,7 @@ authority为用户权限:
 ```
 
 ---
-### 57. [收货部为货单上传照片](#57-收货部为货单上传照片setphotofororiginorder)
+### 59. [收货部为货单上传照片](#59-收货部为货单上传照片setphotofororiginorder)
 - `setPhotoForOriginOrder`
 - 请求方式：`POST`
 
@@ -2277,7 +2356,7 @@ authority为用户权限:
 ```
 
 ---
-### 58. [获取订单](#58-获取订单getorders)
+### 60. [获取订单](#60-获取订单getorders)
 - `getOrders`
 - 请求方式：`POST`
 
@@ -2482,7 +2561,7 @@ authority为用户权限:
 ```
 
 ---
-### 59. [库管部扫描入库](#59-库管部扫描入库placestorage)
+### 61. [库管部扫描入库](#61-库管部扫描入库placestorage)
 - `placeStorage`
 - 请求方式：`POST`
 
@@ -2548,7 +2627,7 @@ authority为用户权限:
 }
 ```
 
-### 60. [保安部检查卡车状态](#60-保安部检查卡车状态checktruckpass)
+### 62. [保安部检查卡车状态](#62-保安部检查卡车状态checktruckpass)
 - `checkTruckPass`
 - 请求方式：`POST`
 
@@ -2585,18 +2664,18 @@ authority为用户权限:
 
 ---
 
-### 61. [用户协议](#61-用户协议user)
+### 63. [用户协议](#63-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 62. [获取软件许可协议](#62-获取软件许可协议software)
+### 64. [获取软件许可协议](#64-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 63. [关于](#63-关于about)
+### 65. [关于](#65-关于about)
 - `about`
 - url: `protocals/about.html`

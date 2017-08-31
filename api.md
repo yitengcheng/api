@@ -68,13 +68,15 @@
 ## 分店api
 ##### 60. [收货部获取需要上传照片的订单(getLastestOrderByReceivePartment)](#60-收货部获取需要上传照片的订单)
 ##### 61. [收货部为货单上传照片(setPhotoForOriginOrder)](#61-收货部为货单上传照片)
-##### 62. [获取订单(getOrders)](#62-获取订单)
-##### 63. [库管部扫描入库(placeStorage)](#63-库管部扫描入库)
-##### 64. [保安部检查卡车状态(checkTruckPass)](#64-保安部检查卡车状态)
+##### 62. [收货部获取订单(getOrdersByReceivePartment)](#62-收货部获取订单)
+##### 63. [库管部获取订单(getOrdersByWareHousePartment)](#63-库管部获取订单)
+##### 64. [库管部获取正在装车的订单列表(getLoadingOrderList)](#64-库管部获取正在装车的订单列表)
+##### 65. [库管部扫描入库(placeStorage)](#65-库管部扫描入库)
+##### 66. [保安部检查卡车状态(checkTruckPass)](#66-保安部检查卡车状态)
 ## 协议文档
-##### 65. [用户协议(user)](#65-用户协议)
-##### 66. [获取软件许可协议(software)](#66-获取软件许可协议)
-##### 67. [关于(about)](#67-关于)
+##### 67. [用户协议(user)](#67-用户协议)
+##### 68. [获取软件许可协议(software)](#68-获取软件许可协议)
+##### 69. [关于(about)](#69-关于)
 
 ---
 
@@ -2440,8 +2442,8 @@ authority为用户权限:
 ```
 
 ---
-### 62. [获取订单](#62-获取订单getorders)
-- `getOrders`
+### 62. [收货部获取订单](#62-收货部获取订单getordersbyreceivepartment)
+- `getOrdersByReceivePartment`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |
@@ -2643,9 +2645,235 @@ authority为用户权限:
 }
 
 ```
+---
+### 63. [库管部获取订单](#63-库管部获取订单getordersbywarehousepartment)
+- `getOrdersByWareHousePartment`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| type | String | 类型 (stored,loaded)|
+| keyword | String | 关键字|
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "tostore": {
+      "count": 0,
+      "list": []
+    },
+    "stored": {
+      "count": 19,
+      "list": [
+        {
+          "endPoint": "北京市东城区景山街道",
+          "modifyTime": "2017-08-30 19:07:30",
+          "createTime": "2017-08-30 19:07:30",
+          "stateList": [
+            {
+              "state": 6,
+              "count": 5,
+              "_id": "59a69c8c03819c74dd8d488a"
+            }
+          ],
+          "needPayInsuanceFee": 0,
+          "needPayTransportFee": 0,
+          "payMode": 0,
+          "size": 1,
+          "weight": 10,
+          "totalNumbers": 5,
+          "receiveMember": {
+            "phone": "18185192480",
+            "name": "收货部负责人",
+            "id": "59954970d1df03410425a916"
+          },
+          "shop": {
+            "name": "华通物流超市",
+            "address": "贵州省贵阳市南明区花果园街道花果园L2区",
+            "id": "5995496cd1df03410425a904"
+          },
+          "receiver": {
+            "phone": "18885192481",
+            "id": "59954981d1df03410425a952"
+          },
+          "sender": {
+            "phone": "18885192480",
+            "id": "59954981d1df03410425a951"
+          },
+          "id": "59a69c7203819c74dd8d4885"
+        },
+        {
+          "endPoint": "北京市东城区景山街道",
+          "modifyTime": "2017-08-31 08:58:21",
+          "createTime": "2017-08-28 19:57:48",
+          "stateList": [
+            {
+              "state": 6,
+              "count": 5,
+              "_id": "59a4053ca655283c6ff39d04"
+            }
+          ],
+          "needPayInsuanceFee": 0,
+          "needPayTransportFee": 0,
+          "payMode": 0,
+          "size": 1,
+          "weight": 10,
+          "totalNumbers": 5,
+          "receiveMember": {
+            "phone": "18185192480",
+            "name": "收货部负责人",
+            "id": "59954970d1df03410425a916"
+          },
+          "shop": {
+            "name": "华通物流超市",
+            "address": "贵州省贵阳市南明区花果园街道花果园L2区",
+            "id": "5995496cd1df03410425a904"
+          },
+          "receiver": {
+            "phone": "18885192481",
+            "id": "59954981d1df03410425a952"
+          },
+          "sender": {
+            "phone": "18885192480",
+            "id": "59954981d1df03410425a951"
+          },
+          "id": "59a4053ca655283c6ff39cff"
+        },
+        {
+          "endPoint": "北京市东城区景山街道",
+          "modifyTime": "2017-08-31 08:58:21",
+          "createTime": "2017-08-24 15:26:42",
+          "stateList": [
+            {
+              "state": 6,
+              "count": 5,
+              "_id": "59a62763477dfaa641c83e89"
+            }
+          ],
+          "needPayInsuanceFee": 0,
+          "needPayTransportFee": 48,
+          "payMode": 2,
+          "size": 1,
+          "weight": 10,
+          "totalNumbers": 5,
+          "receiveMember": {
+            "phone": "18185192480",
+            "name": "收货部负责人",
+            "id": "59954970d1df03410425a916"
+          },
+          "shipper": {
+            "name": "广顺达物流公司",
+            "id": "59954973d1df03410425a946"
+          },
+          "shop": {
+            "name": "华通物流超市",
+            "address": "贵州省贵阳市南明区花果园街道花果园L2区",
+            "id": "5995496cd1df03410425a904"
+          },
+          "receiver": {
+            "phone": "18885192481",
+            "id": "59954981d1df03410425a952"
+          },
+          "sender": {
+            "phone": "18885192480",
+            "id": "59954981d1df03410425a951"
+          },
+          "id": "599e7fb2ead9861cc2a8e259"
+        }
+      ]
+    }
+  }
+}
+```
+---
+### 64. [库管部获取正在装车的订单列表](#64-库管部获取正在装车的订单列表getloadingorderlist)
+- `getLoadingOrderList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shipperId": "59954973d1df03410425a946",
+    "shopId": "5995496cd1df03410425a904",
+    "plateNo": "贵A-778899",
+    "drivingLicense": "A71236717",
+    "truckType": "4.5米 高栏",
+    "driverId": "599575cc277608472d636e97",
+    "carryPartmentId": "599641b27338534997932c45",
+    "scannerId": "59954972d1df03410425a928",
+    "createTime": "2017-08-31 08:44:45",
+    "unloadAllOrderList": [
+      {
+        "endPoint": "北京市东城区景山街道",
+        "totalNumbers": 5,
+        "receiver": {
+          "phone": "18885192481"
+        },
+        "sender": {
+          "phone": "18885192480"
+        },
+        "id": "59a69c7203819c74dd8d4885",
+        "unloadNumber": 4
+      }
+    ],
+    "totalSize": 1.2,
+    "totalWeight": 12,
+    "totalNumbers": 6,
+    "orderCount": 2,
+    "orderList": [
+      {
+        "endPoint": "北京市东城区景山街道",
+        "createTime": "2017-08-31 09:44:41",
+        "size": 1,
+        "weight": 10,
+        "totalNumbers": 5,
+        "receiver": {
+          "phone": "18885192481",
+          "id": "59954981d1df03410425a952"
+        },
+        "sender": {
+          "phone": "18885192480",
+          "id": "59954981d1df03410425a951"
+        },
+        "id": "59a76a0901d61855a2875c12"
+      },
+      {
+        "endPoint": "北京市东城区景山街道",
+        "createTime": "2017-08-30 19:07:30",
+        "size": 1,
+        "weight": 10,
+        "totalNumbers": 5,
+        "receiver": {
+          "phone": "18885192481",
+          "id": "59954981d1df03410425a952"
+        },
+        "sender": {
+          "phone": "18885192480",
+          "id": "59954981d1df03410425a951"
+        },
+        "id": "59a69c7203819c74dd8d4885"
+      }
+    ],
+    "state": 4,
+    "locationList": [],
+    "insuanceMount": 1000000,
+    "carryPrice": 100,
+    "id": "59a75bfd4b0e7a4e17cde5da"
+  }
+}
+```
 
 ---
-### 63. [库管部扫描入库](#63-库管部扫描入库placestorage)
+### 65. [库管部扫描入库](#65-库管部扫描入库placestorage)
 - `placeStorage`
 - 请求方式：`POST`
 
@@ -2711,7 +2939,7 @@ authority为用户权限:
 }
 ```
 
-### 64. [保安部检查卡车状态](#64-保安部检查卡车状态checktruckpass)
+### 66. [保安部检查卡车状态](#66-保安部检查卡车状态checktruckpass)
 - `checkTruckPass`
 - 请求方式：`POST`
 
@@ -2749,18 +2977,18 @@ authority为用户权限:
 
 ---
 
-### 65. [用户协议](#65-用户协议user)
+### 67. [用户协议](#67-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 66. [获取软件许可协议](#66-获取软件许可协议software)
+### 68. [获取软件许可协议](#68-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 67. [关于](#67-关于about)
+### 69. [关于](#69-关于about)
 - `about`
 - url: `protocals/about.html`

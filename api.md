@@ -1460,7 +1460,6 @@ authority为用户权限:
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| partmentId | ID | 部门Id |
 | price | Number | 单价 |
 | enable | Bool | 是否在线 |
 

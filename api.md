@@ -73,10 +73,13 @@
 ##### 64. [库管部获取正在装车的订单列表(getLoadingOrderList)](#64-库管部获取正在装车的订单列表)
 ##### 65. [库管部扫描入库(placeStorage)](#65-库管部扫描入库)
 ##### 66. [保安部检查卡车状态(checkTruckPass)](#66-保安部检查卡车状态)
+##### 67. [分店获取成员列表(getMemberList)](#67-分店获取成员列表)
+##### 68. [分店创建成员(createMember)](#68-分店创建成员)
+##### 69. [分店创建成员(modifyMember)](#69-分店创建成员)
 ## 协议文档
-##### 67. [用户协议(user)](#67-用户协议)
-##### 68. [获取软件许可协议(software)](#68-获取软件许可协议)
-##### 69. [关于(about)](#69-关于)
+##### 70. [用户协议(user)](#70-用户协议)
+##### 71. [获取软件许可协议(software)](#71-获取软件许可协议)
+##### 72. [关于(about)](#72-关于)
 
 ---
 
@@ -2971,24 +2974,124 @@ authority为用户权限:
 }
 ```
 
+### 67. [分店获取成员列表](#67-分店获取成员列表getmemberlist)
+- `getMemberList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| keyword | String | 关键字|
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "count": 1,
+    "memberList": [
+      {
+        "phone": "18085192480",
+        "name": "方运江",
+        "post": "董事长",
+        "authority": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10000,
+          10001,
+          10002,
+          10003,
+          10004,
+          10005,
+          10006,
+          10007
+        ],
+        "id": "5995496ad1df03410425a8f2"
+      }
+    ]
+  }
+}
+```
+
+### 69. [分店创建成员](#69-分店创建成员modifymember)
+- `createMember`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| name | String | 成员名|
+| phone | String | 成员手机|
+| authority | Array | 成员权限 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "name": "王小二",
+    "phone": "13312341234",
+    "authority": [
+      10000,
+      10001
+    ],
+    "id": "59a8f7792bdb4d2ef77b63e5"
+  }
+}
+```
+
+### 69. [分店创建成员](#69-分店创建成员modifymember)
+- `modifyMember`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| memberId | ID | 成员Id |
+| name | String | 成员名|
+| phone | String | 成员手机|
+| authority | Array | 成员权限 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "name": "王小三",
+    "phone": "13312341234",
+    "authority": [
+      10000,
+      10002
+    ],
+    "id": "59a8f7792bdb4d2ef77b63e5"
+  }
+}
+```
+
 ---
 
 ## 协议文档
 
 ---
 
-### 67. [用户协议](#67-用户协议user)
+### 70. [用户协议](#70-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 68. [获取软件许可协议](#68-获取软件许可协议software)
+### 71. [获取软件许可协议](#71-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 69. [关于](#69-关于about)
+### 72. [关于](#72-关于about)
 - `about`
 - url: `protocals/about.html`

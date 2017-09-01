@@ -76,10 +76,11 @@
 ##### 67. [分店获取成员列表(getMemberList)](#67-分店获取成员列表)
 ##### 68. [分店创建成员(createMember)](#68-分店创建成员)
 ##### 69. [分店创建成员(modifyMember)](#69-分店创建成员)
+##### 70. [分店获取部门信息(getOwnPartmentInfo)](#70-分店获取部门信息)
 ## 协议文档
-##### 70. [用户协议(user)](#70-用户协议)
-##### 71. [获取软件许可协议(software)](#71-获取软件许可协议)
-##### 72. [关于(about)](#72-关于)
+##### 71. [用户协议(user)](#71-用户协议)
+##### 72. [获取软件许可协议(software)](#72-获取软件许可协议)
+##### 73. [关于(about)](#73-关于)
 
 ---
 
@@ -3093,24 +3094,55 @@ authority为用户权限:
 }
 ```
 
+### 70. [分店获取部门信息](#70-分店获取部门信息getownpartmentinfo)
+- `getOwnPartmentInfo`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shopId": "5995496cd1df03410425a904",
+    "name": "库管部",
+    "type": 1,
+    "descript": "看家我最在行",
+    "phoneList": "0851-98989000;0851-98989001",
+    "isBusy": false,
+    "createTime": "2017-08-17 15:44:48",
+    "enable": false,
+    "memberCount": 1,
+    "chargeMan": {
+      "phone": "18285192480",
+      "name": "库管部负责人",
+      "id": "59954970d1df03410425a91a"
+    },
+    "id": "59954970d1df03410425a91b"
+  }
+}
+```
+
 ---
 
 ## 协议文档
 
 ---
 
-### 70. [用户协议](#70-用户协议user)
+### 71. [用户协议](#71-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 71. [获取软件许可协议](#71-获取软件许可协议software)
+### 72. [获取软件许可协议](#72-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 72. [关于](#72-关于about)
+### 73. [关于](#73-关于about)
 - `about`
 - url: `protocals/about.html`

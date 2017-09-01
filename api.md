@@ -237,6 +237,26 @@
       10006
     ],
     "sex": 0,
+    "partment": {
+      "shopId": "5995496cd1df03410425a904",
+      "name": "王大搬运部",
+      "type": 2,
+      "descript": "我们活着的意义就是移动",
+      "phoneList": "0851-98989000;0851-98989001",
+      "isBusy": false,
+      "price": 100,
+      "modifyTime": "2017-08-21 12:01:26",
+      "workTruckId": "59a75bfd4b0e7a4e17cde5da",
+      "createTime": "2017-08-18 09:24:02",
+      "enable": true,
+      "memberCount": 1,
+      "chargeMan": {
+        "phone": "18385192481",
+        "name": "搬运工负责人",
+        "id": "599641b27338534997932c44"
+      },
+      "id": "599641b27338534997932c45"
+    },
     "shipper": {
       "name": "广顺达物流公司",
       "logo": "http://192.168.1.111:3000/api/image?id=5989a3c5b48db929e46ad6c4",

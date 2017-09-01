@@ -68,19 +68,20 @@
 ## 分店api
 ##### 60. [收货部获取需要上传照片的订单(getLastestOrderByReceivePartment)](#60-收货部获取需要上传照片的订单)
 ##### 61. [收货部为货单上传照片(setPhotoForOriginOrder)](#61-收货部为货单上传照片)
-##### 62. [收货部获取订单(getOrdersByReceivePartment)](#62-收货部获取订单)
-##### 63. [库管部获取订单(getOrdersByWareHousePartment)](#63-库管部获取订单)
-##### 64. [库管部获取正在装车的订单列表(getLoadingOrderList)](#64-库管部获取正在装车的订单列表)
-##### 65. [库管部扫描入库(placeStorage)](#65-库管部扫描入库)
-##### 66. [保安部检查卡车状态(checkTruckPass)](#66-保安部检查卡车状态)
-##### 67. [分店获取成员列表(getMemberList)](#67-分店获取成员列表)
-##### 68. [分店创建成员(createMember)](#68-分店创建成员)
-##### 69. [分店创建成员(modifyMember)](#69-分店创建成员)
-##### 70. [分店获取部门信息(getOwnPartmentInfo)](#70-分店获取部门信息)
+##### 62. [收货部获取货单详情(getOrderDetailByReceivePartment)](#62-收货部获取货单详情)
+##### 63. [收货部获取订单(getOrdersByReceivePartment)](#63-收货部获取订单)
+##### 64. [库管部获取订单(getOrdersByWareHousePartment)](#64-库管部获取订单)
+##### 65. [库管部获取正在装车的订单列表(getLoadingOrderList)](#65-库管部获取正在装车的订单列表)
+##### 66. [库管部扫描入库(placeStorage)](#66-库管部扫描入库)
+##### 67. [保安部检查卡车状态(checkTruckPass)](#67-保安部检查卡车状态)
+##### 68. [分店获取成员列表(getMemberList)](#68-分店获取成员列表)
+##### 69. [分店创建成员(createMember)](#69-分店创建成员)
+##### 70. [分店创建成员(modifyMember)](#70-分店创建成员)
+##### 71. [分店获取部门信息(getOwnPartmentInfo)](#71-分店获取部门信息)
 ## 协议文档
-##### 71. [用户协议(user)](#71-用户协议)
-##### 72. [获取软件许可协议(software)](#72-获取软件许可协议)
-##### 73. [关于(about)](#73-关于)
+##### 72. [用户协议(user)](#72-用户协议)
+##### 73. [获取软件许可协议(software)](#73-获取软件许可协议)
+##### 74. [关于(about)](#74-关于)
 
 ---
 
@@ -2479,7 +2480,72 @@ authority为用户权限:
 ```
 
 ---
-### 62. [收货部获取订单](#62-收货部获取订单getordersbyreceivepartment)
+### 62. [收货部获取货单详情](#62-收货部获取货单详情getorderdetailbyreceivepartment)
+- `getOrderDetailByReceivePartment`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shopId": "5995496cd1df03410425a904",
+    "receiverName": "18885192481",
+    "endPoint": "北京市东城区景山街道",
+    "endPointLastCode": 110101002,
+    "receivePartmentId": "59954970d1df03410425a917",
+    "receiveMemberId": "59954970d1df03410425a916",
+    "modifyTime": "2017-08-31 11:29:54",
+    "createTime": "2017-08-31 11:29:54",
+    "stateList": [
+      {
+        "state": 5,
+        "count": 5,
+        "_id": "59a782b298e48164554806ba"
+      }
+    ],
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 0,
+    "proxyChargeProfit": 0,
+    "proxyCharge": 0,
+    "designatedFee": 0,
+    "totalDesignatedFee": 1200,
+    "realFee": 0,
+    "branchProfit": 0,
+    "masterProfit": 0,
+    "fee": 0,
+    "payTool": 0,
+    "payMode": 0,
+    "isReachPay": false,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": false,
+    "isSendToDoor": false,
+    "size": 1,
+    "weight": 10,
+    "totalNumbers": 5,
+    "roadmapRankIndex": -1,
+    "isSenderRepresentShipper": false,
+    "receiver": {
+      "phone": "18885192481",
+      "id": "59954981d1df03410425a952"
+    },
+    "sender": {
+      "phone": "18885192480",
+      "id": "59954981d1df03410425a951"
+    },
+    "isTransferOrder": false,
+    "id": "59a782b298e48164554806b7"
+  }
+}
+```
+
+---
+### 63. [收货部获取订单](#63-收货部获取订单getordersbyreceivepartment)
 - `getOrdersByReceivePartment`
 - 请求方式：`POST`
 
@@ -2683,7 +2749,7 @@ authority为用户权限:
 
 ```
 ---
-### 63. [库管部获取订单](#63-库管部获取订单getordersbywarehousepartment)
+### 64. [库管部获取订单](#64-库管部获取订单getordersbywarehousepartment)
 - `getOrdersByWareHousePartment`
 - 请求方式：`POST`
 
@@ -2827,7 +2893,7 @@ authority为用户权限:
 }
 ```
 ---
-### 64. [库管部获取正在装车的订单列表](#64-库管部获取正在装车的订单列表getloadingorderlist)
+### 65. [库管部获取正在装车的订单列表](#65-库管部获取正在装车的订单列表getloadingorderlist)
 - `getLoadingOrderList`
 - 请求方式：`POST`
 
@@ -2910,7 +2976,7 @@ authority为用户权限:
 ```
 
 ---
-### 65. [库管部扫描入库](#65-库管部扫描入库placestorage)
+### 66. [库管部扫描入库](#66-库管部扫描入库placestorage)
 - `placeStorage`
 - 请求方式：`POST`
 
@@ -2976,7 +3042,7 @@ authority为用户权限:
 }
 ```
 
-### 66. [保安部检查卡车状态](#66-保安部检查卡车状态checktruckpass)
+### 67. [保安部检查卡车状态](#67-保安部检查卡车状态checktruckpass)
 - `checkTruckPass`
 - 请求方式：`POST`
 
@@ -3008,7 +3074,7 @@ authority为用户权限:
 }
 ```
 
-### 67. [分店获取成员列表](#67-分店获取成员列表getmemberlist)
+### 68. [分店获取成员列表](#68-分店获取成员列表getmemberlist)
 - `getMemberList`
 - 请求方式：`POST`
 
@@ -3055,7 +3121,7 @@ authority为用户权限:
 }
 ```
 
-### 69. [分店创建成员](#69-分店创建成员modifymember)
+### 70. [分店创建成员](#70-分店创建成员modifymember)
 - `createMember`
 - 请求方式：`POST`
 
@@ -3081,7 +3147,7 @@ authority为用户权限:
 }
 ```
 
-### 69. [分店创建成员](#69-分店创建成员modifymember)
+### 70. [分店创建成员](#70-分店创建成员modifymember)
 - `modifyMember`
 - 请求方式：`POST`
 
@@ -3108,7 +3174,7 @@ authority为用户权限:
 }
 ```
 
-### 70. [分店获取部门信息](#70-分店获取部门信息getownpartmentinfo)
+### 71. [分店获取部门信息](#71-分店获取部门信息getownpartmentinfo)
 - `getOwnPartmentInfo`
 - 请求方式：`POST`
 
@@ -3145,18 +3211,18 @@ authority为用户权限:
 
 ---
 
-### 71. [用户协议](#71-用户协议user)
+### 72. [用户协议](#72-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 72. [获取软件许可协议](#72-获取软件许可协议software)
+### 73. [获取软件许可协议](#73-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 73. [关于](#73-关于about)
+### 74. [关于](#74-关于about)
 - `about`
 - url: `protocals/about.html`

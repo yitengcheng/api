@@ -3,7 +3,7 @@
 ##### 1. [登录(login)](#1-登录)
 ##### 2. [注册(register)](#2-注册)
 ##### 3. [发送验证码(requestSendVerifyCode)](#3-发送验证码)
-##### 4. [修改支付密码(modifyPaymentPassword)](#4-修改支付密码)
+##### 4. [修改支付密码(setPaymentPassword)](#4-修改支付密码)
 ##### 5. [修改登录密码(findPassword)](#5-修改登录密码)
 ##### 6. [获取账户余额(getRemainAmount)](#6-获取账户余额)
 ##### 7. [货主账户充值(recharge)](#7-货主账户充值)
@@ -155,12 +155,13 @@
 
 ---
 
-### 4. [修改支付密码](#4-修改支付密码modifypaymentpassword)
-- `modifyPaymentPassword`
+### 4. [修改支付密码](#4-修改支付密码setpaymentpassword)
+- `setPaymentPassword`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
+| userId | ID | 用户Id |
 | phone | String | 登录手机号码 |
 | password | String | 新密码 |
 | verifyCode | String | 验证码 |

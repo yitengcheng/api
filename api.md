@@ -162,8 +162,8 @@
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | phone | String | 登录手机号码 |
-| oldPassword | String | 老密码（初始密码为登录密码） |
-| newPassword | String | 新密码 |
+| password | String | 新密码 |
+| verifyCode | String | 验证码 |
 
 
 ```js
@@ -179,10 +179,10 @@
 
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
+| userId | ID | 用户Id |
 | phone | String | 登录手机号码 |
 | password | String | 新密码 |
 | verifyCode | String | 验证码 |
-
 
 ```js
 {

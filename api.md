@@ -90,10 +90,11 @@
 ##### 81. [分店创建成员(createMember)](#81-分店创建成员)
 ##### 82. [分店创建成员(modifyMember)](#82-分店创建成员)
 ##### 83. [分店获取部门信息(getOwnPartmentInfo)](#83-分店获取部门信息)
+##### 84. [获取统计信息(getStatistics)](#84-获取统计信息)
 ## 协议文档
-##### 84. [用户协议(user)](#84-用户协议)
-##### 85. [获取软件许可协议(software)](#85-获取软件许可协议)
-##### 86. [关于(about)](#86-关于)
+##### 85. [用户协议(user)](#85-用户协议)
+##### 86. [获取软件许可协议(software)](#86-获取软件许可协议)
+##### 87. [关于(about)](#87-关于)
 
 ---
 
@@ -3572,22 +3573,52 @@ authority为用户权限:
 
 ---
 
+### 84. [获取统计信息](#84-获取统计信息getstatistics)
+- `getStatistics`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| shopId | ID | 分店Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "branchProfit" : [0, 0, 0, 0, 0, 0, 0],
+  "count": [1, 0, 0, 0, 0, 0, 0],
+  "insuanceFee": [0, 0, 0, 0, 0, 0, 0],
+  "insuanceMount": [0, 0, 0, 0, 0, 0, 0],
+  "isInsuance": [0, 0, 0, 0, 0, 0, 0],
+  "isReachPay": [0, 0, 0, 0, 0, 0, 0],
+  "masterProfit": [0, 0, 0, 0, 0, 0, 0],
+  "proxyCharge": [0, 0, 0, 0, 0, 0, 0],
+  "realFee": [1, 0, 0, 0, 0, 0, 0],
+  "size": [1, 0, 0, 0, 0, 0, 0],
+  "totalDesignatedFee": [0, 0, 0, 0, 0, 0, 0],
+  "weight": [1, 0, 0, 0, 0, 0, 0],
+  }
+}
+```
+
+---
 ## 协议文档
 
 ---
 
-### 84. [用户协议](#84-用户协议user)
+### 85. [用户协议](#85-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 85. [获取软件许可协议](#85-获取软件许可协议software)
+### 86. [获取软件许可协议](#86-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 86. [关于](#86-关于about)
+### 87. [关于](#87-关于about)
 - `about`
 - url: `protocals/about.html`

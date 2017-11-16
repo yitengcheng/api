@@ -12,89 +12,124 @@
 ##### 10. [修改个人信息(modifyPersonalInfo)](#10-修改个人信息)
 ##### 11. [修改密码(modifyPassword)](#11-修改密码)
 ##### 12. [意见反馈(submitFeedback)](#12-意见反馈)
-##### 13. [货主获取交易记录(getBillList)](#13-货主获取交易记录)
-##### 14. [获取中国区划地址(getRegionAddress)](#14-获取中国区划地址)
-##### 15. [获取发货点地址(getStartPointAddress)](#15-获取发货点地址)
+##### 13. [董事长修改参数(modifySettingInfo)](#13-董事长修改参数)
+##### 14. [货主获取交易记录(getBillList)](#14-货主获取交易记录)
+##### 15. [获取中国区划地址(getRegionAddress)](#15-获取中国区划地址)
+##### 16. [获取发货点地址(getStartPointAddress)](#16-获取发货点地址)
 ## 货单api
-##### 16. [货主预下单(placePreOrder)](#16-货主预下单)
-##### 17. [货主获取发货单列表(getSendOrderList)](#17-货主获取发货单列表)
-##### 18. [物流公司获取已装货单卡车列表(getTrucks)](#18-物流公司获取已装货单卡车列表)
-##### 19. [物流公司获取货车里的货单列表(getOrderListInTruck)](#19-物流公司获取货车里的货单列表)
-##### 20. [物流公司通过司机手机号获取司机信息(getDriverInfoByPhone)](#20-物流公司通过司机手机号获取司机信息)
-##### 21. [货主获取收货单列表(getReceiveOrderList)](#21-货主获取收货单列表)
-##### 22. [货主获取货单详情(getOrderDetail)](#22-货主获取货单详情)
-##### 23. [货主修改预下单货单(modifyPreOrder)](#23-货主修改预下单货单)
-##### 24. [货主删除预下单货单(removePreOrder)](#24-货主删除预下单货单)
-##### 25. [货主发送货单线上支付(payForOrderWhenSend)](#25-货主发送货单线上支付)
-##### 26. [货主结束货单现金支付(finishOrder)](#26-货主结束货单现金支付)
-##### 27. [货主结束货单线上支付(payForOrderWhenReceive)](#27-货主结束货单线上支付)
-##### 28. [获取订单物流信息(getLogisticsList)](#28-获取订单物流信息)
-##### 29. [物流公司开始装车(startScanOrder)](#29-物流公司开始装车)
-##### 30. [物流公司扫描货单(scanOrder)](#30-物流公司扫描货单)
-##### 31. [物流公司获取入驻分店详情包括担保公司(getBranchShopInfo)](#31-物流公司获取入驻分店详情包括担保公司)
-##### 32. [物流公司结束扫描货单(finishScanOrder)](#32-物流公司结束扫描货单)
-##### 33. [物流公司继续扫描货单(continueScanOrder)](#33-物流公司继续扫描货单)
-##### 34. [库管扫描入库(placeStorage)](#34-库管扫描入库)
+##### 17. [货主预下单(placePreOrder)](#17-货主预下单)
+##### 18. [货主获取发货单列表(getSendOrderList)](#18-货主获取发货单列表)
+##### 19. [物流公司获取已装货单卡车列表(getTrucks)](#19-物流公司获取已装货单卡车列表)
+##### 20. [物流公司获取货车里的货单列表(getOrderListInTruck)](#20-物流公司获取货车里的货单列表)
+##### 21. [物流公司通过司机手机号获取司机信息(getDriverInfoByPhone)](#21-物流公司通过司机手机号获取司机信息)
+##### 22. [货主获取收货单列表(getReceiveOrderList)](#22-货主获取收货单列表)
+##### 23. [货主获取货单详情(getOrderDetail)](#23-货主获取货单详情)
+##### 24. [货主修改预下单货单(modifyPreOrder)](#24-货主修改预下单货单)
+##### 25. [货主删除预下单货单(removePreOrder)](#25-货主删除预下单货单)
+##### 26. [货主通过分店发货线上支付(payForOrderWhenSend)](#26-货主通过分店发货线上支付)
+##### 27. [货主通过收货点发货线上支付(payAgentForOrder)](#27-货主通过收货点发货线上支付)
+##### 28. [货主结束货单现金支付(finishOrder)](#28-货主结束货单现金支付)
+##### 29. [货主结束货单线上支付(payForOrderWhenReceive)](#29-货主结束货单线上支付)
+##### 30. [获取订单物流信息(getLogisticsList)](#30-获取订单物流信息)
+##### 31. [物流公司开始装车(startScanOrder)](#31-物流公司开始装车)
+##### 32. [物流公司扫描货单(scanOrder)](#32-物流公司扫描货单)
+##### 33. [物流公司获取入驻分店详情包括担保公司(getBranchShopInfo)](#33-物流公司获取入驻分店详情包括担保公司)
+##### 34. [物流公司结束扫描货单(finishScanOrder)](#34-物流公司结束扫描货单)
+##### 35. [物流公司继续扫描货单(continueScanOrder)](#35-物流公司继续扫描货单)
+##### 36. [库管扫描入库(placeStorage)](#36-库管扫描入库)
 ## 货物api
-##### 35. [物流公司获取竞得货物列表(getNeedSendOrderSummaryList)](#35-物流公司获取竞得货物列表)
-##### 36. [物流公司获取竞得货物订单列表(getNeedSendOrderListByEndPoint)](#36-物流公司获取竞得货物订单列表)
-##### 37. [物流公司获取成员列表(getMemberList)](#37-物流公司获取成员列表)
-##### 38. [物流公司修改成员权限(modifyMemberAuthority)](#38-物流公司修改成员权限)
-##### 39. [物流公司通过手机号搜索成员(getMemberByPhone)](#39-物流公司通过手机号搜索成员)
+##### 37. [物流公司获取竞得货物列表(getNeedSendOrderSummaryList)](#37-物流公司获取竞得货物列表)
+##### 38. [物流公司获取竞得货物订单列表(getNeedSendOrderListByEndPoint)](#38-物流公司获取竞得货物订单列表)
+##### 39. [物流公司获取成员列表(getMemberList)](#39-物流公司获取成员列表)
+##### 40. [物流公司修改成员权限(modifyMemberAuthority)](#40-物流公司修改成员权限)
+##### 41. [物流公司通过手机号搜索成员(getMemberByPhone)](#41-物流公司通过手机号搜索成员)
 ## 搬运队api
-##### 40. [搬运队获取待扫描货车(getWaitScanTruckInfo)](#40-搬运队获取待扫描货车)
-##### 41. [搬运队获取搬运历史(getCarryList)](#41-搬运队获取搬运历史)
-##### 42. [搬运队修改搬运部信息(modifyOwnPartment)](#42-搬运队修改搬运部信息)
-##### 43. [搬运部获取当前搬运货车信息(getWorkTruckInfo)](#43-搬运部获取当前搬运货车信息)
-##### 44. [物流公司获取货搬运队列表(getCarryPartmentList)](#44-物流公司获取货搬运队列表)
-##### 45. [物流公司选择搬运队(selectCarryPartment)](#45-物流公司选择搬运队)
-##### 46. [物流公司付搬运费(payForCarryPartment)](#46-物流公司付搬运费)
+##### 42. [搬运队获取待扫描货车(getWaitScanTruckInfo)](#42-搬运队获取待扫描货车)
+##### 43. [搬运队获取搬运历史(getCarryList)](#43-搬运队获取搬运历史)
+##### 44. [搬运队修改搬运部信息(modifyOwnPartment)](#44-搬运队修改搬运部信息)
+##### 45. [搬运部获取当前搬运货车信息(getWorkTruckInfo)](#45-搬运部获取当前搬运货车信息)
+##### 46. [物流公司获取货搬运队列表(getCarryPartmentList)](#46-物流公司获取货搬运队列表)
+##### 47. [物流公司选择搬运队(selectCarryPartment)](#47-物流公司选择搬运队)
+##### 48. [物流公司付搬运费(payForCarryPartment)](#48-物流公司付搬运费)
 ## 卡车api
-##### 47. [物流公司获取担保金额(getBondAmountInfo)](#47-物流公司获取担保金额)
-##### 48. [物流公司创建卡车(createTruck)](#48-物流公司创建卡车)
-##### 49. [物流公司获取未完成卡车信息(getUnfinishTruck)](#49-物流公司获取未完成卡车信息)
-##### 50. [总部确认卡车认证通过(passExamineTruck)](#50-总部确认卡车认证通过)
-##### 51. [物流公司获取卡车详情(getTruckDetail)](#51-物流公司获取卡车详情)
-##### 52. [物流公司获取卡车列表(getWorkTruckList)](#52-物流公司获取卡车列表)
-##### 53. [物流公司获取历史审核过的卡车列表(getHistoryTruckList)](#53-物流公司获取历史审核过的卡车列表)
+##### 49. [物流公司获取担保金额(getBondAmountInfo)](#49-物流公司获取担保金额)
+##### 50. [物流公司创建卡车(createTruck)](#50-物流公司创建卡车)
+##### 51. [物流公司获取未完成卡车信息(getUnfinishTruck)](#51-物流公司获取未完成卡车信息)
+##### 52. [总部确认卡车认证通过(passExamineTruck)](#52-总部确认卡车认证通过)
+##### 53. [物流公司获取卡车详情(getTruckDetail)](#53-物流公司获取卡车详情)
+##### 54. [物流公司获取卡车列表(getWorkTruckList)](#54-物流公司获取卡车列表)
+##### 55. [物流公司获取历史审核过的卡车列表(getHistoryTruckList)](#55-物流公司获取历史审核过的卡车列表)
 ## 司机api
-##### 54. [司机获取当前运输中的货车信息(getOnWayTruck)](#54-司机获取当前运输中的货车信息)
-##### 55. [司机上传位置信息(uploadLocation)](#55-司机上传位置信息)
-##### 56. [司机确认到达(confirmReach)](#56-司机确认到达)
-##### 57. [司机获取位置列表(getLocationList)](#57-司机获取位置列表)
+##### 56. [司机获取当前运输中的货车信息(getOnWayTruck)](#56-司机获取当前运输中的货车信息)
+##### 57. [司机上传位置信息(uploadLocation)](#57-司机上传位置信息)
+##### 58. [司机确认到达(confirmReach)](#58-司机确认到达)
+##### 59. [司机获取位置列表(getLocationList)](#59-司机获取位置列表)
 ## 路线api
-##### 58. [物流公司发布路线(publishRoadmap)](#58-物流公司发布路线)
-##### 59. [物流公司修改路线(modifyRoadmap)](#59-物流公司修改路线)
-##### 60. [物流公司删除路线(removeRoadmap)](#60-物流公司删除路线)
-##### 61. [物流公司修改路线价格(setRoadmapPrice)](#61-物流公司修改路线价格)
-##### 62. [物流公司获取路线列表(getRoadmapList)](#62-物流公司获取路线列表)
-##### 63. [物流公司获取路线详情(getRoadmapDetail)](#63-物流公司获取路线详情)
-##### 64. [货主获取分店路线列表(getRoadmapListInShop)](#64-货主获取分店路线列表)
-##### 65. [货主获取收货点路线列表(getRoadmapListInAgent)](#65-货主获取收货点路线列表)
-##### 66. [通过预下单群组id获取路线行情(getRoadmapListWithPreOrderGroup)](#66-通过预下单群组id获取路线行情)
-##### 67. [通过预下单id获取路线行情(getRoadmapListWithPreOrder)](#67-通过预下单id获取路线行情)
-##### 68. [通过终点获取路线行情(getRoadmapListWithEndPoint)](#68-通过终点获取路线行情)
-##### 69. [修改预下单群组详情(modifyPreOrderGroup)](#69-修改预下单群组详情)
-##### 70. [获取预下单群组中的预下单列表(getPreOrderListInGroup)](#70-获取预下单群组中的预下单列表)
+##### 60. [物流公司发布路线(publishRoadmap)](#60-物流公司发布路线)
+##### 61. [物流公司修改路线(modifyRoadmap)](#61-物流公司修改路线)
+##### 62. [物流公司删除路线(removeRoadmap)](#62-物流公司删除路线)
+##### 63. [物流公司修改路线价格(setRoadmapPrice)](#63-物流公司修改路线价格)
+##### 64. [物流公司修改路线对应送货上门路线价格(setRoadmapSendDoorPrice)](#64-物流公司修改路线对应送货上门路线价格)
+##### 65. [物流公司修改路线对应送货上门路线底格(setRoadmapSendDoorBasePrice)](#65-物流公司修改路线对应送货上门路线底格)
+##### 66. [物流公司修改路线是否上线(setRoadmapEnable)](#66-物流公司修改路线是否上线)
+##### 67. [物流公司修改路线对应的送货上门路线是否上线(setRoadmapSendDoorEnable)](#67-物流公司修改路线对应的送货上门路线是否上线)
+##### 68. [物流公司获取路线列表(getRoadmapList)](#68-物流公司获取路线列表)
+##### 69. [物流公司获取路线详情(getRoadmapDetail)](#69-物流公司获取路线详情)
+##### 70. [货主获取分店路线列表(getRoadmapListInShop)](#70-货主获取分店路线列表)
+##### 71. [货主获取收货点路线列表(getRoadmapListInAgent)](#71-货主获取收货点路线列表)
+##### 72. [通过预下单群组id获取路线行情(getRoadmapListWithPreOrderGroup)](#72-通过预下单群组id获取路线行情)
+##### 73. [通过预下单id获取路线行情(getRoadmapListWithPreOrder)](#73-通过预下单id获取路线行情)
+##### 74. [通过终点获取路线行情(getRoadmapListWithEndPoint)](#74-通过终点获取路线行情)
+##### 75. [修改预下单群组详情(modifyPreOrderGroup)](#75-修改预下单群组详情)
+##### 76. [获取预下单群组中的预下单列表(getPreOrderListInGroup)](#76-获取预下单群组中的预下单列表)
 ## 分店api
-##### 71. [收货部获取需要上传照片的订单(getLastestOrderByReceivePartment)](#71-收货部获取需要上传照片的订单)
-##### 72. [收货部为货单上传照片(setPhotoForOriginOrder)](#72-收货部为货单上传照片)
-##### 73. [收货部为货单下中转单(placeTransferOrder)](#73-收货部为货单下中转单)
-##### 74. [收货部获取货单详情(getOrderDetailByReceivePartment)](#74-收货部获取货单详情)
-##### 75. [收货部获取订单(getOrdersByReceivePartment)](#75-收货部获取订单)
-##### 76. [库管部获取订单(getOrdersByWareHousePartment)](#76-库管部获取订单)
-##### 77. [库管部获取正在装车的订单列表(getLoadingOrderList)](#77-库管部获取正在装车的订单列表)
-##### 78. [库管部扫描入库(placeStorage)](#78-库管部扫描入库)
-##### 79. [保安部检查卡车状态(checkTruckPass)](#79-保安部检查卡车状态)
-##### 80. [分店获取成员列表(getMemberList)](#80-分店获取成员列表)
-##### 81. [分店创建成员(createMember)](#81-分店创建成员)
-##### 82. [分店创建成员(modifyMember)](#82-分店创建成员)
-##### 83. [分店获取部门信息(getOwnPartmentInfo)](#83-分店获取部门信息)
-##### 84. [获取统计信息(getStatistics)](#84-获取统计信息)
+##### 77. [收货部获取需要上传照片的订单(getLastestOrderByReceivePartment)](#77-收货部获取需要上传照片的订单)
+##### 78. [收货部为货单上传照片(setPhotoForOriginOrder)](#78-收货部为货单上传照片)
+##### 79. [收货部为货单下中转单(placeTransferOrder)](#79-收货部为货单下中转单)
+##### 80. [收货部获取货单详情(getOrderDetailByReceivePartment)](#80-收货部获取货单详情)
+##### 81. [收货部获取订单(getOrdersByReceivePartment)](#81-收货部获取订单)
+##### 82. [库管部获取订单(getOrdersByWareHousePartment)](#82-库管部获取订单)
+##### 83. [库管部获取正在装车的订单列表(getLoadingOrderList)](#83-库管部获取正在装车的订单列表)
+##### 84. [库管部扫描入库(placeStorage)](#84-库管部扫描入库)
+##### 85. [保安部检查卡车状态(checkTruckPass)](#85-保安部检查卡车状态)
+##### 86. [分店获取成员列表(getMemberList)](#86-分店获取成员列表)
+##### 87. [分店创建成员(createMember)](#87-分店创建成员)
+##### 88. [分店创建成员(modifyMember)](#88-分店创建成员)
+##### 89. [分店获取部门信息(getOwnPartmentInfo)](#89-分店获取部门信息)
+##### 90. [获取统计信息(getStatistics)](#90-获取统计信息)
+## 收货点
+##### 91. [收货点通过手机号获取预下单列表(getPreOrderList)](#91-收货点通过手机号获取预下单列表)
+##### 92. [收货点下单(placeOrder)](#92-收货点下单)
+##### 93. [收货点修改货单(modifyOrder)](#93-收货点修改货单)
+##### 94. [收货点打印二维码(printBarCode)](#94-收货点打印二维码)
+##### 95. [收货点打印二货单(printOrderListBill)](#95-收货点打印二货单)
+##### 96. [收货点代支付货单(confirmCachPayedForOrderList)](#96-收货点代支付货单)
+##### 97. [收货点获取未完成货单(getLastestOrder)](#97-收货点获取未完成货单)
+##### 98. [收货点获取订单(getOrders)](#98-收货点获取订单)
+##### 99. [收货点获取订单详情(getOrderDetail)](#99-收货点获取订单详情)
+##### 100. [收货点获取成员列表(getMemberList)](#100-收货点获取成员列表)
+##### 101. [收货点修改成员权限(modifyMemberAuthority)](#101-收货点修改成员权限)
+##### 102. [收货点通过手机号搜索成员(getMemberByPhone)](#102-收货点通过手机号搜索成员)
+##### 103. [收货点获取关联店铺列表(getReferShopList)](#103-收货点获取关联店铺列表)
+##### 104. [收货点设置关联店铺(setReferShop)](#104-收货点设置关联店铺)
+##### 105. [收货点添加区域的路线提成(addRegionProfit)](#105-收货点添加区域的路线提成)
+##### 106. [收货点获取区域的路线提成列表(getRegionProfitList)](#106-收货点获取区域的路线提成列表)
+##### 107. [收货点获取区域的路线提成详情(getRegionProfitDetail)](#107-收货点获取区域的路线提成详情)
+##### 108. [收货点修改区域的路线提成(modifyRegionProfit)](#108-收货点修改区域的路线提成)
+##### 109. [收货点删除区域的路线提成(removeRegionProfit)](#109-收货点删除区域的路线提成)
+##### 110. [收货点批量设置区域的路线提成(setRegionProfitWithList)](#110-收货点批量设置区域的路线提成)
+## 同城配送
+##### 111. [获取分店设置了上门自提竞价的物流公司列表(getClientPickShipperList)](#111-获取分店设置了上门自提竞价的物流公司列表)
+##### 112. [短途物流公司扫描入库(placeStorage)](#112-短途物流公司扫描入库)
+##### 113. [短途物流公司设置送货上门(setClientPickOrderTransportFee)](#113-短途物流公司设置送货上门)
+##### 114. [短途物流公司设置货车(setCityTruck)](#114-短途物流公司设置货车)
+##### 115. [短途物流公司获取货车详情(getCityTruckDetail)](#115-短途物流公司获取货车详情)
+##### 116. [短途物流公司扫描装车(scanLoadOrderForCityDistribute)](#116-短途物流公司扫描装车)
+##### 117. [短途物流公司获取货车的货单列表(getOrderListInCityTruck)](#117-短途物流公司获取货车的货单列表)
 ## 协议文档
-##### 85. [用户协议(user)](#85-用户协议)
-##### 86. [获取软件许可协议(software)](#86-获取软件许可协议)
-##### 87. [关于(about)](#87-关于)
+##### 118. [用户协议(user)](#118-用户协议)
+##### 119. [获取软件许可协议(software)](#119-获取软件许可协议)
+##### 120. [关于(about)](#120-关于)
 
 ---
 
@@ -362,6 +397,33 @@
         }
       ]
     },
+    "agent": {
+      "name": "18684165865收货点",
+      "logo": "http://localhost:3000/api/image?id=59f698e10931cf0b4e8b5262",
+      "image": "http://localhost:3000/api/image?id=59f698e70931cf0b4e8b5265",
+      "sign": "18684165865收货点18684165865收货点",
+      "phoneList": "18684165865",
+      "address": "贵州省贵阳市云岩区",
+      "location": [
+        106.709177,
+        26.629907
+      ],
+      "legalName": "1868416586",
+      "legalPhone": "18684165865",
+      "createTime": "2017-10-30 11:13:59",
+      "legalIDCard": [],
+      "descriptList": [],
+      "id": "59f698f70931cf0b4e8b5266",
+      "chairMan": {
+        "phone": "18684165865",
+        "id": "59df0a26009deb7e9298e18f"
+      },
+      "referShop": {
+        "name": "15555555501",
+        "address": "贵州省贵阳市云岩区黔灵山分店",
+        "id": "59e426b1b6ee191fe5d4fbf8"
+      }
+    },
     "phoneList": "",
     "userId": "5989a3c4b48db929e46ad6b0"
   }
@@ -475,8 +537,34 @@ authority为用户权限:
 ```
 
 ---
+### 13. [董事长修改参数](#13-董事长修改参数modifysettinginfo)
+- `modifySettingInfo`
+- 请求方式：`POST`
 
-### 13. [货主获取交易记录](#13-货主获取交易记录getbilllist)
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| sizeWeightRate | number | 方量重量比 |
+| insuanceRate | number | 保险费与保价的比 |
+| insuanceMountRate | number | 保价与运费的比 |
+| insuanceBaseValue | number | 保险的保底值 |
+| proxyChargeProfitRate | number | 手续费与代收货款的比 |
+| gradientPriceList | array | 阶梯价格的梯度 |
+| additionalDeliverTime | number | 代签额外增加时间 |
+| noticeShipperStorageWeight | number | 通知物流公司的吨数 |
+| bondAmountWeightRate | number | 每吨货需要的保证金 |
+| rankedMaskFirstRankWeight | number | 屏蔽物流公司货物的基数 |
+| rankedMaskRateList | array | 屏蔽物流公司排名的梯度 |
+
+```js
+{
+    "success": true,
+}
+```
+
+---
+
+### 14. [货主获取交易记录](#14-货主获取交易记录getbilllist)
 - `getBillList`
 - 请求方式：`POST`
 
@@ -507,7 +595,7 @@ authority为用户权限:
 ```
 ---
 
-### 14. [获取中国区划地址](#14-获取中国区划地址getregionaddress)
+### 15. [获取中国区划地址](#15-获取中国区划地址getregionaddress)
 - `getRegionAddress`
 - 请求方式：`POST`
 
@@ -535,7 +623,7 @@ authority为用户权限:
 ```
 ---
 
-### 15. [获取发货点地址](#15-获取发货点地址getstartpointaddress)
+### 16. [获取发货点地址](#16-获取发货点地址getstartpointaddress)
 - `getStartPointAddress`
 - 请求方式：`POST`
 
@@ -567,7 +655,7 @@ authority为用户权限:
 ## 货单api
 
 ---
-### 16. [货主预下单](#16-货主预下单placepreorder)
+### 17. [货主预下单](#17-货主预下单placepreorder)
 - `placePreOrder`
 - 请求方式：`POST`
 
@@ -585,7 +673,7 @@ authority为用户权限:
 | weight | Number | 一票货总的重量 |
 | size | Number | 一票货总的方量 |
 | isSendToDoor | Bool | 是否送货上门 |
-| proxyCharge | Bool | 代收货款金额 |
+| proxyCharge | Number | 代收货款金额 |
 | isInsuance | Bool | 是否保价 |
 | isReachPay | Bool | 是否到付 (如果是到付，并且设置了totalDesignatedFee，为指定向收货人收totalDesignatedFee的运费，否则向收货人收初始单计算出来的运费)|
 | totalDesignatedFee | Number | 指定收款金额 |
@@ -599,7 +687,7 @@ authority为用户权限:
 ```
 
 ---
-### 17. [货主获取发货单列表](#17-货主获取发货单列表getsendorderlist)
+### 18. [货主获取发货单列表](#18-货主获取发货单列表getsendorderlist)
 - `getSendOrderList`
 - 请求方式：`POST`
 
@@ -638,7 +726,7 @@ authority为用户权限:
 ```
 
 ---
-### 18. [物流公司获取已装货单卡车列表](#18-物流公司获取已装货单卡车列表gettrucks)
+### 19. [物流公司获取已装货单卡车列表](#19-物流公司获取已装货单卡车列表gettrucks)
 - `getTrucks`
 - 请求方式：`POST`
 
@@ -703,7 +791,7 @@ authority为用户权限:
 
 ```
 ---
-### 19. [物流公司获取货车里的货单列表](#19-物流公司获取货车里的货单列表getorderlistintruck)
+### 20. [物流公司获取货车里的货单列表](#20-物流公司获取货车里的货单列表getorderlistintruck)
 - `getOrderListInTruck`
 - 请求方式：`POST`
 
@@ -798,7 +886,7 @@ authority为用户权限:
 ```
 
 ---
-### 20. [物流公司通过司机手机号获取司机信息](#20-物流公司通过司机手机号获取司机信息getdriverinfobyphone)
+### 21. [物流公司通过司机手机号获取司机信息](#21-物流公司通过司机手机号获取司机信息getdriverinfobyphone)
 - `getDriverInfoByPhone`
 - 请求方式：`POST`
 
@@ -829,7 +917,7 @@ authority为用户权限:
 ```
 
 ---
-### 21. [货主获取收货单列表](#21-货主获取收货单列表getreceiveorderlist)
+### 22. [货主获取收货单列表](#22-货主获取收货单列表getreceiveorderlist)
 - `getReceiveOrderList`
 - 请求方式：`POST`
 
@@ -874,7 +962,7 @@ authority为用户权限:
 ```
 
 ---
-### 22. [货主获取货单详情](#22-货主获取货单详情getorderdetail)
+### 23. [货主获取货单详情](#23-货主获取货单详情getorderdetail)
 - `getOrderDetail`
 - 请求方式：`POST`
 
@@ -882,6 +970,8 @@ authority为用户权限:
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
 | orderId | ID | 货单Id |
+| isScan | boolean | 是否为扫描单 |
+| type | number | type值，0：物流公司，1：发货人，2：收货人 |
 
 ```js
 {
@@ -964,7 +1054,7 @@ authority为用户权限:
 ```
 
 ---
-### 23. [货主修改预下单货单](#23-货主修改预下单货单modifypreorder)
+### 24. [货主修改预下单货单](#24-货主修改预下单货单modifypreorder)
 - `modifyPreOrder`
 - 请求方式：`POST`
 
@@ -982,7 +1072,7 @@ authority为用户权限:
 | weight | Number | 一票货总的重量 |
 | size | Number | 一票货总的方量 |
 | isSendToDoor | Bool | 是否送货上门 |
-| proxyCharge | Bool | 代收货款金额 |
+| proxyCharge | Number | 代收货款金额 |
 | isInsuance | Bool | 是否保价 |
 | isReachPay | Bool | 是否到付 (如果是到付，并且设置了totalDesignatedFee，为指定向收货人收totalDesignatedFee的运费，否则向收货人收初始单计算出来的运费)|
 | totalDesignatedFee | Number | 指定收款金额 |
@@ -995,7 +1085,7 @@ authority为用户权限:
 ```
 
 ---
-### 24. [货主删除预下单货单](#24-货主删除预下单货单removepreorder)
+### 25. [货主删除预下单货单](#25-货主删除预下单货单removepreorder)
 - `removePreOrder`
 - 请求方式：`POST`
 
@@ -1011,14 +1101,15 @@ authority为用户权限:
 ```
 
 ---
-### 25. [货主发送货单线上支付](#25-货主发送货单线上支付payfororderwhensend)
+### 26. [货主通过分店发货线上支付](#26-货主通过分店发货线上支付payfororderwhensend)
 - `payForOrderWhenSend`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
-| orderId | ID | 订单Id |
+| orderIdList | Array | 订单Id列表 |
+| payPassword | String | 支付密码 |
 
 ```js
 {
@@ -1027,7 +1118,24 @@ authority为用户权限:
 ```
 
 ---
-### 26. [货主结束货单现金支付](#26-货主结束货单现金支付finishorder)
+### 27. [货主通过收货点发货线上支付](#27-货主通过收货点发货线上支付payagentfororder)
+- `payAgentForOrder`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderIdList | Array | 订单Id列表 |
+| payPassword | String | 支付密码 |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 28. [货主结束货单现金支付](#28-货主结束货单现金支付finishorder)
 - `finishOrder`
 - 请求方式：`POST`
 
@@ -1070,7 +1178,7 @@ authority为用户权限:
 ```
 
 ---
-### 27. [货主结束货单线上支付](#27-货主结束货单线上支付payfororderwhenreceive)
+### 29. [货主结束货单线上支付](#29-货主结束货单线上支付payfororderwhenreceive)
 - `payForOrderWhenReceive`
 - 请求方式：`POST`
 
@@ -1086,7 +1194,7 @@ authority为用户权限:
 ```
 
 ---
-### 28. [获取订单物流信息](#28-获取订单物流信息getlogisticslist)
+### 30. [获取订单物流信息](#30-获取订单物流信息getlogisticslist)
 - `getLogisticsList`
 - 请求方式：`POST`
 
@@ -1109,7 +1217,7 @@ authority为用户权限:
 ```
 
 ---
-### 29. [物流公司开始装车](#29-物流公司开始装车startscanorder)
+### 31. [物流公司开始装车](#31-物流公司开始装车startscanorder)
 - `startScanOrder`
 - 请求方式：`POST`
 
@@ -1125,7 +1233,7 @@ authority为用户权限:
 ```
 
 ---
-### 30. [物流公司扫描货单](#30-物流公司扫描货单scanorder)
+### 32. [物流公司扫描货单](#32-物流公司扫描货单scanorder)
 - `scanOrder`
 - 请求方式：`POST`
 
@@ -1194,7 +1302,7 @@ authority为用户权限:
 ```
 
 ---
-### 31. [物流公司获取入驻分店详情包括担保公司](#31-物流公司获取入驻分店详情包括担保公司getbranchshopinfo)
+### 33. [物流公司获取入驻分店详情包括担保公司](#33-物流公司获取入驻分店详情包括担保公司getbranchshopinfo)
 - `getBranchShopInfo`
 - 请求方式：`POST`
 
@@ -1240,7 +1348,7 @@ authority为用户权限:
 ```
 
 ---
-### 32. [物流公司结束扫描货单](#32-物流公司结束扫描货单finishscanorder)
+### 34. [物流公司结束扫描货单](#34-物流公司结束扫描货单finishscanorder)
 - `finishScanOrder`
 - 请求方式：`POST`
 
@@ -1255,7 +1363,7 @@ authority为用户权限:
 ```
 
 ---
-### 33. [物流公司继续扫描货单](#33-物流公司继续扫描货单continuescanorder)
+### 35. [物流公司继续扫描货单](#35-物流公司继续扫描货单continuescanorder)
 - `continueScanOrder`
 - 请求方式：`POST`
 
@@ -1270,7 +1378,7 @@ authority为用户权限:
 ```
 
 ---
-### 34. [库管扫描入库](#34-库管扫描入库placestorage)
+### 36. [库管扫描入库](#36-库管扫描入库placestorage)
 - `placeStorage`
 - 请求方式：`POST`
 
@@ -1340,7 +1448,7 @@ authority为用户权限:
 ## 货物api
 
 ---
-### 35. [物流公司获取竞得货物列表](#35-物流公司获取竞得货物列表getneedsendordersummarylist)
+### 37. [物流公司获取竞得货物列表](#37-物流公司获取竞得货物列表getneedsendordersummarylist)
 - `getNeedSendOrderSummaryList`
 - 请求方式：`POST`
 
@@ -1371,7 +1479,7 @@ authority为用户权限:
 }
 ```
 ---
-### 36. [物流公司获取竞得货物订单列表](#36-物流公司获取竞得货物订单列表getneedsendorderlistbyendpoint)
+### 38. [物流公司获取竞得货物订单列表](#38-物流公司获取竞得货物订单列表getneedsendorderlistbyendpoint)
 - `getNeedSendOrderListByEndPoint`
 - 请求方式：`POST`
 
@@ -1512,7 +1620,7 @@ authority为用户权限:
 ```
 
 ---
-### 37. [物流公司获取成员列表](#37-物流公司获取成员列表getmemberlist)
+### 39. [物流公司获取成员列表](#39-物流公司获取成员列表getmemberlist)
 - `getMemberList`
 - 请求方式：`POST`
 
@@ -1570,7 +1678,7 @@ authority为用户权限:
 ```
 
 ---
-### 38. [物流公司修改成员权限](#38-物流公司修改成员权限modifymemberauthority)
+### 40. [物流公司修改成员权限](#40-物流公司修改成员权限modifymemberauthority)
 - `modifyMemberAuthority`
 - 请求方式：`POST`
 
@@ -1601,7 +1709,7 @@ authority为用户权限:
 ```
 
 ---
-### 39. [物流公司通过手机号搜索成员](#39-物流公司通过手机号搜索成员getmemberbyphone)
+### 41. [物流公司通过手机号搜索成员](#41-物流公司通过手机号搜索成员getmemberbyphone)
 - `getMemberByPhone`
 - 请求方式：`POST`
 
@@ -1630,7 +1738,7 @@ authority为用户权限:
 ## 搬运队api
 
 ---
-### 40. [搬运队获取待扫描货车](#40-搬运队获取待扫描货车getwaitscantruckinfo)
+### 42. [搬运队获取待扫描货车](#42-搬运队获取待扫描货车getwaitscantruckinfo)
 - `getWaitScanTruckInfo`
 - 请求方式：`POST`
 
@@ -1657,7 +1765,7 @@ authority为用户权限:
 ```
 
 ---
-### 41. [搬运队获取搬运历史](#41-搬运队获取搬运历史getcarrylist)
+### 43. [搬运队获取搬运历史](#43-搬运队获取搬运历史getcarrylist)
 - `getCarryList`
 - 请求方式：`POST`
 
@@ -1703,7 +1811,7 @@ authority为用户权限:
 ```
 
 ---
-### 42. [搬运队修改搬运部信息](#42-搬运队修改搬运部信息modifyownpartment)
+### 44. [搬运队修改搬运部信息](#44-搬运队修改搬运部信息modifyownpartment)
 - `modifyOwnPartment`
 - 请求方式：`POST`
 
@@ -1734,7 +1842,7 @@ authority为用户权限:
 ```
 
 ---
-### 43. [搬运部获取当前搬运货车信息](#43-搬运部获取当前搬运货车信息getworktruckinfo)
+### 45. [搬运部获取当前搬运货车信息](#45-搬运部获取当前搬运货车信息getworktruckinfo)
 - `getWorkTruckInfo`
 - 请求方式：`POST`
 
@@ -1770,7 +1878,7 @@ authority为用户权限:
 ```
 
 ---
-### 44. [物流公司获取货搬运队列表](#44-物流公司获取货搬运队列表getcarrypartmentlist)
+### 46. [物流公司获取货搬运队列表](#46-物流公司获取货搬运队列表getcarrypartmentlist)
 - `getCarryPartmentList`
 - 请求方式：`POST`
 
@@ -1805,7 +1913,7 @@ authority为用户权限:
 ```
 
 ---
-### 45. [物流公司选择搬运队](#45-物流公司选择搬运队selectcarrypartment)
+### 47. [物流公司选择搬运队](#47-物流公司选择搬运队selectcarrypartment)
 - `selectCarryPartment`
 - 请求方式：`POST`
 
@@ -1823,7 +1931,7 @@ authority为用户权限:
 ```
 
 ---
-### 46. [物流公司付搬运费](#46-物流公司付搬运费payforcarrypartment)
+### 48. [物流公司付搬运费](#48-物流公司付搬运费payforcarrypartment)
 - `payForCarryPartment`
 - 请求方式：`POST`
 
@@ -1842,7 +1950,7 @@ authority为用户权限:
 ## 卡车api
 
 ---
-### 47. [物流公司获取担保金额](#47-物流公司获取担保金额getbondamountinfo)
+### 49. [物流公司获取担保金额](#49-物流公司获取担保金额getbondamountinfo)
 - `getBondAmountInfo`
 - 请求方式：`POST`
 
@@ -1862,7 +1970,7 @@ authority为用户权限:
 ```
 
 ---
-### 48. [物流公司创建卡车](#48-物流公司创建卡车createtruck)
+### 50. [物流公司创建卡车](#50-物流公司创建卡车createtruck)
 - `createTruck`
 - 请求方式：`POST`
 
@@ -1893,7 +2001,7 @@ authority为用户权限:
 ```
 
 
-### 49. [物流公司获取未完成卡车信息](#49-物流公司获取未完成卡车信息getunfinishtruck)
+### 51. [物流公司获取未完成卡车信息](#51-物流公司获取未完成卡车信息getunfinishtruck)
 - `getUnfinishTruck`
 - 请求方式：`POST`
 
@@ -1946,7 +2054,7 @@ authority为用户权限:
 ```
 
 ---
-### 50. [总部确认卡车认证通过](#50-总部确认卡车认证通过passexaminetruck)
+### 52. [总部确认卡车认证通过](#52-总部确认卡车认证通过passexaminetruck)
 - `passExamineTruck`
 - 请求方式：`POST`
 
@@ -1963,7 +2071,7 @@ authority为用户权限:
 ```
 
 ---
-### 51. [物流公司获取卡车详情](#51-物流公司获取卡车详情gettruckdetail)
+### 53. [物流公司获取卡车详情](#53-物流公司获取卡车详情gettruckdetail)
 - `getTruckDetail`
 - 请求方式：`POST`
 
@@ -2000,7 +2108,7 @@ authority为用户权限:
 
 ```
 ---
-### 52. [物流公司获取卡车列表](#52-物流公司获取卡车列表getworktrucklist)
+### 54. [物流公司获取卡车列表](#54-物流公司获取卡车列表getworktrucklist)
 - `getWorkTruckList`
 - 请求方式：`POST`
 
@@ -2093,7 +2201,7 @@ authority为用户权限:
 ```
 
 ---
-### 53. [物流公司获取历史审核过的卡车列表](#53-物流公司获取历史审核过的卡车列表gethistorytrucklist)
+### 55. [物流公司获取历史审核过的卡车列表](#55-物流公司获取历史审核过的卡车列表gethistorytrucklist)
 - `getHistoryTruckList`
 - 请求方式：`POST`
 
@@ -2135,7 +2243,7 @@ authority为用户权限:
 ## 司机api
 
 ---
-### 54. [司机获取当前运输中的货车信息](#54-司机获取当前运输中的货车信息getonwaytruck)
+### 56. [司机获取当前运输中的货车信息](#56-司机获取当前运输中的货车信息getonwaytruck)
 - `getOnWayTruck`
 - 请求方式：`POST`
 
@@ -2174,7 +2282,7 @@ authority为用户权限:
 ```
 
 ---
-### 55. [司机上传位置信息](#55-司机上传位置信息uploadlocation)
+### 57. [司机上传位置信息](#57-司机上传位置信息uploadlocation)
 - `uploadLocation`
 - 请求方式：`POST`
 
@@ -2192,7 +2300,7 @@ authority为用户权限:
 ```
 
 ---
-### 56. [司机确认到达](#56-司机确认到达confirmreach)
+### 58. [司机确认到达](#58-司机确认到达confirmreach)
 - `confirmReach`
 - 请求方式：`POST`
 
@@ -2207,7 +2315,7 @@ authority为用户权限:
 ```
 
 ---
-### 57. [司机获取位置列表](#57-司机获取位置列表getlocationlist)
+### 59. [司机获取位置列表](#59-司机获取位置列表getlocationlist)
 - `getLocationList`
 - 请求方式：`POST`
 
@@ -2240,7 +2348,7 @@ authority为用户权限:
 ## 路线api
 
 ---
-### 58. [物流公司发布路线](#58-物流公司发布路线publishroadmap)
+### 60. [物流公司发布路线](#60-物流公司发布路线publishroadmap)
 - `publishRoadmap`
 - 请求方式：`POST`
 
@@ -2265,7 +2373,7 @@ authority为用户权限:
 }
 ```
 ---
-### 59. [物流公司修改路线](#59-物流公司修改路线modifyroadmap)
+### 61. [物流公司修改路线](#61-物流公司修改路线modifyroadmap)
 - `modifyRoadmap`
 - 请求方式：`POST`
 
@@ -2292,7 +2400,7 @@ authority为用户权限:
 ```
 
 ---
-### 60. [物流公司删除路线](#60-物流公司删除路线removeroadmap)
+### 62. [物流公司删除路线](#62-物流公司删除路线removeroadmap)
 - `removeRoadmap`
 - 请求方式：`POST`
 
@@ -2308,7 +2416,7 @@ authority为用户权限:
 ```
 
 ---
-### 61. [物流公司修改路线价格](#61-物流公司修改路线价格setroadmapprice)
+### 63. [物流公司修改路线价格](#63-物流公司修改路线价格setroadmapprice)
 - `setRoadmapPrice`
 - 请求方式：`POST`
 
@@ -2316,7 +2424,7 @@ authority为用户权限:
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
 | roadmapIdList | Array | 路线Id列表 |
-| typeList | Array | 修改类型列表（0：长途运费单价  1：长途运费起价  2：送货上门单价  3：送货上门起价） |
+| typeList | Array | 修改类型列表（0：长途运费单价  1：长途运费起价 ） |
 | mode | Number | 修改模式 （0: 按照价格调整  1: 按照百分比调整  2: 按照名次调整）|
 | value | Number | 修改量（如果mode为0和1时，正数为增加，负数为减少） |
 
@@ -2325,8 +2433,84 @@ authority为用户权限:
   "success": true
 }
 ```
+
 ---
-### 62. [物流公司获取路线列表](#62-物流公司获取路线列表getroadmaplist)
+### 64. [物流公司修改路线对应送货上门路线价格](#64-物流公司修改路线对应送货上门路线价格setroadmapsenddoorprice)
+- `setRoadmapSendDoorPrice`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| roadmapId | ID | 路线Id |
+| lastCodeList | Array | 送货上门终点lastCode列表 |
+| typeList | Array | 数组，0：送货上门单价  1：送货上门起价 |
+| mode | Number | 修改模式 （0: 按照价格调整  1: 按照百分比调整  2: 按照名次调整）|
+| value | Number | 修改量（如果mode为0和1时，正数为增加，负数为减少） |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 65. [物流公司修改路线对应送货上门路线底格](#65-物流公司修改路线对应送货上门路线底格setroadmapsenddoorbaseprice)
+- `setRoadmapSendDoorBasePrice`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| roadmapId | ID | 路线Id |
+| lastCodeList | Array | 送货上门终点lastCode列表 |
+| typeList | Array | 数组，0：同城配送运费单价的底价  1：同城配送运费起价的底价 |
+| mode | Number | 修改模式 （0: 设置底价, 1: 按照价格调整  2: 按照百分比调整）|
+| value | Number | 修改量（如果mode为0和1时，正数为增加，负数为减少） |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 66. [物流公司修改路线是否上线](#66-物流公司修改路线是否上线setroadmapenable)
+- `setRoadmapEnable`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| roadmapIdList | Array | 路线Id列表 |
+| enable | Boolean | 是否上线 |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 67. [物流公司修改路线对应的送货上门路线是否上线](#67-物流公司修改路线对应的送货上门路线是否上线setroadmapsenddoorenable)
+- `setRoadmapSendDoorEnable`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| roadmapId | ID | 路线Id |
+| lastCodeList | Array | 送货上门终点lastCode列表 |
+| enable | Boolean | 是否上线 |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 68. [物流公司获取路线列表](#68-物流公司获取路线列表getroadmaplist)
 - `getRoadmapList`
 - 请求方式：`POST`
 
@@ -2361,7 +2545,7 @@ authority为用户权限:
 ```
 
 ---
-### 63. [物流公司获取路线详情](#63-物流公司获取路线详情getroadmapdetail)
+### 69. [物流公司获取路线详情](#69-物流公司获取路线详情getroadmapdetail)
 - `getRoadmapDetail`
 - 请求方式：`POST`
 
@@ -2401,6 +2585,20 @@ authority为用户权限:
       "address": "贵州省贵阳市南明区花果园街道花果园L2区",
       "id": "5995496cd1df03410425a904"
     },
+    "sendDoorList": [
+        {
+            "sendDoorEndPoint": "城关镇",
+            "sendDoorEndPointLastCode": 520121100,
+            "enable": true,
+            "sendDoorPrice": 110,
+            "sendDoorMinFee": 60,
+            "baseSendDoorPrice": 0,
+            "baseSendDoorMinFee": 0,
+            "updateSendDoorPriceTime": "2017-11-04 09:40:10",
+            "updateSendDoorMinFeeTime": "2017-11-04 09:40:10",
+            "_id": "59fd1a7aa5b6e90e5619f1a8"
+        }
+    ],
     "startPoint": "贵州省贵阳市南明区花果园街道花果园L2区",
     "masterDefaultProfitRate": 0.1,
     "id": "59979eef74487466abd0dc8b"
@@ -2409,7 +2607,7 @@ authority为用户权限:
 ```
 
 ---
-### 64. [货主获取分店路线列表](#64-货主获取分店路线列表getroadmaplistinshop)
+### 70. [货主获取分店路线列表](#70-货主获取分店路线列表getroadmaplistinshop)
 - `getRoadmapListInShop`
 - 请求方式：`POST`
 
@@ -2467,7 +2665,7 @@ authority为用户权限:
 ```
 
 ---
-### 65. [货主获取收货点路线列表](#65-货主获取收货点路线列表getroadmaplistinagent)
+### 71. [货主获取收货点路线列表](#71-货主获取收货点路线列表getroadmaplistinagent)
 - `getRoadmapListInAgent`
 - 请求方式：`POST`
 
@@ -2524,7 +2722,7 @@ authority为用户权限:
 ```
 
 ---
-### 66. [通过预下单群组id获取路线行情](#66-通过预下单群组id获取路线行情getroadmaplistwithpreordergroup)
+### 72. [通过预下单群组id获取路线行情](#72-通过预下单群组id获取路线行情getroadmaplistwithpreordergroup)
 - `getRoadmapListWithPreOrderGroup`
 - 请求方式：`POST`
 
@@ -2573,7 +2771,7 @@ authority为用户权限:
 ```
 
 ---
-### 67. [通过预下单id获取路线行情](#67-通过预下单id获取路线行情getroadmaplistwithpreorder)
+### 73. [通过预下单id获取路线行情](#73-通过预下单id获取路线行情getroadmaplistwithpreorder)
 - `getRoadmapListWithPreOrder`
 - 请求方式：`POST`
 
@@ -2597,7 +2795,7 @@ authority为用户权限:
 ```
 
 ---
-### 68. [通过终点获取路线行情](#68-通过终点获取路线行情getroadmaplistwithendpoint)
+### 74. [通过终点获取路线行情](#74-通过终点获取路线行情getroadmaplistwithendpoint)
 - `getRoadmapListWithEndPoint`
 - 请求方式：`POST`
 
@@ -2605,6 +2803,11 @@ authority为用户权限:
 | :- |:-:| :-:|
 | userId | ID | 用户Id |
 | shopId | ID | 分店Id |
+| agentId | ID | 收货点Id |
+| startPoint | String | 范围，如贵州省贵阳市，如果有agentId，该字段无效 |
+| endPointLastCode | String | 终点code |
+| sendDoorEndPointLastCode | String | 送货上门终点code |
+| isSendDoor | Bool | 是否送货上门 |
 | location | Array | 坐标 |
 | orderBy | Number | 排序类型 |
 | pageNo | Number | 页码 |
@@ -2637,7 +2840,7 @@ authority为用户权限:
 ```
 
 ---
-### 69. [修改预下单群组详情](#69-修改预下单群组详情modifypreordergroup)
+### 75. [修改预下单群组详情](#75-修改预下单群组详情modifypreordergroup)
 - `modifyPreOrderGroup`
 - 请求方式：`POST`
 
@@ -2657,7 +2860,7 @@ authority为用户权限:
 ```
 
 ---
-### 70. [获取预下单群组中的预下单列表](#70-获取预下单群组中的预下单列表getpreorderlistingroup)
+### 76. [获取预下单群组中的预下单列表](#76-获取预下单群组中的预下单列表getpreorderlistingroup)
 - `getPreOrderListInGroup`
 - 请求方式：`POST`
 
@@ -2704,7 +2907,7 @@ authority为用户权限:
 ## 分店api
 
 ---
-### 71. [收货部获取需要上传照片的订单](#71-收货部获取需要上传照片的订单getlastestorderbyreceivepartment)
+### 77. [收货部获取需要上传照片的订单](#77-收货部获取需要上传照片的订单getlastestorderbyreceivepartment)
 - `getLastestOrderByReceivePartment`
 - 请求方式：`POST`
 
@@ -2767,7 +2970,7 @@ authority为用户权限:
 ```
 
 ---
-### 72. [收货部为货单上传照片](#72-收货部为货单上传照片setphotofororiginorder)
+### 78. [收货部为货单上传照片](#78-收货部为货单上传照片setphotofororiginorder)
 - `setPhotoForOriginOrder`
 - 请求方式：`POST`
 
@@ -2784,7 +2987,7 @@ authority为用户权限:
 ```
 
 ---
-### 73. [收货部为货单下中转单](#73-收货部为货单下中转单placetransferorder)
+### 79. [收货部为货单下中转单](#79-收货部为货单下中转单placetransferorder)
 - `placeTransferOrder`
 - 请求方式：`POST`
 
@@ -2846,7 +3049,7 @@ authority为用户权限:
 ```
 
 ---
-### 74. [收货部获取货单详情](#74-收货部获取货单详情getorderdetailbyreceivepartment)
+### 80. [收货部获取货单详情](#80-收货部获取货单详情getorderdetailbyreceivepartment)
 - `getOrderDetailByReceivePartment`
 - 请求方式：`POST`
 
@@ -2911,7 +3114,7 @@ authority为用户权限:
 ```
 
 ---
-### 75. [收货部获取订单](#75-收货部获取订单getordersbyreceivepartment)
+### 81. [收货部获取订单](#81-收货部获取订单getordersbyreceivepartment)
 - `getOrdersByReceivePartment`
 - 请求方式：`POST`
 
@@ -3115,7 +3318,7 @@ authority为用户权限:
 
 ```
 ---
-### 76. [库管部获取订单](#76-库管部获取订单getordersbywarehousepartment)
+### 82. [库管部获取订单](#82-库管部获取订单getordersbywarehousepartment)
 - `getOrdersByWareHousePartment`
 - 请求方式：`POST`
 
@@ -3259,7 +3462,7 @@ authority为用户权限:
 }
 ```
 ---
-### 77. [库管部获取正在装车的订单列表](#77-库管部获取正在装车的订单列表getloadingorderlist)
+### 83. [库管部获取正在装车的订单列表](#83-库管部获取正在装车的订单列表getloadingorderlist)
 - `getLoadingOrderList`
 - 请求方式：`POST`
 
@@ -3342,7 +3545,7 @@ authority为用户权限:
 ```
 
 ---
-### 78. [库管部扫描入库](#78-库管部扫描入库placestorage)
+### 84. [库管部扫描入库](#84-库管部扫描入库placestorage)
 - `placeStorage`
 - 请求方式：`POST`
 
@@ -3408,7 +3611,7 @@ authority为用户权限:
 }
 ```
 
-### 79. [保安部检查卡车状态](#79-保安部检查卡车状态checktruckpass)
+### 85. [保安部检查卡车状态](#85-保安部检查卡车状态checktruckpass)
 - `checkTruckPass`
 - 请求方式：`POST`
 
@@ -3440,7 +3643,7 @@ authority为用户权限:
 }
 ```
 
-### 80. [分店获取成员列表](#80-分店获取成员列表getmemberlist)
+### 86. [分店获取成员列表](#86-分店获取成员列表getmemberlist)
 - `getMemberList`
 - 请求方式：`POST`
 
@@ -3487,7 +3690,7 @@ authority为用户权限:
 }
 ```
 
-### 82. [分店创建成员](#82-分店创建成员modifymember)
+### 88. [分店创建成员](#88-分店创建成员modifymember)
 - `createMember`
 - 请求方式：`POST`
 
@@ -3513,7 +3716,7 @@ authority为用户权限:
 }
 ```
 
-### 82. [分店创建成员](#82-分店创建成员modifymember)
+### 88. [分店创建成员](#88-分店创建成员modifymember)
 - `modifyMember`
 - 请求方式：`POST`
 
@@ -3540,7 +3743,7 @@ authority为用户权限:
 }
 ```
 
-### 83. [分店获取部门信息](#83-分店获取部门信息getownpartmentinfo)
+### 89. [分店获取部门信息](#89-分店获取部门信息getownpartmentinfo)
 - `getOwnPartmentInfo`
 - 请求方式：`POST`
 
@@ -3573,7 +3776,7 @@ authority为用户权限:
 
 ---
 
-### 84. [获取统计信息](#84-获取统计信息getstatistics)
+### 90. [获取统计信息](#90-获取统计信息getstatistics)
 - `getStatistics`
 - 请求方式：`POST`
 
@@ -3603,22 +3806,1342 @@ authority为用户权限:
 ```
 
 ---
+## 收货点
+
+---
+
+### 91. [收货点通过手机号获取预下单列表](#91-收货点通过手机号获取预下单列表getpreorderlist)
+- `getPreOrderList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| senderPhone | String | 发货人手机号|
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "count": 2,
+    "orderList": [
+      {
+        "startPoint": "贵州省贵阳市",
+        "senderId": "59e416b1d9196a1dc3d5d961",
+        "senderPhone": "13984387205",
+        "senderName": "1024",
+        "receiverId": "59e419d4b6ee191fe5d4fbc6",
+        "receiverPhone": "13000000000",
+        "receiverName": "Test1",
+        "name": "种子",
+        "endPoint": "天津",
+        "sendDoorEndPoint": "",
+        "isSendToDoor": false,
+        "createTime": "2017-10-20 10:34:52",
+        "stateList": [
+          {
+            "state": -1,
+            "count": 1,
+            "_id": "59e960cc482e7a0be7dc7581"
+          }
+        ],
+        "needPayInsuanceFee": 0,
+        "needPayTransportFee": 0,
+        "proxyChargeProfit": 0,
+        "proxyCharge": 0,
+        "designatedFee": 0,
+        "totalDesignatedFee": 0,
+        "realFee": 0,
+        "branchProfit": 0,
+        "masterProfit": 0,
+        "profit": 0,
+        "fee": 0,
+        "payTool": 0,
+        "payMode": 0,
+        "isReachPay": false,
+        "insuanceFee": 0,
+        "insuanceMount": 0,
+        "isInsuance": false,
+        "size": 1,
+        "weight": 1,
+        "totalNumbers": 1,
+        "needBondAmount": 0,
+        "roadmapRankIndex": -1,
+        "sendDoorEndPointLastCode": null,
+        "isSendDoor": false,
+        "endPointLastCode": 12,
+        "startPointLastCode": 0,
+        "isSenderRepresentShipper": true,
+        "isTransferOrder": false,
+        "id": "59e960cc482e7a0be7dc7580"
+      },
+      {
+        "shopId": "59df08df009deb7e9298e176",
+        "startPoint": "贵州省",
+        "senderId": "59e416b1d9196a1dc3d5d961",
+        "senderPhone": "13984387205",
+        "senderName": "范泽华",
+        "receiverId": "59e419d4b6ee191fe5d4fbc6",
+        "receiverPhone": "13000000000",
+        "receiverName": "伊藤诚",
+        "name": "种子",
+        "endPoint": "北京市东城区东华门街道",
+        "isSendToDoor": false,
+        "groupId": "59e5a1889594771ba19eeba7",
+        "createTime": "2017-10-17 14:21:39",
+        "stateList": [
+          {
+            "state": -1,
+            "count": 1,
+            "_id": "59e5a1739594771ba19eeba5"
+          }
+        ],
+        "needPayInsuanceFee": 0,
+        "needPayTransportFee": 0,
+        "proxyChargeProfit": 0,
+        "proxyCharge": 0,
+        "designatedFee": 0,
+        "totalDesignatedFee": 0,
+        "realFee": 0,
+        "branchProfit": 0,
+        "masterProfit": 0,
+        "profit": 0,
+        "fee": 0,
+        "payTool": 0,
+        "payMode": 0,
+        "isReachPay": false,
+        "insuanceFee": 0,
+        "insuanceMount": 0,
+        "isInsuance": false,
+        "size": 1,
+        "weight": 1,
+        "totalNumbers": 1,
+        "needBondAmount": 0,
+        "roadmapRankIndex": -1,
+        "sendDoorEndPointLastCode": 0,
+        "isSendDoor": false,
+        "endPointLastCode": 110101001,
+        "startPointLastCode": 0,
+        "isSenderRepresentShipper": true,
+        "isTransferOrder": false,
+        "id": "59e5a1739594771ba19eeba4"
+      }
+    ]
+  }
+}
+```
+
+---
+
+### 92. [收货点下单](#92-收货点下单placeorder)
+- `placeOrder`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| senderPhone | String | 发货人手机号|
+| senderName | String | 发货人姓名|
+| receiverPhone | String | 收货人手机号|
+| receiverName | String | 收货人姓名|
+| endPoint | String | 终点|
+| endPointLastCode | Number | 编码|
+| sendDoorEndPoint | String | 送货上门终点|
+| sendDoorEndPointLastCode | Number | 送货上门终点编码|
+| name | String | 货物名|
+| totalNumbers | Number | 总件数 |
+| weight | Number | 重量 |
+| size | Number | 方量 |
+| isSendDoor | Bool | 是否送货上门 |
+| isReachPay | Bool | 是否到付 |
+| proxyCharge | Number | 代收货款金额 |
+| insuanceMount | Number | 保险 |
+| totalDesignatedFee | Number | 指定收款金额 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "agentId": "59f698f70931cf0b4e8b5266",
+    "senderId": "59df087f009deb7e9298e16f",
+    "senderName": "fang1",
+    "senderPhone": "18083602719",
+    "receiverId": "59df0a26009deb7e9298e18f",
+    "receiverPhone": "18684165865",
+    "receiverName": "方运江",
+    "name": "腊肉",
+    "endPoint": "北京",
+    "sendDoorEndPoint": "东城区景山街道",
+    "placeOrderTime": "2017-10-30 16:35:02",
+    "createTime": "2017-10-30 16:35:02",
+    "stateList": [
+      {
+        "state": 0,
+        "count": 5,
+        "_id": "59f6e4361dc67612a47e3162"
+      }
+    ],
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 0,
+    "proxyChargeProfit": 0,
+    "proxyCharge": 0,
+    "designatedFee": 0,
+    "totalDesignatedFee": 0,
+    "realFee": 0,
+    "branchProfit": 0,
+    "masterProfit": 0,
+    "profit": 0,
+    "fee": 0,
+    "payTool": 0,
+    "payMode": 0,
+    "isReachPay": false,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": false,
+    "size": 1,
+    "weight": 1,
+    "totalNumbers": 5,
+    "needBondAmount": 0,
+    "roadmapRankIndex": -1,
+    "sendDoorEndPointLastCode": 110101002,
+    "isSendDoor": true,
+    "endPointLastCode": 11,
+    "startPointLastCode": 0,
+    "isSenderRepresentShipper": false,
+    "isTransferOrder": false,
+    "id": "59f6e4361dc67612a47e3161",
+    "state": 0
+  }
+}
+```
+
+---
+
+### 93. [收货点修改货单](#93-收货点修改货单modifyorder)
+- `modifyOrder`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+| senderPhone | String | 发货人手机号|
+| senderName | String | 发货人姓名|
+| receiverPhone | String | 收货人手机号|
+| receiverName | String | 收货人姓名|
+| endPoint | String | 终点|
+| endPointLastCode | Number | 编码|
+| sendDoorEndPoint | String | 送货上门终点|
+| sendDoorEndPointLastCode | Number | 送货上门终点编码|
+| name | String | 货物名|
+| totalNumbers | Number | 总件数 |
+| weight | Number | 重量 |
+| size | Number | 方量 |
+| isSendDoor | Bool | 是否送货上门 |
+| isReachPay | Bool | 是否到付 |
+| proxyCharge | Number | 代收货款金额 |
+| insuanceMount | Number | 保险 |
+| totalDesignatedFee | Number | 指定收款金额 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "agentId": "59f698f70931cf0b4e8b5266",
+    "senderId": "59df087f009deb7e9298e16f",
+    "senderName": "fang1",
+    "senderPhone": "18083602719",
+    "receiverId": "59df0a26009deb7e9298e18f",
+    "receiverPhone": "18684165865",
+    "receiverName": "方运江",
+    "name": "腊肉",
+    "endPoint": "北京",
+    "sendDoorEndPoint": "东城区景山街道",
+    "placeOrderTime": "2017-10-30 16:35:02",
+    "createTime": "2017-10-30 16:35:02",
+    "stateList": [
+      {
+        "state": 0,
+        "count": 5,
+        "_id": "59f6e4361dc67612a47e3162"
+      }
+    ],
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 0,
+    "proxyChargeProfit": 0,
+    "proxyCharge": 0,
+    "designatedFee": 0,
+    "totalDesignatedFee": 0,
+    "realFee": 0,
+    "branchProfit": 0,
+    "masterProfit": 0,
+    "profit": 0,
+    "fee": 0,
+    "payTool": 0,
+    "payMode": 0,
+    "isReachPay": false,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": false,
+    "size": 1,
+    "weight": 1,
+    "totalNumbers": 5,
+    "needBondAmount": 0,
+    "roadmapRankIndex": -1,
+    "sendDoorEndPointLastCode": 110101002,
+    "isSendDoor": true,
+    "endPointLastCode": 11,
+    "startPointLastCode": 0,
+    "isSenderRepresentShipper": false,
+    "isTransferOrder": false,
+    "id": "59f6e4361dc67612a47e3161",
+    "state": 0
+  }
+}
+```
+
+---
+
+### 94. [收货点打印二维码](#94-收货点打印二维码printbarcode)
+- `printBarCode`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "startPoint": "贵州省贵阳市",
+    "senderId": "59df087f009deb7e9298e16f",
+    "senderPhone": "18083602719",
+    "senderName": "第一物流老大",
+    "receiverId": "59df08e5009deb7e9298e179",
+    "receiverPhone": "17608566786",
+    "receiverName": "收货人2",
+    "name": "0000",
+    "endPoint": "北京市",
+    "isSendToDoor": false,
+    "shopId": "59df08df009deb7e9298e176",
+    "receivePartmentId": "59df0968009deb7e9298e17e",
+    "receiveMemberId": "59df1048009deb7e9298e1eb",
+    "placeOrderTime": "2017-10-12 16:06:36",
+    "photo": "http://localhost:3000/api/image?id=59df22a4009deb7e9298e2de",
+    "modifyTime": "2017-11-02 11:51:16",
+    "deductError": false,
+    "roadmapId": "59df0d32009deb7e9298e1ca",
+    "shipperChairManId": "59df0b1f009deb7e9298e19a",
+    "shipperId": "59df0c27009deb7e9298e1a7",
+    "storeScannerId": "59df09bf009deb7e9298e185",
+    "loadScannerId": "59df0b1f009deb7e9298e19a",
+    "truckId": "59df23f4009deb7e9298e2f7",
+    "confirmHandOverId": "59df0b1f009deb7e9298e19a",
+    "createTime": "2017-10-12 15:50:17",
+    "stateList": [
+      {
+        "state": 3,
+        "count": 2,
+        "_id": "59fa96346137254a82861339"
+      }
+    ],
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 1300,
+    "proxyChargeProfit": 10,
+    "proxyCharge": 1000,
+    "designatedFee": 0,
+    "totalDesignatedFee": 20,
+    "realFee": 1320,
+    "branchProfit": 30.799999999999997,
+    "masterProfit": 13.200000000000003,
+    "profit": 44,
+    "fee": 220,
+    "payTool": 0,
+    "payMode": 2,
+    "isReachPay": true,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": false,
+    "size": 1,
+    "weight": 2,
+    "totalNumbers": 2,
+    "needBondAmount": 20000,
+    "roadmapRankIndex": 1,
+    "sendDoorEndPointLastCode": 0,
+    "isSendDoor": false,
+    "endPointLastCode": 11,
+    "isCityDistribute": false,
+    "startPointLastCode": 0,
+    "isSenderRepresentShipper": true,
+    "isTransferOrder": false,
+    "id": "59df1eb9009deb7e9298e28f",
+    "state": 3
+  }
+}
+```
+
+---
+
+### 95. [收货点打印二货单](#95-收货点打印二货单printorderlistbill)
+- `printOrderListBill`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderIdList | Array | 货单Id数组 |
+
+```js
+{
+  "success": true,
+}
+```
+
+---
+
+### 96. [收货点代支付货单](#96-收货点代支付货单confirmcachpayedfororderlist)
+- `confirmCachPayedForOrderList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderIdList | Array | 货单Id数组 |
+
+```js
+{
+  "success": true,
+}
+```
+
+---
+
+### 97. [收货点获取未完成货单](#97-收货点获取未完成货单getlastestorder)
+- `getLastestOrder`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "senderId": "59fab1a1c651f44b1d891d28",
+    "senderName": "fang",
+    "senderPhone": "18085192480",
+    "receiverId": "59fab1a1c651f44b1d891d28",
+    "receiverPhone": "18085192480",
+    "receiverName": "fang",
+    "name": "腊肉",
+    "endPoint": "贵州遵义市湄潭县",
+    "sendDoorEndPoint": "湄江镇",
+    "receiveAgentMemberId": "59df0a26009deb7e9298e18f",
+    "placeOrderTime": "2017-11-02 13:48:17",
+    "createTime": "2017-11-02 13:48:17",
+    "stateList": [
+      {
+        "state": 0,
+        "count": 1,
+        "_id": "59fab1a1c651f44b1d891d2a"
+      }
+    ],
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 0,
+    "proxyChargeProfit": 0,
+    "proxyCharge": 0,
+    "designatedFee": 0,
+    "totalDesignatedFee": 0,
+    "realFee": 0,
+    "branchProfit": 0,
+    "masterProfit": 0,
+    "profit": 0,
+    "fee": 0,
+    "payTool": 0,
+    "payMode": 0,
+    "isReachPay": false,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": false,
+    "size": 1,
+    "weight": 1,
+    "totalNumbers": 1,
+    "needBondAmount": 0,
+    "roadmapRankIndex": -1,
+    "sendDoorEndPointLastCode": 520328100,
+    "isSendDoor": true,
+    "endPointLastCode": 520328,
+    "isCityDistribute": false,
+    "startPointLastCode": 0,
+    "isSenderRepresentShipper": false,
+    "isTransferOrder": false,
+    "id": "59fab1a1c651f44b1d891d29",
+    "agent": {
+      "name": "18684165865收货点",
+      "address": "贵州省贵阳市云岩区",
+      "id": "59f698f70931cf0b4e8b5266"
+    },
+    "state": 0
+  }
+}
+```
+
+---
+### 98. [收货点获取订单](#98-收货点获取订单getorders)
+- `getOrders`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| type | String | 类型 (topay(待支付),toprintbill(待打印货单),tosend(待发货),onway(运输中),success(已完成))|
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "topay": {
+      "count": 1,
+      "list": [
+        {
+          "senderName": "fang",
+          "senderPhone": "18085192480",
+          "receiverPhone": "18085192480",
+          "receiverName": "fang",
+          "name": "腊肉",
+          "endPoint": "贵州遵义市湄潭县",
+          "sendDoorEndPoint": "湄江镇",
+          "placeOrderTime": "2017-11-02 13:48:17",
+          "createTime": "2017-11-02 13:48:17",
+          "stateList": [
+            {
+              "state": 0,
+              "count": 1,
+              "_id": "59fab1a1c651f44b1d891d2a"
+            }
+          ],
+          "needPayInsuanceFee": 0,
+          "needPayTransportFee": 0,
+          "proxyCharge": 0,
+          "totalDesignatedFee": 0,
+          "payMode": 0,
+          "size": 1,
+          "weight": 1,
+          "totalNumbers": 1,
+          "isSendDoor": true,
+          "isCityDistribute": false,
+          "id": "59fab1a1c651f44b1d891d29"
+        }
+      ]
+    },
+    "toprintbill": {
+      "count": 0,
+      "list": []
+    },
+    "tosend": {
+      "count": 0,
+      "list": []
+    },
+    "onway": {
+      "count": 0,
+      "list": []
+    },
+    "success": {
+      "count": 0,
+      "list": []
+    }
+  }
+}
+```
+
+###### stateList.state的说明：
+```
+3：待付款状态
+2/4：待打印货单
+8：待发货
+9：运输中
+11：已完成
+```
+
+---
+### 99. [收货点获取订单详情](#99-收货点获取订单详情getorderdetail)
+- `getOrderDetail`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "senderId": "59df087f009deb7e9298e16f",
+    "senderName": "fang1",
+    "senderPhone": "18083602719",
+    "receiverId": "59df0a26009deb7e9298e18f",
+    "receiverPhone": "18684165865",
+    "receiverName": "方运江",
+    "name": "腊肉",
+    "endPoint": "北京",
+    "sendDoorEndPoint": "东城区景山街道",
+    "placeOrderTime": "2017-10-30 16:35:02",
+    "createTime": "2017-10-30 16:35:02",
+    "stateList": [
+      {
+        "state": 0,
+        "count": 5,
+        "_id": "59f6e4361dc67612a47e3162"
+      }
+    ],
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 0,
+    "proxyChargeProfit": 0,
+    "proxyCharge": 0,
+    "designatedFee": 0,
+    "totalDesignatedFee": 0,
+    "realFee": 0,
+    "branchProfit": 0,
+    "masterProfit": 0,
+    "profit": 0,
+    "fee": 0,
+    "payTool": 0,
+    "payMode": 0,
+    "isReachPay": false,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": false,
+    "size": 1,
+    "weight": 1,
+    "totalNumbers": 5,
+    "needBondAmount": 0,
+    "roadmapRankIndex": -1,
+    "sendDoorEndPointLastCode": 110101002,
+    "isSendDoor": true,
+    "endPointLastCode": 11,
+    "isCityDistribute": false,
+    "startPointLastCode": 0,
+    "isSenderRepresentShipper": false,
+    "isTransferOrder": false,
+    "id": "59f6e4361dc67612a47e3161",
+    "agent": {
+      "name": "18684165865收货点",
+      "address": "贵州省贵阳市云岩区",
+      "id": "59f698f70931cf0b4e8b5266"
+    },
+    "state": 0
+  }
+}
+```
+
+---
+### 100. [收货点获取成员列表](#100-收货点获取成员列表getmemberlist)
+- `getMemberList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "memberList": [
+      {
+        "phone": "18684165865",
+        "registerTime": "2017-10-12 14:22:30",
+        "shipperId": "59df0b86009deb7e9298e19c",
+        "head": "http://localhost:3000/api/image?id=59df35441b989b12d6ac11d1",
+        "agentId": "59f698f70931cf0b4e8b5266",
+        "createTime": "2017-10-12T06:22:30.345Z",
+        "isSetPaymentPassword": 1,
+        "authority": [
+          40000,
+          40001,
+          40002,
+          10008,
+          10005,
+          10006,
+          10007,
+          10009
+        ],
+        "sex": 0,
+        "id": "59df0a26009deb7e9298e18f"
+      }
+    ]
+  }
+}
+```
+
+---
+### 101. [收货点修改成员权限](#101-收货点修改成员权限modifymemberauthority)
+- `modifyMemberAuthority`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| memberId | ID | 成员Id |
+| authority | Array | 权限列表Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "phone": "15629002829",
+    "registerTime": "2017-10-19 14:29:59",
+    "createTime": "2017-10-19T06:29:59.222Z",
+    "isSetPaymentPassword": 0,
+    "authority": [
+      40001,
+      40002,
+      40003
+    ],
+    "sex": 0,
+    "id": "59e846675d12e51039dde2e0"
+  }
+}
+```
+
+---
+### 102. [收货点通过手机号搜索成员](#102-收货点通过手机号搜索成员getmemberbyphone)
+- `getMemberByPhone`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| memberPhone | String | 成员手机号 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "phone": "13312341234",
+    "email": "42550564@qq.com",
+    "registerTime": "2017-08-30 19:41:55",
+    "createTime": "2017-08-30T11:41:55.543Z",
+    "authority": [],
+    "sex": 0,
+    "id": "59a6a483523fa0838161fd27"
+  }
+}
+```
+
+---
+### 103. [收货点获取关联店铺列表](#103-收货点获取关联店铺列表getrefershoplist)
+- `getReferShopList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "branchShopList": [
+      {
+        "name": "15555555501",
+        "phoneList": "15555555501",
+        "address": "贵州省贵阳市云岩区黔灵山分店",
+        "location": [
+          106.70094,
+          26.605311
+        ],
+        "addressRegion": "贵州贵阳市市辖区",
+        "addressRegionLastCode": 520101,
+        "profitRate": 0.2,
+        "id": "59e426b1b6ee191fe5d4fbf8",
+        "chairMan": {
+          "phone": "15555555501",
+          "name": "程",
+          "id": "59e426b1b6ee191fe5d4fbf7"
+        }
+      },
+      {
+        "name": "北站分店",
+        "phoneList": "16666666601",
+        "address": "贵州省贵阳市乌当区贵阳北站",
+        "location": [
+          106.68309,
+          26.625563
+        ],
+        "profitRate": 0.2,
+        "id": "59e41c3cb6ee191fe5d4fbd4",
+        "chairMan": {
+          "phone": "16666666601",
+          "name": "程",
+          "id": "59e41c3cb6ee191fe5d4fbd3"
+        }
+      },
+      {
+        "name": "分店2",
+        "phoneList": "0851-86190987;18185192480",
+        "address": "湖北省十堰市竹溪县",
+        "location": [
+          109.657937,
+          32.171422
+        ],
+        "addressRegion": "湖北十堰市竹溪县",
+        "addressRegionLastCode": 420324,
+        "profitRate": 0.7,
+        "id": "59df4fdc975c7a2578e79674",
+        "chairMan": {
+          "phone": "15629000001",
+          "name": "陈方东",
+          "id": "59df4fdc975c7a2578e79673"
+        }
+      },
+      {
+        "name": "范家分店",
+        "phoneList": "0851-88622803",
+        "address": "贵州省贵阳市云岩区",
+        "location": [
+          106.709177,
+          26.629907
+        ],
+        "profitRate": 0.7,
+        "id": "59df08df009deb7e9298e176",
+        "chairMan": {
+          "phone": "13984387205",
+          "name": "范泽华",
+          "id": "59df08df009deb7e9298e175"
+        }
+      }
+    ]
+  }
+}
+```
+
+---
+### 104. [收货点设置关联店铺](#104-收货点设置关联店铺setrefershop)
+- `setReferShop`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| shopId | ID | 店铺Id |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 105. [收货点添加区域的路线提成](#105-收货点添加区域的路线提成addregionprofit)
+- `addRegionProfit`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| region | String | 方向，如：北京 |
+| regionLastCode | number | 方向的最后一个code |
+| profitRate | number | 提成比例 |
+| profitCount | number | 提成价格 |
+| type | number | 类型，0：所有，1：长途，2：短途|
+
+```js
+{
+  "success": true,
+  "context": {
+    "shopId": null,
+    "region": "河北",
+    "createTime": "2017-11-02 10:55:43",
+    "type": 0,
+    "profitCount": 0,
+    "profitRate": 0.3,
+    "regionLastCode": 14,
+    "id": "59fa892fa417a943de84d1a3",
+    "shop": null
+  }
+}
+```
+
+---
+### 106. [收货点获取区域的路线提成列表](#106-收货点获取区域的路线提成列表getregionprofitlist)
+- `getRegionProfitList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| keyword | String | 关键字 |
+| pageNo | Number | 页码 |
+| pageSize | Number | 每一页大小 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "count": 2,
+    "regionRateList": [
+      {
+        "shopId": null,
+        "createTime": "2017-11-02 10:53:33",
+        "type": 0,
+        "profitCount": 0,
+        "profitRate": 0.2,
+        "regionLastCode": 0,
+        "id": "59fa88ada417a943de84d1a1",
+        "shop": null
+      },
+      {
+        "shopId": null,
+        "region": "河北",
+        "createTime": "2017-11-02 10:55:43",
+        "type": 0,
+        "profitCount": 0,
+        "profitRate": 0.3,
+        "regionLastCode": 14,
+        "id": "59fa892fa417a943de84d1a3",
+        "shop": null
+      }
+    ]
+  }
+}
+```
+
+---
+### 107. [收货点获取区域的路线提成详情](#107-收货点获取区域的路线提成详情getregionprofitdetail)
+- `getRegionProfitDetail`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| regionId | ID | 路线提成Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "agentId": "59f698f70931cf0b4e8b5266",
+    "shopId": null,
+    "createTime": "2017-11-02 10:53:33",
+    "level": 1,
+    "type": 0,
+    "profitCount": 0,
+    "profitRate": 0.2,
+    "regionLastCode": 0,
+    "id": "59fa88ada417a943de84d1a1",
+    "shop": null
+  }
+}
+```
+
+---
+### 108. [收货点修改区域的路线提成](#108-收货点修改区域的路线提成modifyregionprofit)
+- `modifyRegionProfit`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| regionId | ID | 路线提成Id |
+| region | String | 方向，如：北京 |
+| regionLastCode | number | 方向的最后一个code |
+| profitRate | number | 提成比例 |
+| profitCount | number | 提成价格 |
+| type | number | 类型，0：所有，1：长途，2：短途|
+
+```js
+{
+  "success": true,
+  "context": {
+    "shopId": null,
+    "region": "河北",
+    "modifyTime": "2017-11-02 11:20:23",
+    "createTime": "2017-11-02 10:53:33",
+    "type": 0,
+    "profitCount": 4,
+    "profitRate": 0,
+    "regionLastCode": 15,
+    "id": "59fa88ada417a943de84d1a1",
+    "shop": null
+  }
+}
+```
+
+---
+### 109. [收货点删除区域的路线提成](#109-收货点删除区域的路线提成removeregionprofit)
+- `removeRegionProfit`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| regionId | ID | 路线提成Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shopId": null,
+    "region": "河北",
+    "modifyTime": "2017-11-02 11:20:23",
+    "createTime": "2017-11-02 10:53:33",
+    "type": 0,
+    "profitCount": 4,
+    "profitRate": 0,
+    "regionLastCode": 15,
+    "id": "59fa88ada417a943de84d1a1",
+    "shop": null
+  }
+}
+```
+
+---
+### 110. [收货点批量设置区域的路线提成](#110-收货点批量设置区域的路线提成setregionprofitwithlist)
+- `setRegionProfitWithList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| regionIdList | Array | 路线提成Id数组 |
+| profitRate | number | 提成比例 |
+| profitCount | number | 提成价格 |
+
+```js
+{
+  "success": true,
+}
+```
+
+---
+## 同城配送
+
+---
+
+### 111. [获取分店设置了上门自提竞价的物流公司列表](#111-获取分店设置了上门自提竞价的物流公司列表getclientpickshipperlist)
+- `getClientPickShipperList`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| shopId | ID | 分店Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shipperList": [
+      {
+        "clientPickEnable": true,
+        "clientPickPrice": 10,
+        "id": "5a04fa648fbe0257a3922ddb",
+        "name": " 13500000000同城物流",
+        "shipperType": 1
+      }
+    ]
+  }
+}
+```
+
+---
+### 112. [短途物流公司扫描入库](#112-短途物流公司扫描入库placestorage)
+- `placeStorage`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+| count | Number | 数量 |
+
+```js
+{
+  "success": true,
+  "order": {
+    "placeStoreTime": "2017-11-14 10:51:55",
+    "shipperStoreScannerId": "5a04f98a8fbe0257a3922dd3",
+    "preOrderId": "5a03c19ffd520c16113012cd",
+    "shopId": "5a04f68b8fbe0257a3922db5",
+    "senderId": "5a04f98a8fbe0257a3922dd3",
+    "senderPhone": "18684165865",
+    "senderName": "呵呵",
+    "receiverId": "59faced36b15a74e0438faee",
+    "receiverPhone": "13312341234",
+    "receiverName": "后过敏",
+    "name": "破破网",
+    "endPoint": "云岩区中华中路街道",
+    "sendDoorEndPoint": null,
+    "receivePartmentId": "5a04f7018fbe0257a3922db9",
+    "receiveMemberId": "5a04f7018fbe0257a3922db8",
+    "placeOrderTime": "2017-11-10 10:09:47",
+    "modifyTime": "2017-11-10 10:24:30",
+    "photo": "http://192.168.1.189:80/api/image?id=5a050a7b1d6a5427bc7dcbeb",
+    "deductError": false,
+    "roadmapId": "5a04fd559d2eb14135c8a3a4",
+    "shipperChairManId": "5a04f98a8fbe0257a3922dd3",
+    "shipperId": "5a04fa648fbe0257a3922ddb",
+    "warehouse": " 13500000000同城物流",
+    "nextOrderId": "5a050eff1d6a5427bc7dcbf1",
+    "createTime": "2017-11-10 10:09:47",
+    "stateList": [
+      {
+        "state": 6,
+        "count": 1,
+        "_id": "5a0a5a4bc9b3cd6f647085d5"
+      },
+      {
+        "state": 5,
+        "count": 9,
+        "_id": "5a050eff1d6a5427bc7dcbf3"
+      }
+    ],
+    "additionalFee": 0,
+    "needPayInsuanceFee": 0,
+    "needPayTransportFee": 1,
+    "proxyChargeProfit": 0,
+    "proxyCharge": 0,
+    "designatedFee": 0,
+    "totalDesignatedFee": 0,
+    "realFee": 1,
+    "branchProfit": 0,
+    "masterProfit": 0,
+    "profit": 0,
+    "fee": 1,
+    "payTool": 0,
+    "payMode": 0,
+    "isReachPay": false,
+    "insuanceFee": 0,
+    "insuanceMount": 0,
+    "isInsuance": false,
+    "size": 0,
+    "weight": 1,
+    "totalNumbers": 10,
+    "sendDoorMinFee": 0,
+    "sendDoorPrice": 0,
+    "minFee": 0.2,
+    "price": 0.2,
+    "needBondAmount": 10000,
+    "roadmapRankIndex": 0,
+    "isClientPick": false,
+    "sendDoorEndPointLastCode": 0,
+    "isSendDoor": false,
+    "endPointLastCode": 520103001,
+    "isCityDistribute": false,
+    "startPointLastCode": 0,
+    "isSenderRepresentShipper": true,
+    "isTransferOrder": true,
+    "id": "5a050a6b1d6a5427bc7dcbe5"
+  }
+}
+```
+
+---
+### 113. [短途物流公司设置送货上门](#113-短途物流公司设置送货上门setclientpickordertransportfee)
+- `setClientPickOrderTransportFee`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+| isTransport | Boolean | 是否要送货上门 |
+| endPoint | String | 送货上门地址 |
+| transportFee | Number | 送货上门费用 |
+| isScan | Boolean | 是否为扫描货单（还可以在货单列表修改送货上门状态） |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 114. [短途物流公司设置货车](#114-短途物流公司设置货车setcitytruck)
+- `setCityTruck`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| plateNo | String | 车牌号 |
+
+```js
+{
+  "success": true
+}
+```
+
+---
+### 115. [短途物流公司获取货车详情](#115-短途物流公司获取货车详情getcitytruckdetail)
+- `getCityTruckDetail`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shipperId": "5a04fa648fbe0257a3922ddb",
+    "plateNo": "123456",
+    "driverId": "5a04f98a8fbe0257a3922dd3",
+    "createTime": "2017-11-14 11:06:52",
+    "unloadAllOrderList": [],
+    "totalSize": 0,
+    "totalWeight": 0,
+    "totalNumbers": 0,
+    "orderCount": 0,
+    "orderList": [],
+    "locationList": [],
+    "id": "5a0a5dccc9b3cd6f64708718"
+  }
+}
+```
+
+---
+### 116. [短途物流公司扫描装车](#116-短途物流公司扫描装车scanloadorderforcitydistribute)
+- `scanLoadOrderForCityDistribute`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| orderId | ID | 货单Id |
+| count | Number | 数量 |
+
+```js
+{
+  "success": true,
+  "context": {
+    "shipperId": "5a04fa648fbe0257a3922ddb",
+    "plateNo": "123456",
+    "driverId": "5a04f98a8fbe0257a3922dd3",
+    "createTime": "2017-11-14 11:06:52",
+    "unloadAllOrderList": [
+      {
+        "senderPhone": "18684165865",
+        "senderName": "呵呵",
+        "receiverPhone": "13312341234",
+        "receiverName": "后过敏",
+        "endPoint": "张三家门口1",
+        "totalNumbers": 10,
+        "id": "5a050a6b1d6a5427bc7dcbe5",
+        "unloadNumber": 9
+      }
+    ],
+    "totalSize": 0,
+    "totalWeight": 0.1,
+    "totalNumbers": 1,
+    "orderCount": 1,
+    "locationList": [],
+    "id": "5a0a5dccc9b3cd6f64708718",
+    "latestOrder": {
+      "senderPhone": "18684165865",
+      "senderName": "呵呵",
+      "receiverPhone": "13312341234",
+      "receiverName": "后过敏",
+      "endPoint": "张三家门口1",
+      "photo": "http://192.168.1.189:80/api/image?id=5a050a7b1d6a5427bc7dcbeb",
+      "createTime": "2017-11-10 10:09:47",
+      "size": 0,
+      "weight": 1,
+      "totalNumbers": 10,
+      "id": "5a050a6b1d6a5427bc7dcbe5"
+    }
+  }
+}
+```
+
+---
+### 117. [短途物流公司获取货车的货单列表](#117-短途物流公司获取货车的货单列表getorderlistincitytruck)
+- `getOrderListInCityTruck`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true,
+  "context": {
+    "orderList": [
+      {
+        "senderPhone": "18684165865",
+        "senderName": "呵呵",
+        "receiverId": "59faced36b15a74e0438faee",
+        "receiverPhone": "13312341234",
+        "receiverName": "后过敏",
+        "name": "破破网",
+        "endPoint": "张三家门口1",
+        "placeOrderTime": "2017-11-10 10:09:47",
+        "photo": "http://192.168.1.189:80/api/image?id=5a050a7b1d6a5427bc7dcbeb",
+        "roadmapId": "5a04fd559d2eb14135c8a3a4",
+        "createTime": "2017-11-10 10:09:47",
+        "stateList": [
+          {
+            "state": 8,
+            "count": 1,
+            "_id": "5a0a5f2cc9b3cd6f6470871a"
+          },
+          {
+            "state": 6,
+            "count": 9,
+            "_id": "5a0a5bb3c9b3cd6f647085d7"
+          }
+        ],
+        "needPayInsuanceFee": 0,
+        "proxyCharge": 0,
+        "totalDesignatedFee": 0,
+        "realFee": 1,
+        "payMode": 0,
+        "isReachPay": false,
+        "isInsuance": false,
+        "size": 0,
+        "weight": 1,
+        "totalNumbers": 10,
+        "isSendDoor": false,
+        "id": "5a050a6b1d6a5427bc7dcbe5",
+        "shop": {
+          "name": "13300000000贵阳分店",
+          "address": "贵州省贵阳市乌当区",
+          "id": "5a04f68b8fbe0257a3922db5"
+        }
+      }
+    ]
+  }
+}
+```
+
+---
 ## 协议文档
 
 ---
 
-### 85. [用户协议](#85-用户协议user)
+### 118. [用户协议](#118-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 86. [获取软件许可协议](#86-获取软件许可协议software)
+### 119. [获取软件许可协议](#119-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 87. [关于](#87-关于about)
+### 120. [关于](#120-关于about)
 - `about`
 - url: `protocals/about.html`

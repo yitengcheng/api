@@ -133,10 +133,12 @@
 ##### 121. [替换我的业务员(replaceSalesman)](#121-替换我的业务员)
 ##### 122. [主动申请业务员(applySalesman)](#122-主动申请业务员)
 ##### 123. [获取业务员详情(getSalesmanDetail)](#123-获取业务员详情)
+##### 124. [获取会员信息(getMembershipData)](#124-获取会员信息)
+##### 125. [客户对业务员评分(appraiseSalesman)](#125-客户对业务员评分)
 ## 协议文档
-##### 124. [用户协议(user)](#124-用户协议)
-##### 125. [获取软件许可协议(software)](#125-获取软件许可协议)
-##### 126. [关于(about)](#126-关于)
+##### 126. [用户协议(user)](#126-用户协议)
+##### 127. [获取软件许可协议(software)](#127-获取软件许可协议)
+##### 128. [关于(about)](#128-关于)
 
 ---
 
@@ -5321,23 +5323,64 @@ authority为用户权限:
 }
 ```
 
+### 124. [获取会员信息](#124-获取会员信息getmembershipdata)
+- `getMembershipData`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+
+```js
+{
+  "success": true,
+  "context":{
+      "discountRate":0.01
+      "historyMaxStarLevel":3
+      "historyTotalSendWeight":1000
+      "starLevel":1
+      "chart" : [
+          {weight: 1, starLevel: 4, placeOrderTime: "2017-12-18"},
+          {weight: 24, starLevel: 2, placeOrderTime: "2017-12-17"},
+      ]
+  }
+}
+```
+
+### 125. [客户对业务员评分](#125-客户对业务员评分appraisesalesman)
+- `appraiseSalesman`
+- 请求方式：`POST`
+
+| 参数名称 | 参数类型  | 描述 |
+| :- |:-:| :-:|
+| userId | ID | 用户Id |
+| salesmanId | ID | 业务员Id |
+| appraiseLevel | number | 评分(0优,1良,2中,3差) |
+| remark | string | 具体评价 |
+
+```js
+{
+  "success": true
+}
+```
+
 ---
 ## 协议文档
 
 ---
 
-### 124. [用户协议](#124-用户协议user)
+### 126. [用户协议](#126-用户协议user)
 - `user`
 - url: `protocals/user.html`
 
 ---
 
-### 125. [获取软件许可协议](#125-获取软件许可协议software)
+### 127. [获取软件许可协议](#127-获取软件许可协议software)
 - `software`
 - url: `protocals/software.html`
 
 ---
 
-### 126. [关于](#126-关于about)
+### 128. [关于](#128-关于about)
 - `about`
 - url: `protocals/about.html`

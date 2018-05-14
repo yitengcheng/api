@@ -1,7 +1,7 @@
 # 目录
 ## 团队api
 ##### 1. [创建业绩团队(createAchieveGroup)](#1-创建业绩团队)
-##### 2. [获取业绩团队列表(createAchieveGroup)](#2-获取业绩团队列表)
+##### 2. [获取业绩团队列表(getAchieveGroupList)](#2-获取业绩团队列表)
 
 ---
 
@@ -32,8 +32,8 @@
 ```
 ---
 
-### 2. [获取业绩团队列表](#2-获取业绩团队列表createachievegroup)
-- `createAchieveGroup`
+### 2. [获取业绩团队列表](#2-获取业绩团队列表getachievegrouplist)
+- `getAchieveGroupList`
 - 请求方式：`POST`
 
 | 参数名称 | 参数类型  | 描述 |
